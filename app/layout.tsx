@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
+import classNames from "classnames";
+import NavBar from "./components/NavBar";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -28,14 +30,24 @@ export const metadata: Metadata = {
   // },
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en">
-      <body className={raleway.className}>{children}</body>
+      <body
+        className={classNames(
+          raleway.className,
+          "bg-background text-white max-w-6xl px-16 mx-auto"
+        )}
+      >
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
+
+export default RootLayout;
