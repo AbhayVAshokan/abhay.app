@@ -19,7 +19,7 @@ const NavBar = () => (
           className={classNames("p-2 rounded-lg  transition-colors", {
             // TODO: Replace this with URL pathname.
             "text-zinc-400 hover:bg-zinc-700 hover:text-zinc-500": link !== "/",
-            "bg-zinc-600 text-white hover:text-zinc-300": link === "/",
+            "bg-zinc-600 text-typography hover:text-zinc-300": link === "/",
           })}
         >
           <Link href={link}>{label}</Link>
