@@ -3,6 +3,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import classNames from "classnames";
 import NavBar from "./components/NavBar";
+import Copyright from "./components/Copyright";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ const RootLayout = ({
       >
         <NavBar />
         {children}
+        <Copyright />
       </body>
     </html>
   );
