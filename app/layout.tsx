@@ -41,7 +41,7 @@ const RootLayout = ({
       <body
         className={classNames(
           raleway.className,
-          "bg-background text-typography max-w-6xl px-16 mx-auto"
+          "bg-background text-typography max-w-6xl sm:px-16 px-8 py-4 mx-auto min-h-screen flex flex-col flex-grow"
         )}
       >
         <NavBar />
