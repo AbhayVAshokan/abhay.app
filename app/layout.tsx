@@ -8,7 +8,7 @@ import Copyright from "./components/Copyright";
 const raleway = Raleway({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400"], // TODO: Add all the weights used within the projects.
+  weight: ["400", "600"],
 });
 
 // TODO: Update metadata object with relevant information.
