@@ -2,16 +2,12 @@
   margin: 0rem auto;
   max-width: 700px;
 
-  img {
-    margin: 2rem 0;
-    width: 100%;
-  }
-
   h2,
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .header-link>svg {
     margin-top: 3rem;
   }
 
@@ -22,7 +18,8 @@
   h6,
   p,
   ul,
-  ol {
+  ol,
+  .header-link>svg {
     margin-bottom: 1rem;
   }
 
@@ -65,7 +62,28 @@
     }
   }
 
-  img {
-    border-radius: 12px;
+  code {
+    font-family: ui-monospace, monospace, system-ui, sans-serif;
+    padding: 0.125rem 0.25rem;
+    background: #232323;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .header-link svg {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity .2s, transform .2s;
+  }
+
+  .header-link:hover svg {
+    opacity: 1;
+    transform: none;
   }
 }
