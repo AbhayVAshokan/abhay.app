@@ -4,10 +4,11 @@ import Link from "next/link";
 interface CardProps {
   index: number;
   title: string;
+  prefix: string | string[];
   subtitle?: string;
   link?: string;
-  summary: string;
-  prefix: string | string[];
+  target?: string | null;
+  summary?: string;
 }
 
 const Prefix = ({ prefix }: { prefix: string | string[] }) => {
@@ -32,27 +33,29 @@ const Prefix = ({ prefix }: { prefix: string | string[] }) => {
 const Title = ({
   children,
   link,
+  target = "_blank"
 }: {
   children: React.ReactNode;
   link?: string;
+  target?: string;
 }) => {
   if (!link) return <h2 className="text-2xl">{children}</h2>;
 
   return (
-    <Link href={link} target="_blank" rel="noopener">
+    <Link href={link} target={target} rel="noopener">
       <h2 className="text-2xl underline mb-1">{children}</h2>
     </Link>
   );
 };
 
-const Card = ({ index, title, subtitle, summary, prefix, link }: CardProps) => (
+const Card = ({ index, title, subtitle, summary, prefix, link, target }: CardProps) => (
   <div className="border-t border-zinc-600 py-6 flex gap-6">
     <span className="text-4xl text-zinc-400">
       {index.toString().padStart(2, "0")}
     </span>
     <div>
       <Prefix prefix={prefix} />
-      <Title link={link}>{title}</Title>
+      <Title link={link} target={target}>{title}</Title>
       {subtitle && <h3 className="text-lg text-zinc-300 mb-3">{subtitle}</h3>}
       <p>{summary}</p>
     </div>
