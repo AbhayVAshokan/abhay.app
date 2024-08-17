@@ -12,7 +12,7 @@ const ReadTime = () => {
     setMinutes(Math.round(length / WORDS_PER_MINUTE))
   }, []);
 
-  return <span className="whitespace-pre-wrap"> • {minutes} minute read</span>;
+  return <span className="whitespace-pre-wrap"> • {minutes} min read</span>;
 };
 
 export default ReadTime;

@@ -2,24 +2,14 @@
   margin: 0rem auto;
   max-width: 700px;
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .header-link>svg {
-    margin-top: 3rem;
+  .header-link {
+    margin-top: 2rem;
   }
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
+  .header-link,
   p,
   ul,
-  ol,
-  .header-link>svg {
+  ol {
     margin-bottom: 1rem;
   }
 

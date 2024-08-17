@@ -25,6 +25,7 @@ const BlogLayout = ({
             <span>{data.date}</span><ReadTime />
           </p>
         </section>
+
         <section className="max-w-3xl mx-auto">
           <h1 className="md:text-6xl text-4xl font-semibold my-4 md:my-4 py-4">
             {data.title}
@@ -35,6 +36,7 @@ const BlogLayout = ({
             <div className="border-b my-12 w-full border-zinc-600" />
           </div>
         </section>
+
         <section className="blog">{children}</section>
       </article>
     </main>
