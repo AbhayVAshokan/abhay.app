@@ -45,7 +45,7 @@ const Header = ({
   );
 };
 
-export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
+export const useMDXComponents = (components: any): MDXComponents => ({
   img: Img,
   h2: Header,
   h3: Header,

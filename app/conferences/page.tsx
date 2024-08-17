@@ -82,8 +82,8 @@ const Talks = () => (
         facilis?
       </p>
       <div>
-        {CONFERENCES.map((talk, index) => (
-          <Card key={index} index={index + 1} {...talk} />
+        {CONFERENCES.map((conference, index) => (
+          <Card key={index} index={index + 1} {...conference} />
         ))}
       </div>
     </section>
