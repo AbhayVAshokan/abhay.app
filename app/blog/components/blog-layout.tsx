@@ -18,8 +18,8 @@ const BlogLayout = ({
 }) => {
   return (
     <main className="flex-1">
-      <article className="my-2">
-        <section className="mb-8 flex relative">
+      <article className="my-4">
+        <section className="flex relative">
           <Back />
           <p className="text-zinc-400 text-sm absolute left-1/2 -translate-x-1/2">
             <span>{data.date}</span><ReadTime />
@@ -27,7 +27,7 @@ const BlogLayout = ({
         </section>
 
         <section className="max-w-3xl mx-auto">
-          <h1 className="md:text-6xl text-4xl font-semibold my-4 md:my-4 py-4">
+          <h1 className="md:text-6xl text-4xl font-semibold py-4">
             {data.title}
           </h1>
           <div>

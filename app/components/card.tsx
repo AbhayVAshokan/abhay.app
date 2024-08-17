@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Link from "next/link";
 
-interface CardProps {
+export interface CardProps {
   index: number;
   title: string;
   prefix: string | string[];
@@ -9,9 +9,10 @@ interface CardProps {
   link?: string;
   target?: string | null;
   summary?: string;
+  className?: any;
 }
 
-const Prefix = ({ prefix }: { prefix: string | string[] }) => {
+export const Prefix = ({ prefix }: { prefix: string | string[] }) => {
   if (typeof prefix === "string") {
     return <p className="text-sm lowercase text-zinc-400">{prefix}</p>;
   }
@@ -30,14 +31,14 @@ const Prefix = ({ prefix }: { prefix: string | string[] }) => {
   );
 };
 
-const Title = ({
+export const Title = ({
   children,
   link,
-  target = "_blank"
+  target = "_blank",
 }: {
   children: React.ReactNode;
   link?: string;
-  target?: string;
+  target?: any;
 }) => {
   if (!link) return <h2 className="text-2xl">{children}</h2>;
 
@@ -48,14 +49,29 @@ const Title = ({
   );
 };
 
-const Card = ({ index, title, subtitle, summary, prefix, link, target }: CardProps) => (
-  <div className="border-t border-zinc-600 py-6 flex gap-6">
+const Card = ({
+  index,
+  title,
+  subtitle,
+  summary,
+  prefix,
+  link,
+  target,
+  className,
+}: CardProps) => (
+  <div
+    className={classNames("border-t border-zinc-600 py-6 flex gap-6", {
+      [className]: className,
+    })}
+  >
     <span className="text-4xl text-zinc-400">
       {index.toString().padStart(2, "0")}
     </span>
     <div>
       <Prefix prefix={prefix} />
-      <Title link={link} target={target}>{title}</Title>
+      <Title link={link} target={target}>
+        {title}
+      </Title>
       {subtitle && <h3 className="text-lg text-zinc-300 mb-3">{subtitle}</h3>}
       <p>{summary}</p>
     </div>

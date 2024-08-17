@@ -1,6 +1,12 @@
 import Card from "@/app/components/card";
 import Header from "@/app/components/header";
 
+// TODO: Verify and update metadata across all the pages.
+export const metadata = {
+  title: "Projects | Abhay V Ashokan",
+};
+
+
 const PROJECTS = [
   {
     title: "Flair",

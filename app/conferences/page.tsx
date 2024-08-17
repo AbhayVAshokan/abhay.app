@@ -29,8 +29,8 @@ const CONFERENCES = [
   {
     title: "Ruby Conf 2024",
     prefix: "November 14, 2022",
-    summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+    summary: "Upcoming",
+    className: "opacity-70",
   },
   {
     title: "Ruby Conf 2023",
