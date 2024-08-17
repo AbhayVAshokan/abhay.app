@@ -79,11 +79,54 @@
   .header-link svg {
     opacity: 0;
     transform: translateX(-50%);
-    transition: opacity .2s, transform .2s;
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
   }
 
   .header-link:hover svg {
     opacity: 1;
     transform: none;
+  }
+
+  pre {
+    margin: 2rem 0;
+
+    code {
+      counter-reset: line;
+      padding: 1rem;
+      background: #0d0e10;
+      border: 1px solid #27272a;
+      overflow: auto;
+      font-size: 0.8em;
+    }
+
+    code>[data-line]::before {
+      counter-increment: line;
+      content: counter(line);
+      display: inline-block;
+      width: 1rem;
+      margin-right: 1.5rem;
+      margin-left: 0.5rem;
+      text-align: right;
+      color: #71717a;
+    }
+
+    code[data-line-numbers-max-digits="2"]>[data-line]::before {
+      width: 2rem;
+    }
+
+    code[data-line-numbers-max-digits="3"]>[data-line]::before {
+      width: 3rem;
+    }
+
+    code>[data-highlighted-line] {
+      background: #27272a;
+      border-left: 0.25rem solid #a1a1aa;
+    }
+
+    code>[data-highlighted-line]::before {
+      margin-left: 0.25rem;
+    }
   }
 }
