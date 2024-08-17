@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: "About", link: "/about" },
   { label: "Blog", link: "/blog" },
   { label: "Projects", link: "/projects" },
-  { label: "Talks", link: "/talks" },
+  { label: "Conferences", link: "/conferences" },
   { label: "Achievements", link: "/achievements" },
 ];
 
@@ -19,7 +19,7 @@ const NavBar = () => {
   const activePath = NAV_LINKS.slice(1).find(({ link }) => pathname.includes(link))?.link;
   const activeLink = activePath ?? "/"
 
-  return <nav className="hidden md:block top-4 w-[450px] mx-auto sticky z-50 mb-4">
+  return <nav className="hidden md:block top-4 w-[475px] mx-auto sticky z-50 mb-4">
     <ul className="flex justify-between w-full border items-center p-2 rounded-2xl border-zinc-800 bg-background text-sm backdrop-blur bg-opacity-60">
       {NAV_LINKS.map(({ label, link }) => (
         <Link key={link} href={link}>

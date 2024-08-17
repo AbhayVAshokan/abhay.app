@@ -70,25 +70,6 @@
     font-size: 0.9rem;
   }
 
-  .header-link {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .header-link svg {
-    opacity: 0;
-    transform: translateX(-50%);
-    transition:
-      opacity 0.2s,
-      transform 0.2s;
-  }
-
-  .header-link:hover svg {
-    opacity: 1;
-    transform: none;
-  }
-
   pre {
     margin: 2rem 0;
 
