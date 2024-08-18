@@ -2,7 +2,7 @@ import ReadTime from "./read-time";
 import "./blog.css";
 import Back from "./back";
 import RecentBlogs from "../recent-blogs";
-import { BLOGS } from "../page";
+import { BLOGS } from "../blogs";
 
 interface BlogDataProps {
   title: string;

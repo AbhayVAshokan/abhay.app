@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Caveat } from "next/font/google";
 import Image from "next/image";
-import { BLOGS } from "./blog/page";
+import { BLOGS } from "./blog/blogs";
 import RecentBlogs from "./blog/recent-blogs";
 import GitHub from "./icons/github";
 import Link from "next/link";

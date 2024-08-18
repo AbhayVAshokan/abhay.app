@@ -1,20 +1,6 @@
 import Card from "@/app/components/card";
 import Header from "@/app/components/header";
-
-export const BLOGS = [
-  {
-    title: "Hello world",
-    prefix: "August 9, 2024 • 2 minute read",
-    link: "/blog/hello-world",
-    target: null,
-  },
-  {
-    title: "This is the second blog",
-    prefix: "August 9, 2024 • 2 minute read",
-    link: "/blog/hello-world",
-    target: null,
-  },
-];
+import { BLOGS } from "./blogs";
 
 const Blogs = () => (
   <main className="flex-1 space-y-12">
