@@ -119,7 +119,7 @@ const About = () => (
         {ACHIEVEMENTS.map(({ title, year }) => (
           <div key={title} className="flex gap-4">
             <p className="text-zinc-400">{year}</p>
-            <h3>{title}</h3>
+            <p>{title}</p>
           </div>
         ))}
       </div>

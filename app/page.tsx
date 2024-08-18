@@ -13,8 +13,8 @@ const caveat = Caveat({
 // TODO: Improve the tablet view.
 
 const Home = () => (
-  <main className="flex-1 space-y-8">
-    <section className="flex items-center py-2">
+  <main className="flex-1 space-y-8 flex flex-col justify-center">
+    <section className="flex items-center py-8">
       <div className="flex flex-col-reverse justify-center md:grid grid-cols-12 gap-8">
         <div className="col-span-8 my-auto">
           <h1 className="md:text-4xl text-2xl mb-4">
@@ -47,7 +47,7 @@ const Home = () => (
             voluptatibus itaque id cum!
           </p>
         </div>
-        <div className="col-span-4 relative aspect-[16/23] h-72 md:h-auto md:w-auto self-center">
+        <div className="col-span-4 relative aspect-[9/13] h-72 md:h-auto md:w-auto self-center">
           <Image fill priority src="/home/abhay.webp" alt="Abhay V Ashokan" />
         </div>
       </div>

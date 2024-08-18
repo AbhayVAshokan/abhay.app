@@ -14,7 +14,7 @@ export interface CardProps {
 
 export const Prefix = ({ prefix }: { prefix: string | string[] }) => {
   if (typeof prefix === "string") {
-    return <p className="text-sm lowercase text-zinc-400">{prefix}</p>;
+    return <p className="text-sm lowercase text-zinc-300">{prefix}</p>;
   }
 
   return (

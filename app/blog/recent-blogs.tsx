@@ -17,7 +17,7 @@ const RecentBlogs = ({ blogs }: { blogs: BlogType[] }) => (
           className="flex gap-4 border-b border-dashed opacity-70 hover:opacity-100 transition-opacity justify-between p-2"
         >
           <h3>{title}</h3>
-          <p className="text-zinc-400 lowercase text-sm">{prefix}</p>
+          <p className="text-zinc-300 lowercase text-sm">{prefix}</p>
         </Link>
       ))}
     </div>

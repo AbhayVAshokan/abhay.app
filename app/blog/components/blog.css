@@ -92,7 +92,7 @@
     }
 
     code>[data-highlighted-line] {
-      background: #27272a;
+      background: #1f1f21;
       border-left: 0.25rem solid #a1a1aa;
     }
 
