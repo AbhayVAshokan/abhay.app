@@ -3,6 +3,13 @@ import { Caveat } from "next/font/google";
 import Image from "next/image";
 import { BLOGS } from "./blog/page";
 import RecentBlogs from "./blog/recent-blogs";
+import GitHub from "./icons/github";
+import Link from "next/link";
+import Twitter from "./icons/twitter";
+import LinkedIn from "./icons/linkedin";
+import Gmail from "./icons/gmail";
+import Instagram from "./icons/instagram";
+import Medium from "./icons/medium";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -10,11 +17,20 @@ const caveat = Caveat({
   weight: ["400"],
 });
 
+const SOCIALS = [
+  { icon: GitHub, link: "https://github.com/AbhayVAshokan" },
+  { icon: Twitter, link: "https://twitter.com/abhayvashokan" },
+  { icon: LinkedIn, link: "https://linkedin.com/in/abhayvashokan" },
+  { icon: Medium, link: "https://abhayvashokan.medium.com" },
+  { icon: Gmail, link: "mailto:abhayvashokan@gmail.com" },
+  { icon: Instagram, link: "https://www.instagram.com/__abhay_ashokan__" },
+];
+
 // TODO: Improve the tablet view.
 
 const Home = () => (
   <main className="flex-1 space-y-8 flex flex-col justify-center">
-    <section className="flex items-center py-8">
+    <section className="flex items-center mt-8">
       <div className="flex flex-col-reverse justify-center md:grid grid-cols-12 gap-8">
         <div className="col-span-8 my-auto">
           <h1 className="md:text-4xl text-2xl mb-4">
@@ -51,6 +67,19 @@ const Home = () => (
           <Image fill priority src="/home/abhay.webp" alt="Abhay V Ashokan" />
         </div>
       </div>
+    </section>
+
+    <section className="flex flex-wrap gap-4 mx-auto">
+      {SOCIALS.map(({ icon: Icon, link }) => (
+        <Link
+          key={link}
+          href={link}
+          className="h-7 w-7 inline-block opacity-50 hover:opacity-100 transition-opacity"
+          aria-label="social icon"
+        >
+          <Icon />
+        </Link>
+      ))}
     </section>
 
     <RecentBlogs blogs={BLOGS.slice(0, 5)} />
