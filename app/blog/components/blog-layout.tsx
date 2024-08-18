@@ -1,6 +1,8 @@
 import ReadTime from "./read-time";
 import "./blog.css";
 import Back from "./back";
+import RecentBlogs from "../recent-blogs";
+import { BLOGS } from "../page";
 
 interface BlogDataProps {
   title: string;
@@ -22,7 +24,8 @@ const BlogLayout = ({
         <section className="flex relative">
           <Back />
           <p className="text-zinc-400 text-sm absolute left-1/2 -translate-x-1/2">
-            <span>{data.date}</span><ReadTime />
+            <span>{data.date}</span>
+            <ReadTime />
           </p>
         </section>
 
@@ -38,6 +41,11 @@ const BlogLayout = ({
         </section>
 
         <section className="blog">{children}</section>
+
+        <div className="border-b my-12 w-full border-zinc-600" />
+        <RecentBlogs
+          blogs={BLOGS.filter((blog) => blog.title !== data.title).slice(0, 5)}
+        />
       </article>
     </main>
   );
