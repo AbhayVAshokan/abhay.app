@@ -1,4 +1,3 @@
-import ReadTime from "./read-time";
 import "./blog.css";
 import Back from "./back";
 import RecentBlogs from "../recent-blogs";
@@ -24,8 +23,7 @@ const BlogLayout = ({
         <section className="flex relative">
           <Back />
           <p className="text-zinc-400 text-sm absolute left-1/2 -translate-x-1/2">
-            <span>{data.date}</span>
-            <ReadTime />
+            {data.date} • {data.readingTime} min read
           </p>
         </section>
 
