@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
@@ -47,9 +48,12 @@ const RootLayout = ({
         <NavBar />
         {children}
         <Copyright />
+        {process.env.GOOGLE_ANALYTICS_ID && (
+          <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID} />
+        )}
       </body>
     </html>
   );
-}
+};
 
 export default RootLayout;
