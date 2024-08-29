@@ -1,18 +1,16 @@
 import BlogLayout from "_/blog-layout";
+import { buildMetaData } from "../utils";
 
 export const data = {
   title: "Lorem ipsum odor amet, consectetuer adipiscing elit",
-  summary: "Lorem ipsum odor amet, consectetuer adipiscing elit. Ligula imperdiet mus sollicitudin, dapibus nunc ex malesuada aliquam. Adipiscing habitasse taciti pellentesque, orci per iaculis enim. Aut accumsan gravida; primis enim semper. Consectetur sit mauris, fermentum hac primis gravida. Per et euismod; adipiscing lacus faucibus nascetur.",
+  summary:
+    "Lorem ipsum odor amet, consectetuer adipiscing elit. Ligula imperdiet mus sollicitudin, dapibus nunc ex malesuada aliquam. Adipiscing habitasse taciti pellentesque, orci per iaculis enim. Aut accumsan gravida; primis enim semper. Consectetur sit mauris, fermentum hac primis gravida. Per et euismod; adipiscing lacus faucibus nascetur.",
   keywords: ["Software engineer", "React"],
   date: "9 aug 2024",
   readingTime: 2,
 };
 
-export const metadata = {
-  title: `${data.title} | Abhay V Ashokan`,
-  description: data.summary,
-  keywords: data.keywords,
-};
+export const generateMetadata = () => buildMetaData(data);
 
 <BlogLayout data={data}>
 ## This is a secondary heading
@@ -35,11 +33,12 @@ import { useEffect, useState } from "react";
 const WORDS_PER_MINUTE = 200;
 
 const ReadTime = () => {
-  const [minutes, setMinutes] = useState<number | '  '>("  ");
+  const [minutes, setMinutes] = (useState < number) | ("  " > "  ");
 
   useEffect(() => {
-    const length = document.querySelector(".blog")?.textContent?.split(/\s/).length ?? 0;
-    setMinutes(Math.round(length / WORDS_PER_MINUTE))
+    const length =
+      document.querySelector(".blog")?.textContent?.split(/\s/).length ?? 0;
+    setMinutes(Math.round(length / WORDS_PER_MINUTE));
   }, []);
 
   return <span className="whitespace-pre-wrap"> • {minutes} minute read</span>;
@@ -47,6 +46,7 @@ const ReadTime = () => {
 
 export default ReadTime;
 ```
+
 This is a new section:
 
 ```bash
@@ -56,5 +56,6 @@ brew install postgres
 Condimentum ex convallis aptent semper pellentesque nisl leo. Augue eros nec auctor velit platea ornare interdum facilisi mus. Nec nibh magnis metus eros facilisis aptent consequat malesuada iaculis? Nascetur laoreet felis, finibus posuere tristique malesuada orci congue. Sit faucibus enim nisi ornare nisi. Iaculis ultricies himenaeos magnis neque massa; quis luctus leo pulvinar. Fermentum scelerisque phasellus platea vestibulum eros! Mi nisi nec dis maximus vulputate risus auctor blandit porttitor. Elementum egestas maximus elit non rhoncus praesent.
 
 Nullam tortor himenaeos per luctus congue? Pulvinar cras ante euismod class suscipit. Vehicula nisi euismod sagittis scelerisque vulputate viverra enim vivamus. Atincidunt lacinia litora lacinia at inceptos nibh egestas tempor. Vehicula habitant molestie cursus eget accumsan eget enim vulputate risus. Hac a orci sociosqu interdum habitasse curabitur tempus euismod eleifend. Varius metus ultricies nullam torquent massa nam lobortis. Feugiat vulputate lacinia torquent facilisi posuere molestie.
+
 </BlogLayout>
 import { jsx } from "react/jsx-runtime"

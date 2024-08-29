@@ -26,15 +26,13 @@ const SOCIALS = [
   { icon: Instagram, link: "https://www.instagram.com/__abhay_ashokan__" },
 ];
 
-// TODO: Improve the tablet view.
-
 const Home = () => (
   <main className="flex-1 space-y-8 flex flex-col justify-center">
     <section className="flex items-center mt-8">
       <div className="flex flex-col-reverse justify-center md:grid grid-cols-12 gap-8">
         <div className="col-span-8 my-auto">
           <h1 className="md:text-4xl text-2xl mb-4">
-            Hi, I am{" "}
+            Hi, I&apos;m{" "}
             <span
               className={classNames(
                 "inline-block relative md:text-7xl text-4xl",
@@ -74,6 +72,8 @@ const Home = () => (
         <Link
           key={link}
           href={link}
+          target="_blank"
+          rel="noopener"
           className="h-7 w-7 inline-block opacity-50 hover:opacity-100 transition-opacity"
           aria-label="social icon"
         >
