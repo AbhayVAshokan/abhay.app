@@ -34,7 +34,7 @@ export const Prefix = ({ prefix }: { prefix: string | string[] }) => {
 export const Title = ({
   children,
   link,
-  target = "_blank",
+  target,
 }: {
   children: React.ReactNode;
   link?: string;

@@ -1,12 +1,6 @@
 import Card from "@/app/components/card";
 import Header from "@/app/components/header";
 
-// TODO: Verify and update metadata across all the pages.
-export const metadata = {
-  title: "Projects | Abhay V Ashokan",
-};
-
-
 const PROJECTS = [
   {
     title: "Flair",
@@ -17,6 +11,7 @@ const PROJECTS = [
   {
     title: "Talk Sindhi",
     link: "https://github.com/AbhayVAshokan/Talk-Sindhi",
+    target: "_blank",
     prefix: ["flutter"],
     summary:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
@@ -24,6 +19,7 @@ const PROJECTS = [
   {
     title: "Habituals",
     link: "https://github.com/AbhayVAshokan/Habituals",
+    target: "_blank",
     prefix: ["flutter", "nodejs", "mysql"],
     summary:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
@@ -31,6 +27,7 @@ const PROJECTS = [
   {
     title: "Semantic segmentation of road surface",
     link: "https://github.com/AbhayVAshokan/Semantic-Segmentation-of-Road-Surface",
+    target: "_blank",
     prefix: ["python", "ml", "opencv", "cnn"],
     summary:
       "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
@@ -38,21 +35,24 @@ const PROJECTS = [
   {
     title: "Object-Detection-YOLOv3",
     link: "https://github.com/AbhayVAshokan/Object-Detection-YOLOv3",
+    target: "_blank",
     prefix: ["python", "ml", "opencv", "html", "javascript"],
     summary:
       "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
   },
   {
     //https://github.com/AbhayVAshokan/Reboot-Kerala-Hackathon-Finals
+    target: "_blank",
     title: "Blaze: An application for connecting students with teachers.",
     subtitle: "AI week GEC Thrissur",
-    prefix: ["todo"],
+    prefix: [""],
     summary:
       "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
   },
 
   {
     // https://github.com/AbhayVAshokan/Live-Face-Recognition
+    target: "_blank",
     title: "Live face recognition",
     subtitle: "AI week GEC Thrissur",
     prefix: ["python", "ml", "opencv"],
@@ -61,6 +61,7 @@ const PROJECTS = [
   },
   {
     // https://github.com/TEDxStTeresasCollege-Website/Web-App
+    target: "_blank",
     title: "TEDxStTeresa 2022",
     subtitle: "AI week GEC Thrissur",
     prefix: ["nextjs"],
@@ -68,6 +69,10 @@ const PROJECTS = [
       "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
   },
 ];
+
+export const metadata = {
+  title: "Projects | Abhay V Ashokan",
+};
 
 const Projects = () => (
   <main className="flex-1 space-y-12">

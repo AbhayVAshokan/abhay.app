@@ -30,7 +30,7 @@ const CONFERENCES = [
     title: "Ruby Conf 2024",
     prefix: "November 14, 2022",
     summary: "Upcoming",
-    className: "opacity-70",
+    className: "opacity-50",
   },
   {
     title: "Ruby Conf 2023",
@@ -51,6 +51,10 @@ const CONFERENCES = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
   },
 ];
+
+export const metadata = {
+  title: "Conferences | Abhay V Ashokan",
+};
 
 const Talks = () => (
   <main className="flex-1 space-y-12">

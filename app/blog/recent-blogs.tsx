@@ -4,17 +4,19 @@ interface BlogType {
   title: string;
   prefix: string;
   link: string;
+  target?: string;
 }
 
 const RecentBlogs = ({ blogs }: { blogs: BlogType[] }) => (
   <section className="my-8">
     <h2 className="text-2xl mb-4">Recent blogs</h2>
-    <div className="mb-4">
-      {blogs.map(({ title, prefix, link }) => (
+    <div className="mb-8">
+      {blogs.map(({ title, prefix, link, target }) => (
         <Link
           key={title}
           href={link}
           className="flex gap-4 border-b border-dashed opacity-70 hover:opacity-100 transition-opacity justify-between p-2"
+          target={target}
         >
           <h3>{title}</h3>
           <p className="text-zinc-300 lowercase text-sm">{prefix}</p>

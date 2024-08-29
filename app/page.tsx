@@ -82,7 +82,7 @@ const Home = () => (
       ))}
     </section>
 
-    <RecentBlogs blogs={BLOGS.slice(0, 5)} />
+    <RecentBlogs blogs={BLOGS.filter(({ link }) => link !== "#").slice(0, 5)} />
   </main>
 );
 

@@ -5,17 +5,17 @@ const sitemap = (): MetadataRoute.Sitemap => {
   return [
     {
       url: `${process.env.APP_URL}`,
-      changeFrequency: "yearly",
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${process.env.APP_URL}/about`,
-      changeFrequency: "yearly",
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${process.env.APP_URL}/projects`,
-      changeFrequency: "yearly",
+      changeFrequency: "monthly",
       priority: 0.5,
     },
     {

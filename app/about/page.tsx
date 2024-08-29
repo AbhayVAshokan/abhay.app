@@ -2,7 +2,6 @@ import { CardProps, Prefix, Title } from "@/app/components/card";
 import Header from "@/app/components/header";
 
 const durationFromToday = (date: Date) => {
-  // TODO: This will get outdated due to server side render.
   const today = new Date();
   const months =
     today.getMonth() -
@@ -32,6 +31,7 @@ const EXPERIENCES = [
   {
     title: "Software Engineer at BigBinary",
     link: "https://bigbinary.com",
+    target: "_blank",
     prefix: `July 2021 - Present • ${durationFromToday(new Date("01 Jul 2021"))}`,
     summary:
       "A competitive platform for people to show off their talents in music and dance: Flutter, NodeJS, AWS.",
@@ -39,6 +39,7 @@ const EXPERIENCES = [
   {
     title: "Intern at Infoware India",
     link: "https://github.com/AbhayVAshokan/Talk-Sindhi",
+    target: "_blank",
     prefix: "Apr 2020 - Jun 2020 • 3 mos",
     summary:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
@@ -63,6 +64,10 @@ const ACHIEVEMENTS = [
   },
   { title: "KSM Idea Grant 2018 finalist", year: "2018" },
 ];
+
+export const metadata = {
+  title: "About | Abhay V Ashokan",
+};
 
 const Card = ({
   title,
@@ -126,5 +131,8 @@ const About = () => (
     </section>
   </main>
 );
+
+// Revalidate the projects route every month to auto-increment my experience field.
+export const revalidate = 30 * 24 * 60 * 60;
 
 export default About;
