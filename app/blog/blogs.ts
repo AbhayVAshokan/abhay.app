@@ -3,7 +3,7 @@ export const BLOGS = [
     title: "Dropping tables in a safe way in Ruby on Rails",
     prefix: "Upcoming",
     link: "#",
-    className: "opacity-50"
+    className: "opacity-70"
   },
   {
     title: "Hello world",

@@ -40,11 +40,11 @@ export const Title = ({
   link?: string;
   target?: any;
 }) => {
-  if (!link) return <h2 className="text-2xl">{children}</h2>;
+  if (!link) return <h2 className="text-2xl mb-2">{children}</h2>;
 
   return (
     <Link href={link} target={target} rel="noopener">
-      <h2 className="text-2xl underline mb-1">{children}</h2>
+      <h2 className="text-2xl underline mb-2">{children}</h2>
     </Link>
   );
 };

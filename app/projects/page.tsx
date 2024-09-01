@@ -4,9 +4,9 @@ import Header from "@/app/components/header";
 const PROJECTS = [
   {
     title: "Flair",
-    prefix: ["flutter", "nodejs", "mongodb"],
+    prefix: ["flutter", "nodejs", "mongodb", "aws"],
     summary:
-      "A competitive platform for people to show off their talents in music and dance: Flutter, NodeJS, AWS.",
+      "A competitive platform for people to show off their talents in music and dance. It started as a side project to kill time during lockdown. Soon, it started showing good potential. We noticed that the traditional algorithms promoted clickbait content and not the best talent. So we developed our own algorithm to rank video submissions for competitions. It is built using Flutter, Node.js and deployed in AWS. Unfortunately, it is now taken down from Play Store due to lack of maintenance when we went our separate ways after college.",
   },
   {
     title: "Talk Sindhi",
@@ -14,7 +14,7 @@ const PROJECTS = [
     target: "_blank",
     prefix: ["flutter"],
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+      "This is a mobile application to help users learn the language Sindhi. It has a fun interface to learn Sindhi using English or Hindi as the primary medium. Additionally, the app offers interactive quizzes to assess the user's knowledge. This was developed during my internship at Infoware India.",
   },
   {
     title: "Habituals",
@@ -22,7 +22,13 @@ const PROJECTS = [
     target: "_blank",
     prefix: ["flutter", "nodejs", "mysql"],
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+      "This is a corporate mobile application for helping with mental health. The app provides audits and nudges to make sure that there is a good employee wellbeing. It was developed using Flutter and Node.js during my internship at Infoware India. ",
+  },
+  {
+    target: "_blank",
+    title: "TEDx StTeresasCollege",
+    prefix: ["nextjs"],
+    summary: "Curated the website development of TEDx StTeresasCollege.",
   },
   {
     title: "Semantic segmentation of road surface",
@@ -30,43 +36,23 @@ const PROJECTS = [
     target: "_blank",
     prefix: ["python", "ml", "opencv", "cnn"],
     summary:
-      "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
+      "Semantic segmentation of road surface using the Indian Driving Dataset (IDD). Here, the IDD dataset was transformed to a collection of masks using binary thresholding. The result was trained on a U-NET (end-to-end fully convolutional network).",
   },
   {
     title: "Object-Detection-YOLOv3",
     link: "https://github.com/AbhayVAshokan/Object-Detection-YOLOv3",
     target: "_blank",
-    prefix: ["python", "ml", "opencv", "html", "javascript"],
+    prefix: ["python", "ml", "opencv", "nodejs"],
     summary:
-      "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
+      "The input video is first checked for motion detection. If a motion is detected, every second frame is processed using YOLOv3 object detection algorithm loaded with pre-trained weights. The dashboard sends API request to the Node.js server to execute object detection in a virtual Python shell.",
   },
   {
-    //https://github.com/AbhayVAshokan/Reboot-Kerala-Hackathon-Finals
-    target: "_blank",
-    title: "Blaze: An application for connecting students with teachers.",
-    subtitle: "AI week GEC Thrissur",
-    prefix: [""],
-    summary:
-      "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
-  },
-
-  {
-    // https://github.com/AbhayVAshokan/Live-Face-Recognition
-    target: "_blank",
     title: "Live face recognition",
-    subtitle: "AI week GEC Thrissur",
+    link: "https://github.com/AbhayVAshokan/Live-Face-Recognition",
+    target: "_blank",
     prefix: ["python", "ml", "opencv"],
     summary:
-      "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
-  },
-  {
-    // https://github.com/TEDxStTeresasCollege-Website/Web-App
-    target: "_blank",
-    title: "TEDxStTeresa 2022",
-    subtitle: "AI week GEC Thrissur",
-    prefix: ["nextjs"],
-    summary:
-      "U-NET Our college is in the initial stages of signing a memorandum of understanding with the Toyota Industries Corporation. We are currently working on computer vision and machine learning algorithms for developing autonomous vehicles.",
+      "Live training and recognition of faces using convolutional neural network.",
   },
 ];
 
@@ -79,12 +65,10 @@ const Projects = () => (
     <section className="max-w-3xl mx-auto my-8">
       <Header>Projects</Header>
       <p className="my-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quidem
-        libero a exercitationem minima minus, ex ducimus unde voluptates illo
-        ipsam corrupti nostrum in quo sit fugiat consequuntur assumenda. Vel
-        modi, soluta quis adipisci a perferendis laudantium earum assumenda
-        labore ea, ipsum totam aliquam, et architecto optio laboriosam natus
-        facilis?
+        I have more unfinished projects than the number of tabs that are open on
+        my browser. There are a lot more on my to-do. For me, side projects are
+        a great way to kill time and learn something new. Here are a few good
+        ones that I built during my time in college.
       </p>
       <div>
         {PROJECTS.map((project, index) => (

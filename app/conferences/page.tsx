@@ -7,48 +7,48 @@ const TALKS = [
     subtitle: "Kerala Ruby meetup 2024",
     prefix: "February 10, 2024",
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+      "Solid Cache is a database-backed Active Support cache store implementation in Ruby. In this talk, I focused on breaking down the Solid Cache architecture, discussing several design decisions, and how it compares with Redis highlighting the differences in performance and cost, and debating when Solid Cache might be the better choice for your applications.",
   },
   {
     title: "Discovering your passion and stepping into the world of tech",
-    subtitle: "Meet the Alumini inauguration",
+    subtitle: "Inauguration of Meet the Alumini in GEC Thrissur",
     prefix: "December 4, 2023",
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+      "I delivered a talk to kick off the Meet the Alumni event at GEC Thrissur. It was an interactive session with students of GEC Thrissur where we discussed my experience in the industry and all the options they needed to explore.",
   },
   {
     title: "An optical illution for machines",
-    subtitle: "AI week GEC Thrissur",
+    subtitle: "AI week in GEC Thrissur",
     prefix: "November 14, 2022",
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+      "An interactive talk on Generative AI. I discussed the challenges of implementing generative models, ethical dilemmas, technical difficulties, and potential real-world implementations and insights.",
   },
 ];
 
 const CONFERENCES = [
   {
     title: "Ruby Conf 2024",
-    prefix: "November 14, 2022",
-    summary: "Upcoming",
-    className: "opacity-50",
+    prefix: "November 29-30, 2024",
+    summary: "Upcoming - Jaipur, India",
+    className: "opacity-70",
   },
   {
     title: "Ruby Conf 2023",
-    prefix: "November 14, 2022",
+    prefix: "August 26-27, 2023",
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+      "The 2023 edition took place in Pune. It was impressive to find several like-minded Ruby enthusiasts at the same place. The talks were very insightful, it covered topics such as concurrency in Ruby, Async ruby, evolution of JS tooling in Ruby on Rails, performance tracking, and metaprogramming, the dissection of Rails, and much more.",
   },
   {
-    title: "PyCon 2023",
-    prefix: "November 14, 2022",
+    title: "PyCon India 2023",
+    prefix: "Sept 29 - Oct 2, 2023",
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+      "This year's PyCon felt more like a general programming conference than a Python-specific event, making it more fun. The conference brought together like-minded tech enthusiasts and featured a variety of nice talks.",
   },
   {
-    title: "AICSTSE 2020",
-    prefix: "November 14, 2022",
+    title: "IEEE AICSSCE 2019",
+    prefix: "November 14, 2019",
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+      "This was one of the main conferences of the IEEE Society in India. This is where I first came across tools like Elastic search, and Kubernetes, and had hands-on experience in drone building and more. I made several new friends who are still close to me today. It was also amazing to see how IEEE worked as a team during the 2018 Kerala floods.",
   },
 ];
 
@@ -61,12 +61,8 @@ const Talks = () => (
     <section className="max-w-3xl mx-auto my-8">
       <Header>Talks</Header>
       <p className="my-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quidem
-        libero a exercitationem minima minus, ex ducimus unde voluptates illo
-        ipsam corrupti nostrum in quo sit fugiat consequuntur assumenda. Vel
-        modi, soluta quis adipisci a perferendis laudantium earum assumenda
-        labore ea, ipsum totam aliquam, et architecto optio laboriosam natus
-        facilis?
+        I attend numerous conferences and meetups but have only delivered a
+        handful of talks. Here are some notable ones.
       </p>
       <div>
         {TALKS.map((talk, index) => (
@@ -78,12 +74,10 @@ const Talks = () => (
     <section className="max-w-3xl mx-auto my-8">
       <Header>Conferences</Header>
       <p className="my-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quidem
-        libero a exercitationem minima minus, ex ducimus unde voluptates illo
-        ipsam corrupti nostrum in quo sit fugiat consequuntur assumenda. Vel
-        modi, soluta quis adipisci a perferendis laudantium earum assumenda
-        labore ea, ipsum totam aliquam, et architecto optio laboriosam natus
-        facilis?
+        Conferences are a great place to find like-minded tech enthusiasts,
+        learn about what is new in the industry, network, travel, explore new
+        places, and much more. Here are a few notable conferences that I have
+        attended.
       </p>
       <div>
         {CONFERENCES.map((conference, index) => (

@@ -49,16 +49,16 @@ const Home = () => (
             </span>
           </h1>
           <p className="md:text-lg">
-            Some quote long quote by me Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Architecto sint blanditiis deleniti incidunt
-            voluptates fuga, sequi quo vitae ipsa delectus repellat cum
-            excepturi molestias officiis magnam, iusto, et minima provident!
-            Exercitationem dolores, explicabo perferendis aperiam itaque quo
-            autem et ipsa iure illo, fuga culpa in mollitia commodi magni?
-            Perspiciatis consequatur ut itaque minus nulla quae libero voluptas
-            laudantium voluptatum, provident sit autem quibusdam ratione
-            recusandae architecto, ea deleniti necessitatibus? Maxime eos
-            voluptatibus itaque id cum!
+            I am a software engineer at BigBinary. For me, building software is
+            more than just a job — it&apos;s a passion. I like to get my hands
+            dirty and build tools to solve my own itch, and make life easier for
+            everyone else. You will always find me with endless open tabs,
+            reading numerous blogs, experimenting with what&apos;s hot in the
+            JavaScript world, or solving chess puzzles. Don&apos;t hesitate to
+            say hi if you spot me at meetups or cafes with a laptop and
+            headphones. I will not stop talking if you strike up a conversation
+            with me by casually mentioning Next.js, React, Ruby on Rails, or
+            anything related to chess.
           </p>
         </div>
         <div className="col-span-4 relative aspect-[9/13] h-72 md:h-auto md:w-auto self-center">

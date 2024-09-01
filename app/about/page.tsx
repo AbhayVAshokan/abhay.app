@@ -16,10 +16,11 @@ const SKILLS = [
   { title: "Next.js", level: 10 },
   { title: "Rails", level: 10 },
   { title: "PostgreSQL", level: 9 },
-  { title: "UI/UX", level: 9 },
   { title: "JavaScript", level: 9 },
   { title: "TypeScript", level: 8 },
   { title: "Ruby", level: 8 },
+  { title: "UI/UX", level: 8 },
+  { title: "SCSS", level: 8 },
   { title: "Python", level: 7 },
   { title: "C/C++", level: 7 },
   { title: "Node.js", level: 5 },
@@ -33,33 +34,36 @@ const EXPERIENCES = [
     link: "https://bigbinary.com",
     target: "_blank",
     prefix: `July 2021 - Present • ${durationFromToday(new Date("01 Jul 2021"))}`,
-    summary:
-      "A competitive platform for people to show off their talents in music and dance: Flutter, NodeJS, AWS.",
+    summary: [
+      "Here, we build Neeto, a bunch of projects to get your work done. I am a full-stack developer and a tech lead. We use Next.js, React, Rails, PostgreSQL, Redis, SCSS, and TailwindCSS.",
+      "NeetoSite: a no-code website-building platform where you can create and launch websites with ease. You can quickly create a multipage website using pre-made templates or start from scratch with our cool blocks. You can launch your websites on your own custom domains.",
+      "NeetoEditor: a WYSIWYG editor for Neeto built using Tiptap and Prosemirror.",
+      "I actively work on several NPM packages and Rails engines, developing build tools and improving the performance. I also focus on code standardization, the creation of custom RuboCop or ESlint rules, UI components, and Chrome extensions.",
+    ],
   },
   {
     title: "Intern at Infoware India",
     link: "https://github.com/AbhayVAshokan/Talk-Sindhi",
     target: "_blank",
     prefix: "Apr 2020 - Jun 2020 • 3 mos",
-    summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit sunt excepturi nulla quasi, velit quisquam, fugiat ipsa repellat harum nostrum a autem alias eveniet quas quaerat architecto quibusdam rem doloremque aliquam eligendi accusamus. Ducimus, animi, voluptates suscipit laudantium illum quia, reprehenderit illo earum nam odio aliquid et architecto at",
+    summary: [
+      "Here I developed projects in Flutter and Node.js and had the opportunity to work with experienced developers from the industry. I built the front end for Talk Sindhi - a mobile application to learn the language of Sindhi and the front and back end for Habituals - a corporate healthcare application.",
+    ],
   },
 ];
 
 const ACHIEVEMENTS = [
   {
-    title:
-      "First runner up in Reboot Kerala Hackathon 2020 - healthcare division",
+    title: "First runner up in Reboot Kerala Hackathon - healthcare division",
     year: "2020",
   },
-  { title: "KSM IDea Fest 2019 future lab support", year: "2019" },
+  { title: "Obtained future lab support for KSM Idea Fest", year: "2019" },
   {
     title: "IEEE Xtreme 12.0 global rank 1450, country rank 271",
     year: "2019",
   },
   {
-    title:
-      "First in competitive coding: ISTE Annual State Convention February 2018",
+    title: "First in competitive coding: ISTE Annual State Convention",
     year: "2018",
   },
   { title: "KSM Idea Grant 2018 finalist", year: "2018" },
@@ -76,7 +80,7 @@ const Card = ({
   prefix,
   link,
   target,
-}: Omit<CardProps, "index">) => (
+}: Omit<CardProps, "index"> & { summary: string[] }) => (
   <div className="border-t border-zinc-600 py-6 flex gap-6">
     <div>
       <Prefix prefix={prefix} />
@@ -84,7 +88,9 @@ const Card = ({
         {title}
       </Title>
       {subtitle && <h3 className="text-lg text-zinc-300 mb-3">{subtitle}</h3>}
-      <p>{summary}</p>
+      {summary.map((paragraph, index) => (
+        <p key={index} className="mb-2">{paragraph}</p>
+      ))}
     </div>
   </div>
 );

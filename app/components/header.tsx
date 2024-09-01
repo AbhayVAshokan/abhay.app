@@ -32,8 +32,8 @@ const Header = ({ className, children }: HeaderProps) => {
   const id = children?.toString().toLowerCase();
 
   return (
-    <Link href={`#${id}`} className="header-link">
-      <h1 id={id} className="text-5xl md:text-6xl font-semibold mb-8">
+    <Link href={`#${id}`} className="header-link mb-8">
+      <h1 id={id} className="text-5xl md:text-6xl font-semibold">
         {children}
       </h1>
       <LinkIcon />{" "}
