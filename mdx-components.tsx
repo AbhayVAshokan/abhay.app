@@ -25,7 +25,7 @@ const Img = (props: any) => (
     <Image
       fill
       alt="blog content"
-      className="rounded-xl object-contain"
+      className="rounded-xl object-contain !w-auto mx-auto border border-zinc-800"
       {...props}
     />
   </span>

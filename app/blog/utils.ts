@@ -25,14 +25,15 @@ export const buildMetaData = (data: Data): Metadata => {
       site: "@abhayvashokan",
       creator: "@abhayvashokan",
       images: ogImage,
+      title: data.title,
     },
     openGraph: {
-      type: "website",
+      type: "article",
       url: `${process.env.APP_URL}/blog/${data.title.split(" ").join("-").toLowerCase()}`,
       title: data.title,
-      description: data.summary,
       siteName: data.title,
       images: ogImage,
+      authors: "Abhay V Ashokan"
     },
   };
 };

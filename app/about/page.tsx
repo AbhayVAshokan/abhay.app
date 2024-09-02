@@ -20,7 +20,7 @@ const SKILLS = [
   { title: "TypeScript", level: 8 },
   { title: "Ruby", level: 8 },
   { title: "UI/UX", level: 8 },
-  { title: "SCSS", level: 8 },
+  { title: "CSS/SCSS", level: 8 },
   { title: "Python", level: 7 },
   { title: "C/C++", level: 7 },
   { title: "Node.js", level: 5 },
@@ -35,19 +35,19 @@ const EXPERIENCES = [
     target: "_blank",
     prefix: `July 2021 - Present • ${durationFromToday(new Date("01 Jul 2021"))}`,
     summary: [
-      "Here, we build Neeto, a bunch of projects to get your work done. I am a full-stack developer and a tech lead. We use Next.js, React, Rails, PostgreSQL, Redis, SCSS, and TailwindCSS.",
+      "I am a full-stack developer and a tech lead at Neeto. We use Next.js, React, Rails, PostgreSQL, Redis, SCSS, and TailwindCSS.",
       "NeetoSite: a no-code website-building platform where you can create and launch websites with ease. You can quickly create a multipage website using pre-made templates or start from scratch with our cool blocks. You can launch your websites on your own custom domains.",
       "NeetoEditor: a WYSIWYG editor for Neeto built using Tiptap and Prosemirror.",
-      "I actively work on several NPM packages and Rails engines, developing build tools and improving the performance. I also focus on code standardization, the creation of custom RuboCop or ESlint rules, UI components, and Chrome extensions.",
+      "I actively work on several NPM packages and Rails engines. I also work on improving the build tools and auditing and fixing performance issues across products. I also focus on code standardization, the creation of custom RuboCop or ESlint rules, building new UI components, and Chrome extensions.",
     ],
   },
   {
     title: "Intern at Infoware India",
-    link: "https://github.com/AbhayVAshokan/Talk-Sindhi",
+    link: "https://www.infowareindia.com",
     target: "_blank",
     prefix: "Apr 2020 - Jun 2020 • 3 mos",
     summary: [
-      "Here I developed projects in Flutter and Node.js and had the opportunity to work with experienced developers from the industry. I built the front end for Talk Sindhi - a mobile application to learn the language of Sindhi and the front and back end for Habituals - a corporate healthcare application.",
+      "This was my first opportunity to work with experienced developers from the industry. I joined as an intern for the Flutter team. I built the frontend for Talk Sindhi - a mobile application to learn the language of Sindhi and the frontend and backend for Habituals - a corporate healthcare application.",
     ],
   },
 ];
@@ -80,7 +80,7 @@ const Card = ({
   prefix,
   link,
   target,
-}: Omit<CardProps, "index"> & { summary: string[] }) => (
+}: Omit<CardProps, "index" | "summary"> & { summary: string[] }) => (
   <div className="border-t border-zinc-600 py-6 flex gap-6">
     <div>
       <Prefix prefix={prefix} />

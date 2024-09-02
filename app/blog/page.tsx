@@ -12,13 +12,11 @@ const Blogs = () => (
     <section className="max-w-3xl mx-auto my-8">
       <Header>Blogs</Header>
       <p className="my-8">
-        I like to scribble my shower thoughts as short microblogs or dive into
-        detailed write-ups about interesting topics I&apos;ve recently
-        encountered. It could be a clever coding trick, a thought-provoking
-        idea, or how I solved a problem. I like my blogs to be a mix of quick
-        insights and in-depth explorations, always with a touch of technical
-        jargon. It&apos;s my way of connecting with like-minded folks, kicking
-        off discussions, and keeping me curious to learn something new.
+        I like scribbling down my shower thoughts as quick microblogs or diving
+        deep into topics that catch my interest. It could be a clever coding
+        trick, a thought-provoking idea, or a problem I finally cracked. I like
+        to mix short insights and some in-depth explorations with a lot of
+        technical jargon for fun.
       </p>
       <div className="my-8">
         {BLOGS.map((blog, index) => (

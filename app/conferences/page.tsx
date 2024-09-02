@@ -7,7 +7,7 @@ const TALKS = [
     subtitle: "Kerala Ruby meetup 2024",
     prefix: "February 10, 2024",
     summary:
-      "Solid Cache is a database-backed Active Support cache store implementation in Ruby. In this talk, I focused on breaking down the Solid Cache architecture, discussing several design decisions, and how it compares with Redis highlighting the differences in performance and cost, and debating when Solid Cache might be the better choice for your applications.",
+      "Solid Cache is a database-backed Active Support cache store implementation in Ruby. In this talk, I focused on breaking down the Solid Cache architecture, discussing several design decisions, and how it compares with Redis. I highlighted the differences in performance and cost, and debated when Solid Cache might be the better choice for your applications.",
   },
   {
     title: "Discovering your passion and stepping into the world of tech",
@@ -36,7 +36,7 @@ const CONFERENCES = [
     title: "Ruby Conf 2023",
     prefix: "August 26-27, 2023",
     summary:
-      "The 2023 edition took place in Pune. It was impressive to find several like-minded Ruby enthusiasts at the same place. The talks were very insightful, it covered topics such as concurrency in Ruby, Async ruby, evolution of JS tooling in Ruby on Rails, performance tracking, and metaprogramming, the dissection of Rails, and much more.",
+      "The 2023 edition took place in Pune. It was impressive to find several Ruby enthusiasts at the same place. The talks were very insightful, it covered topics such as concurrency in Ruby, async ruby, evolution of JS tooling in Ruby on Rails, enhancing performance, metaprogramming, the dissection of Rails, and much more.",
   },
   {
     title: "PyCon India 2023",
