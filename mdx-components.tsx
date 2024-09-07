@@ -21,7 +21,7 @@ const LinkIcon = () => (
 );
 
 const Img = (props: any) => (
-  <span className="relative h-[450px] max-h-[450px] my-8 block">
+  <span className="relative md:h-[450px] md:max-h-[450px] h-80 max-h-80 my-8 block">
     <Image
       fill
       alt="blog content"

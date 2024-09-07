@@ -1,0 +1,56 @@
+import BlogLayout from "_/blog-layout";
+import { buildMetaData } from "../utils";
+
+export const data = {
+  title: "It Only Took a Million Tries, But My Portfolio Is Done!",
+  summary:
+    "Finally built my portfolio using Next.js and TailwindCSS. Simple, responsive, and ready for random tech rambles!",
+  keywords: ["Next.js", "MDX", "Portfolio"],
+  date: "8 sept 2024",
+  readingTime: 4,
+};
+
+export const generateMetadata = () => buildMetaData(data);
+
+<BlogLayout data={data}>
+
+I'm pretty sure every developer reading this has _that moment_ where you decide to build a portfolio. In your head, it's a sleek, perfect site, complete with a dark/light theme toggle and all sorts of cool animations. Let me guess, you never found the time to actually finish it. Yeah, I didn't either, three times tbh... until now. This time, decided to skip the Figma, wireframes, or any sort of a design. I just wanted to get it out of my head. I grabbed a pen, sketched a rough idea, and built it using raw Next.js and TailwindCSS.
+
+I won't bore you with the details of how I tried building my portfolio with a different framework each time, only to lose motivation halfway through. Long story short, I spent more time creating elaborate Figma designs or starting with building a theme switcher than actually building the site. I kept getting distracted and lost motivation when I didn't see any real progress.
+
+I just needed a personal space where I can share my random shower thoughts and the new ideas that frequently pop into my head. It'll be a mix of many things - sometimes I'll dive into some technical jargon, other times I might us it to vent about whatever's on my mind. Back in college, I was pretty active on [Medium](https://medium.com), but it feels a bit formal for me now. I want this blog to be a place where I can write freely without worrying about making it perfect.
+
+Honestly, Next.js made the whole process way easier than I expected. I don't need to manually read markdown files, parse them, and turn them into React components during build. [Next.js and MDX!!](https://nextjs.org/docs/app/building-your-application/configuring/mdx) Just create a `page.mdx` file instead of `page.tsx` with some minimal configuration; kaboom! your blog is done. I made a little `BlogLayout` component to handle titles and meta information. Here's how a blog post will look like:
+
+```tsx
+import BlogLayout from "_/blog-layout";
+
+export const data = {
+  title: "It Only Took a Million Tries, But My Portfolio Is Done!",
+  keywords: ["Next.js", "MDX", "Portfolio"],
+};
+
+<BlogLayout data={data}>
+  ## Lorem ipsum dolor **Lorem ipsum** dolor sit amet, consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+  voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+  anim id est laborum.
+</BlogLayout>;
+```
+
+Now, let's talk about the dark theme. I must admit, I'm guilty of always asking if a site has a dark mode. But here? Nope. No theme switcher here. That's right—this site only comes dark. Sometimes you just have to embrace the dark side and make life a little simpler!
+
+I'm pretty pleased with how things turned out. It's simple, it's responsive, and it has reusable UI elements. I even managed to dynamically generate OG images for each blog post. Yep, [Next.js makes that possible too!](https://nextjs.org/docs/app/api-reference/functions/image-response) Here's a peek at what it looks like for this blog.
+
+![Dynamically rendered OG image](/blogs/it-only-took-a-million-tries-but-my-portfolio-is-done/og-image.png)
+
+I ran a Lighthouse audit and was delighted to see a near-perfect score. I had to tweak a few minor warnings to hit the perfect score with a confetti for my little victory. Yippee!
+
+![100% lighthouse score](/blogs/it-only-took-a-million-tries-but-my-portfolio-is-done/100-percent-lighthouse-score.gif)
+
+So, yeah, there you have it. my portfolio is finally live and I couldn't be happier. Sometimes, simple is just better. Check out the repository at [AbhayVAshokan/abhay.app](https://github.com/AbhayVAshokan/abhay.app). I'll be posting ramdom stuff here, so stay tuned!
+
+</BlogLayout>

@@ -6,9 +6,9 @@ export const BLOGS = [
     className: "opacity-70"
   },
   {
-    title: "Hello world",
-    prefix: "August 9, 2024 • 2 minute read",
-    link: "/blog/hello-world",
+    title: "It Only Took a Million Tries, But My Portfolio Is Done!",
+    prefix: "September 8, 2024 • 4 minute read",
+    link: "/blog/it-only-took-a-million-tries-but-my-portfolio-is-done",
   },
   {
     title: "React performance optimization - memoization demystified",

@@ -89,7 +89,7 @@ const Card = ({
       </Title>
       {subtitle && <h3 className="text-lg text-zinc-300 mb-3">{subtitle}</h3>}
       {summary.map((paragraph, index) => (
-        <p key={index} className="mb-2">{paragraph}</p>
+        <p key={index} className="mb-4">{paragraph}</p>
       ))}
     </div>
   </div>
