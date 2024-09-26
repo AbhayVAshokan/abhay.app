@@ -1,9 +1,9 @@
 export const BLOGS = [
   {
-    title: "Dropping tables in a safe way in Ruby on Rails",
-    prefix: "Upcoming",
-    link: "#",
-    className: "opacity-70"
+    title: "Dropping tables, dropping columns and renaming columns in a safe way in Ruby on Rails",
+    prefix: "September 17, 2024 • 11 minute read",
+    link: "https://bigbinary.com/blog/rails-8-deleting-tables-columns-using-rubocop",
+    target: "_blank",
   },
   {
     title: "It Only Took a Million Tries, But My Portfolio Is Done!",
