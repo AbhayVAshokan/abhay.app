@@ -3,6 +3,14 @@ import Header from "@/app/components/header";
 
 const TALKS = [
   {
+    title:
+      "Panel discussion: Thread of thoughts: navigating diverse career paths",
+    subtitle: "Proxy 2024 - GEC Thrissur",
+    prefix: "September 30, 2024",
+    summary:
+      "GEC Thrissur alumni organized a panel discussion inviting alumnis from different domains. It was a fun and interactive session where we discussed our experiences, shared our opinions, and answered the students' questions.",
+  },
+  {
     title: "Solid Cache",
     subtitle: "Kerala Ruby meetup 2024",
     prefix: "February 10, 2024",
@@ -11,7 +19,7 @@ const TALKS = [
   },
   {
     title: "Discovering your passion and stepping into the world of tech",
-    subtitle: "Inauguration of Meet the Alumini in GEC Thrissur",
+    subtitle: "Inauguration of Meet the Alumni in GEC Thrissur",
     prefix: "December 4, 2023",
     summary:
       "I delivered a talk to kick off the Meet the Alumni event at GEC Thrissur. It was an interactive session with students of GEC Thrissur where we discussed my experience in the industry and all the options they needed to explore.",
