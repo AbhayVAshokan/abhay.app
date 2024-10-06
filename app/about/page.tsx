@@ -23,6 +23,8 @@ const SKILLS = [
   { title: "CSS/SCSS", level: 8 },
   { title: "Python", level: 7 },
   { title: "C/C++", level: 7 },
+  { title: "Vue.js", level: 7 },
+  { title: "Nuxt.js", level: 7 },
   { title: "Node.js", level: 5 },
   { title: "Flutter", level: 5 },
   { title: "AI/ML", level: 4 },

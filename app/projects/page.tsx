@@ -11,6 +11,14 @@ const PROJECTS = [
       "A URL shortener for shrinking my personal links. I started this project to check out the new shadcn CLI tool. trpc looked like a cool way to send requests between the client and server. I decided to give it a go. I used Prisma for ODM and added my database to PostgreSQL.",
   },
   {
+    title: "Fast",
+    prefix: ["nuxtjs"],
+    link: "https://fast.abhay.app",
+    target: "_blank",
+    summary:
+      "A web app for testing internet bandwidth.",
+  },
+  {
     title: "Flair",
     prefix: ["flutter", "nodejs", "mongodb", "aws"],
     summary:
