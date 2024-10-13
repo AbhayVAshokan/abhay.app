@@ -21,13 +21,14 @@ const LinkIcon = () => (
 );
 
 const Img = (props: any) => (
-  <span className="relative md:h-[450px] md:max-h-[450px] h-80 max-h-80 my-8 block">
+  <span className="relative md:h-[450px] md:max-h-[450px] h-80 max-h-80 mt-8 mb-12 block">
     <Image
       fill
       alt="blog content"
       className="rounded-xl object-contain !w-auto mx-auto border border-zinc-800"
       {...props}
     />
+    <span className="inline-block text-sm text-zinc-400 absolute text-center w-full -bottom-8 left-1/2 -translate-x-1/2">{props.alt}</span>
   </span>
 );
 
