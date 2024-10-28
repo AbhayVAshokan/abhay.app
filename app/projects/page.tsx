@@ -15,8 +15,15 @@ const PROJECTS = [
     prefix: ["nuxtjs"],
     link: "https://fast.abhay.app",
     target: "_blank",
+    summary: "A web app for testing internet bandwidth.",
+  },
+  {
+    title: "Lorem",
+    prefix: ["remix.run"],
+    link: "https://lorem.abhay.app",
+    target: "_blank",
     summary:
-      "A web app for testing internet bandwidth.",
+      "Generate lorem ipsum text for your website by specifying the number of paragraphs.",
   },
   {
     title: "Flair",
