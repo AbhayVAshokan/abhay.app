@@ -3,6 +3,13 @@ import Header from "@/app/components/header";
 
 const TALKS = [
   {
+    title: "Reading the Ruby AST to write RuboCop rules",
+    subtitle: "RubyConf India 2024",
+    prefix: "November 30, 2024",
+    summary:
+      "I delivered a lightning talk on the day two of the conference. I showed how easy it is to read the Ruby AST using several examples by live coding. Then I proceeded to explain how to use this knowledge to write a RubyCop rule to throw the usages of 'pluck().first' method as an offense and to prefer 'pick' method instead.",
+  },
+  {
     title:
       "Panel discussion: Thread of thoughts: navigating diverse career paths",
     subtitle: "Proxy 2024 - GEC Thrissur",
@@ -35,13 +42,13 @@ const TALKS = [
 
 const CONFERENCES = [
   {
-    title: "Ruby Conf 2024",
+    title: "RubyConf India 2024",
     prefix: "November 29-30, 2024",
-    summary: "Upcoming - Jaipur, India",
-    className: "opacity-70",
+    summary:
+      "The 2024 edition was held in Jaipur - The Pink City. The city with it's huge palaces and forts just blows you away. The talks were decent. I did a lightning talk on 'Reading the Ruby AST and to write RuboCop rule'. There were a lot of familiar faces from the last conference, which made it easy to network.",
   },
   {
-    title: "Ruby Conf 2023",
+    title: "RubyConf India 2023",
     prefix: "August 26-27, 2023",
     summary:
       "The 2023 edition took place in Pune. It was impressive to find several Ruby enthusiasts at the same place. The talks were very insightful, it covered topics such as concurrency in Ruby, async ruby, evolution of JS tooling in Ruby on Rails, enhancing performance, metaprogramming, the dissection of Rails, and much more.",
