@@ -10,6 +10,7 @@ import LinkedIn from "./icons/linkedin";
 import Gmail from "./icons/gmail";
 import Instagram from "./icons/instagram";
 import Medium from "./icons/medium";
+import RSS from "./icons/rss";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ const SOCIALS = [
   { icon: Twitter, link: "https://twitter.com/abhayvashokan" },
   { icon: LinkedIn, link: "https://linkedin.com/in/abhayvashokan" },
   { icon: Medium, link: "https://abhayvashokan.medium.com" },
+  { icon: RSS, link: `${process.env.APP_URL}/feed.xml` },
   { icon: Gmail, link: "mailto:abhayvashokan@gmail.com" },
   { icon: Instagram, link: "https://www.instagram.com/__abhay_ashokan__" },
 ];
@@ -36,7 +38,7 @@ const Home = () => (
             <span
               className={classNames(
                 "inline-block relative md:text-7xl text-4xl",
-                caveat.className
+                caveat.className,
               )}
             >
               Abhay V Ashokan
