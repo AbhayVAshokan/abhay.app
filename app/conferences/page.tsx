@@ -8,6 +8,8 @@ const TALKS = [
     prefix: "November 30, 2024",
     summary:
       "I delivered a lightning talk on the day two of the conference. I showed how easy it is to read the Ruby AST using several examples by live coding. Then I proceeded to explain how to use this knowledge to write a RubyCop rule to throw the usages of 'pluck().first' method as an offense and to prefer 'pick' method instead.",
+    link: "https://youtu.be/eGnhXyYQRos?si=VhCOIY0uowtSeT2u&t=594",
+    target: "_blank",
   },
   {
     title:
