@@ -91,7 +91,9 @@ const Card = ({
       </Title>
       {subtitle && <h3 className="text-lg text-zinc-300 mb-3">{subtitle}</h3>}
       {summary.map((paragraph, index) => (
-        <p key={index} className="mb-4">{paragraph}</p>
+        <p key={index} className="mb-4">
+          {paragraph}
+        </p>
       ))}
     </div>
   </div>
@@ -140,7 +142,8 @@ const About = () => (
   </main>
 );
 
+// FIXME: This was disabled after the Next.js upgrade to v15.
 // Revalidate the projects route every month to auto-increment my experience field.
-export const revalidate = 30 * 24 * 60 * 60;
+// export const revalidate = 30 * 24 * 60 * 60;
 
 export default About;
