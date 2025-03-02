@@ -29,14 +29,14 @@ const sitemap = (): MetadataRoute.Sitemap => {
       priority: 0.8,
     },
 
-    ...BLOGS.map(({ link, prefix }) => ({
-      url: `${process.env.APP_URL}${link}`,
+    ...BLOGS.map(({ link, prefix, target }) => ({
+      url: target === "_blank" ? link : `${process.env.APP_URL}${link}`,
       priority: 0.8,
       lastModified: new Date(
-        prefix.match(/\w+\s\d{1,2},\s\d{4}/)?.[0] || new Date()
+        prefix.match(/\w+\s\d{1,2},\s\d{4}/)?.[0] || new Date(),
       ),
     })),
   ];
-}
+};
 
 export default sitemap;
