@@ -4,8 +4,10 @@ import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import "./navbar.css";
 import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
+import "./index.css";
+import ThemeSwitcher from "./theme-switcher";
 
 const NAV_LINKS = [
   { label: "Home", link: "/" },
@@ -41,6 +43,7 @@ const Large = () => {
           </Link>
         ))}
       </div>
+      <ThemeSwitcher />
     </nav>
   );
 };
