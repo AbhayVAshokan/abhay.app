@@ -1,22 +1,20 @@
 import createMDX from "@next/mdx";
+import { NextConfig } from "next";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
 const withMDX = createMDX({
-  experimental: {
-    mdxRs: true,
-  },
   options: {
     rehypePlugins: [
       rehypeSlug,
       [
         rehypePrettyCode,
         {
+          // TODO: This might break in light mode.
           theme: "dark-plus",
           keepBackground: false,
           defaultLang: "plaintext",
