@@ -4,39 +4,39 @@ import { BLOGS } from "./blog/blogs";
 const sitemap = (): MetadataRoute.Sitemap => {
   return [
     {
-      url: `${process.env.APP_URL}`,
+      url: "https://abhay.app",
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${process.env.APP_URL}/about`,
+      url: "https://abhay.app/about",
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${process.env.APP_URL}/projects`,
+      url: "https://abhay.app/projects",
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      url: `${process.env.APP_URL}/conferences`,
+      url: "https://abhay.app/conferences",
       changeFrequency: "yearly",
       priority: 0.5,
     },
     {
-      url: `${process.env.APP_URL}/blog`,
+      url: "https://abhay.app/blog",
       changeFrequency: "weekly",
       priority: 0.8,
     },
 
     ...BLOGS.map(({ link, prefix }) => ({
-      url: `${process.env.APP_URL}${link}`,
+      url: `https://abhay.app${link}`,
       priority: 0.8,
       lastModified: new Date(
-        prefix.match(/\w+\s\d{1,2},\s\d{4}/)?.[0] || new Date()
+        prefix.match(/\w+\s\d{1,2},\s\d{4}/)?.[0] || new Date(),
       ),
     })),
   ];
-}
+};
 
 export default sitemap;

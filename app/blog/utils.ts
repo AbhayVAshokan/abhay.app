@@ -11,9 +11,9 @@ interface Data {
 export const buildMetaData = (data: Data): Metadata => {
   const subtitle = `${data.date} ${data.readingTime} • minute read`;
   const ogImage =
-    `${process.env.APP_URL}/api/og?title=${data.title}&subtitle=${subtitle}`.replace(
+    `https://abhay.app/api/og?title=${data.title}&subtitle=${subtitle}`.replace(
       /\s/g,
-      "+"
+      "+",
     );
 
   return {
@@ -29,11 +29,11 @@ export const buildMetaData = (data: Data): Metadata => {
     },
     openGraph: {
       type: "article",
-      url: `${process.env.APP_URL}/blog/${data.title.split(" ").join("-").toLowerCase()}`,
+      url: `https://abhay.app/blog/${data.title.split(" ").join("-").toLowerCase()}`,
       title: data.title,
       siteName: data.title,
       images: ogImage,
-      authors: "Abhay V Ashokan"
+      authors: "Abhay V Ashokan",
     },
   };
 };
