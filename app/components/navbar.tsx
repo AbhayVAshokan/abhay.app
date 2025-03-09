@@ -19,7 +19,7 @@ const Large = () => {
   const pathname = usePathname();
 
   const activePath = NAV_LINKS.slice(1).find(({ link }) =>
-    pathname.includes(link)
+    pathname.includes(link),
   )?.link;
   const activeLink = activePath ?? "/";
 
@@ -62,7 +62,7 @@ const Small = () => {
           "ham fixed top-2 right-0 z-[60] md:hidden inline-block",
           {
             active: isOpen,
-          }
+          },
         )}
         viewBox="0 0 100 100"
         width="60"
@@ -81,9 +81,9 @@ const Small = () => {
 
       <div
         className={classNames(
-          "md:hidden fixed inset-0 w-screen flex flex-col gap-4 uppercase items-center justify-center bg-zinc-900 z-50 bg-opacity-70 backdrop-blur transition-all duration-300",
+          "md:hidden fixed inset-0 w-screen flex flex-col gap-4 uppercase items-center justify-center bg-zinc-900 z-50 bg-black/70 backdrop-blur transition-all duration-300",
           { "h-[1px]": !isOpen },
-          { "h-screen": isOpen }
+          { "h-screen": isOpen },
         )}
       >
         {NAV_LINKS.map(({ label, link }) => (
@@ -91,17 +91,20 @@ const Small = () => {
             key={link}
             href={link}
             onClick={() => setIsOpen(false)}
-            className={classNames("sliding-underline text-4xl tracking-tight transition-all", {
-              "opacity-100 delay-200": isOpen,
-              "opacity-0 delay-0": !isOpen,
-            })}
+            className={classNames(
+              "sliding-underline text-4xl tracking-tight transition-all",
+              {
+                "opacity-100 delay-200": isOpen,
+                "opacity-0 delay-0": !isOpen,
+              },
+            )}
           >
             {label}
           </Link>
         ))}
       </div>
     </>,
-    document.body
+    document.body,
   );
 };
 
