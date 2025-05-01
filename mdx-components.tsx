@@ -25,10 +25,10 @@ const Img = (props: any) => (
     <Image
       fill
       alt="blog content"
-      className="rounded-xl object-contain !w-auto mx-auto border border-zinc-800"
+      className="rounded-xl object-contain !w-auto mx-auto border border-muted-foreground"
       {...props}
     />
-    <span className="inline-block text-sm text-zinc-400 absolute text-center w-full -bottom-8 left-1/2 -translate-x-1/2">{props.alt}</span>
+    <span className="inline-block text-sm text-muted-foreground opacity-70 absolute text-center w-full -bottom-8 left-1/2 -translate-x-1/2">{props.alt}</span>
   </span>
 );
 

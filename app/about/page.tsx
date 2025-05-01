@@ -83,13 +83,12 @@ const Card = ({
   link,
   target,
 }: Omit<CardProps, "index" | "summary"> & { summary: string[] }) => (
-  <div className="border-t border-zinc-600 py-6 flex gap-6">
+  <div className="border-t py-6 flex gap-6">
     <div>
       <Prefix prefix={prefix} />
       <Title link={link} target={target}>
         {title}
       </Title>
-      {subtitle && <h3 className="text-lg text-zinc-300 mb-3">{subtitle}</h3>}
       {summary.map((paragraph, index) => (
         <p key={index} className="mb-4">
           {paragraph}
@@ -133,7 +132,7 @@ const About = () => (
       <div>
         {ACHIEVEMENTS.map(({ title, year }) => (
           <div key={title} className="flex gap-4">
-            <p className="text-zinc-400">{year}</p>
+            <p className="text-muted-foreground opacity-50">{year}</p>
             <p>{title}</p>
           </div>
         ))}

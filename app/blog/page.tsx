@@ -27,7 +27,7 @@ const Blogs = () => (
         target="_blank"
         rel="noopener"
         href="https://abhayvashokan.medium.com"
-        className="text-zinc-300 hover:text-typography transition-colors"
+        className="text-muted-foreground opacity-70 hover:text-typography transition-colors"
       >
         View older blogs on Medium →
       </Link>

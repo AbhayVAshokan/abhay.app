@@ -26,7 +26,7 @@ const Large = () => {
 
   return (
     <nav className="hidden md:block top-4 w-[375px] mx-auto sticky z-50 mb-4">
-      <div className="flex justify-between w-full border items-center p-2 rounded-2xl border-muted-background/50 bg-background text-sm backdrop-blur bg-opacity-60">
+      <div className="flex justify-between w-full border items-center p-2 rounded-2xl border-muted-background/50 text-sm backdrop-blur bg-opacity-60">
         {NAV_LINKS.map(({ label, link }) => (
           <Link
             key={link}

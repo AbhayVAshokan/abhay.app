@@ -22,7 +22,7 @@ const BlogLayout = ({
       <article className="my-4">
         <section className="flex relative">
           <Back />
-          <p className="text-zinc-400 text-sm absolute left-1/2 -translate-x-1/2">
+          <p className="text-muted-foreground text-sm absolute left-1/2 -translate-x-1/2">
             {data.date} • {data.readingTime} min read
           </p>
         </section>
@@ -32,15 +32,15 @@ const BlogLayout = ({
             {data.title}
           </h1>
           <div>
-            <p className="text-sm text-zinc-400">tl;dr</p>
+            <p className="text-sm text-muted-foreground">tl;dr</p>
             <p className="italic !m-0">{data.summary}</p>
-            <div className="border-b my-12 w-full border-zinc-600" />
+            <div className="border-b my-12 w-full border-muted-foreground/30" />
           </div>
         </section>
 
         <section className="blog">{children}</section>
 
-        <div className="border-b my-12 w-full border-zinc-600" />
+        <div className="border-b my-12 w-full border-muted-foreground/30" />
         <RecentBlogs
           blogs={BLOGS.filter((blog) => blog.title !== data.title && blog.link !== "#").slice(0, 5)}
         />
