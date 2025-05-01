@@ -74,7 +74,7 @@ const Home = () => (
           href={link}
           target="_blank"
           rel="noopener"
-          className="h-7 w-7 inline-block opacity-50 hover:opacity-100 transition-opacity"
+          className="h-7 w-7 inline-block opacity-50 hover:opacity-100 transition-opacity text-foreground"
           aria-label="social icon"
         >
           <Icon />

@@ -55,9 +55,22 @@
   code {
     font-family: ui-monospace, monospace, system-ui, sans-serif;
     padding: 0.125rem 0.25rem;
-    background: #232323;
     border-radius: 0.25rem;
     font-size: 0.9rem;
+  }
+
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-light);
+    background-color: var(--shiki-light-bg);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    code[data-theme*=" "],
+    code[data-theme*=" "] span {
+      color: var(--shiki-dark);
+      background-color: var(--shiki-dark-bg);
+    }
   }
 
   pre {
@@ -66,13 +79,12 @@
     code {
       counter-reset: line;
       padding: 1rem;
-      background: #0d0e10;
       border: 1px solid #27272a;
       overflow: auto;
       font-size: 0.8em;
     }
 
-    code>[data-line]::before {
+    code > [data-line]::before {
       counter-increment: line;
       content: counter(line);
       display: inline-block;
@@ -83,20 +95,20 @@
       color: #71717a;
     }
 
-    code[data-line-numbers-max-digits="2"]>[data-line]::before {
+    code[data-line-numbers-max-digits="2"] > [data-line]::before {
       width: 2rem;
     }
 
-    code[data-line-numbers-max-digits="3"]>[data-line]::before {
+    code[data-line-numbers-max-digits="3"] > [data-line]::before {
       width: 3rem;
     }
 
-    code>[data-highlighted-line] {
+    code > [data-highlighted-line] {
       background: #1f1f21;
       border-left: 0.25rem solid #a1a1aa;
     }
 
-    code>[data-highlighted-line]::before {
+    code > [data-highlighted-line]::before {
       margin-left: 0.25rem;
     }
   }

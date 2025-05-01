@@ -1,10 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-::selection {
-  background: #474747;
-  color: #ffffff;
+@layer base {
+  :root {
+    /* --background: rgb(248, 249, 250);
+    --foreground: rgb(10, 10, 10); */
+    --background: var(--color-zinc-100);
+    --foreground: var(--color-zinc-900);
+    --muted-background: var(--color-zinc-300);
+    --muted-foreground: var(--color-zinc-800);
+  }
+
+  .dark {
+    --background: rgb(12, 12, 12);
+    --foreground: rgb(234, 234, 234);
+    --muted-background: var(--color-zinc-600);
+    --muted-foreground: var(--color-zinc-400);
+  }
+
+  @theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-muted-background: var(--muted-background);
+    --color-muted-foreground: var(--muted-foreground);
+  }
+
+
+  body {
+    @apply bg-background text-foreground;
+    transition-property: background-color, color;
+    transition-duration: 200ms;
+  }
+
+  ::selection {
+    background: var(--color-muted-background);
+    color: var(--color-foreground);
+  }
 }
 
 .header-link {

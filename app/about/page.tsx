@@ -32,15 +32,29 @@ const SKILLS = [
 
 const EXPERIENCES = [
   {
-    title: "Software Engineer at BigBinary",
+    title: "Tech-lead at BigBinary",
     link: "https://bigbinary.com",
     target: "_blank",
     prefix: `July 2021 - Present • ${durationFromToday(new Date("01 Jul 2021"))}`,
     summary: [
-      "I am a full-stack developer and a tech lead at Neeto. We use Next.js, React, Rails, PostgreSQL, Redis, SCSS, and TailwindCSS.",
-      "NeetoSite: a no-code website-building platform where you can create and launch websites with ease. You can quickly create a multipage website using pre-made templates or start from scratch with our cool blocks. You can launch your websites on your own custom domains.",
-      "NeetoEditor: a WYSIWYG editor for Neeto built using Tiptap and Prosemirror.",
-      "I actively work on several NPM packages and Rails engines. I also work on improving the build tools and auditing and fixing performance issues across products. I also focus on code standardization, the creation of custom RuboCop or ESlint rules, building new UI components, and Chrome extensions.",
+      `
+NeetoSite: neeto.com/neetosite
+As the Tech Lead, I was responsible for architecting its core infrastructure, which included designing and building the essential components for creating professional multi-page websites. A key part of my role involved devising and implementing a novel strategy to bridge between the Rails and Next.js applications by automatically invalidating the Next.js build upon any new changes, providing near-instant updates to live sites.
+
+Code standardization
+I played a key role in establishing and maintaining code quality and consistency across the Neeto ecosystem. I led the team in migrating the build system from Shakapacker (Webpacker) to ESBuild. My role also included taking ownership of NeetoUI, the core UI library, NeetoMolecules, which contains common UI components used throughout Neeto products, NeetoIcons, which contains the icons used within the Neeto ecosystem, along with several other packages and gems. I developed and maintained custom ESLint and RuboCop rules to ensure adherence to best practices. My responsibilities also included overseeing the overall quality of the codebase and promoting consistent conventions across all Neeto projects.
+
+Hiring
+I was responsible for conducting interviews and participating in the hiring process for fresher candidates, primarily focusing on JavaScript and React skills.
+
+- NeetoAuth: Developed a JWT-based login system for Neeto with a strong emphasis on security. This included creating a custom OmniAuth strategy to decode and verify JWTs, as well as measures to prevent replay attacks and integrate with Doorkeeper. To facilitate seamless integration across Neeto, I also created and open-sourced the neeto-jwt package.
+- NeetoCal: Improved the performance and overall quality of the booking page through lazy loading, and fixing the memory leaks usign performance profiling.
+- NeetoQuiz: Implemented SQL optimizations and caching, to reduce the API response times for huge quizzes from 30 seconds to under 1 second. The optimized system was able to support quizzes for 500+ students during the hiring phase without any performance issues, demonstrating its enhanced scalability.
+- NeetoInvisible: A Chrome extension designed to streamline website user experience testing.
+- NeetoEditor: I developed an open-source rich-text WYSIWYG editor using Tiptap and Prosemirror in React.
+- NeetoKB: Initial revamp of NeetoKB, the foundational architecture and integration of APIs.
+- NeetoFilters: simplify filtering operations for all Neeto products using Arel.
+      `
     ],
   },
   {
@@ -49,7 +63,15 @@ const EXPERIENCES = [
     target: "_blank",
     prefix: "Apr 2020 - Jun 2020 • 3 mos",
     summary: [
-      "This was my first opportunity to work with experienced developers from the industry. I joined as an intern for the Flutter team. I built the frontend for Talk Sindhi - a mobile application to learn the language of Sindhi and the frontend and backend for Habituals - a corporate healthcare application.",
+      `
+Involved in the end-to-end development of two mobile apps.
+
+1. Talk Sindhi - Language Learning Application (Flutter):
+Developed a cross - platform mobile application with Flutter, designed to help Hindi and English speakers learn the language of Sindhi.I implemented user progress tracking and a quiz system to revise learned vocabulary and concepts to personalize the learning experience.
+
+2. Habituals - Corporate Healthcare Application (Flutter, Node.js, MySQL):
+I developed a corporate healthcare mobile application with a focus on promoting and improving employee mental well- being.I architected the models and built the backend using Node.js and MySQL.I implemented \"well-being nudges\" and \"rating-based quizzes\", in addition to the primary functionality, to encourage positive mental health habits among users.I implemented Google Auth for login and Bearer token - based authorization for APIs.
+`,
     ],
   },
 ];
@@ -83,15 +105,14 @@ const Card = ({
   link,
   target,
 }: Omit<CardProps, "index" | "summary"> & { summary: string[] }) => (
-  <div className="border-t border-zinc-600 py-6 flex gap-6">
+  <div className="border-t py-6 flex gap-6">
     <div>
       <Prefix prefix={prefix} />
       <Title link={link} target={target}>
         {title}
       </Title>
-      {subtitle && <h3 className="text-lg text-zinc-300 mb-3">{subtitle}</h3>}
       {summary.map((paragraph, index) => (
-        <p key={index} className="mb-4">
+        <p key={index} className="mb-4 whitespace-pre-wrap">
           {paragraph}
         </p>
       ))}
@@ -133,7 +154,7 @@ const About = () => (
       <div>
         {ACHIEVEMENTS.map(({ title, year }) => (
           <div key={title} className="flex gap-4">
-            <p className="text-zinc-400">{year}</p>
+            <p className="text-muted-foreground opacity-50">{year}</p>
             <p>{title}</p>
           </div>
         ))}

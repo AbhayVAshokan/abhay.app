@@ -14,7 +14,7 @@ export interface CardProps {
 
 export const Prefix = ({ prefix }: { prefix: string | string[] }) => {
   if (typeof prefix === "string") {
-    return <p className="text-sm lowercase text-zinc-300">{prefix}</p>;
+    return <p className="text-sm lowercase text-muted-foreground opacity-70">{prefix}</p>;
   }
 
   return (
@@ -22,7 +22,7 @@ export const Prefix = ({ prefix }: { prefix: string | string[] }) => {
       {prefix.map((label) => (
         <span
           key={label}
-          className="rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors bg-zinc-700 text-typography"
+          className="rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors bg-muted-background text-typography"
         >
           {label}
         </span>
@@ -60,11 +60,11 @@ const Card = ({
   className,
 }: CardProps) => (
   <div
-    className={classNames("border-t border-zinc-600 py-6 flex gap-6", {
+    className={classNames("border-t border-muted-foreground/30 py-6 flex gap-6", {
       [className]: className,
     })}
   >
-    <span className="text-4xl text-zinc-400">
+    <span className="text-4xl text-muted-foreground opacity-70">
       {index.toString().padStart(2, "0")}
     </span>
     <div>
@@ -72,7 +72,7 @@ const Card = ({
       <Title link={link} target={target}>
         {title}
       </Title>
-      {subtitle && <h3 className="text-lg text-zinc-300 mb-3">{subtitle}</h3>}
+      {subtitle && <h3 className="text-lg text-muted-foreground mb-3">{subtitle}</h3>}
       <p>{summary}</p>
     </div>
   </div>

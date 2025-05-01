@@ -3,6 +3,14 @@ import Header from "@/app/components/header";
 
 const PROJECTS = [
   {
+    title: "Leetify",
+    prefix: ["nextjs", "prisma", "supabase", "leetcode"],
+    link: "https://leetify.onrender.com",
+    target: "_blank",
+    summary:
+      "Gamify Leetcode with a comprehensive Leetcode dashboard showing the list of all the solved problems, your score, rank, and the current streak.",
+  },
+  {
     title: "Tiny",
     prefix: ["nextjs", "prisma", "supabase", "trpc"],
     link: "https://tiny.abhay.app",
