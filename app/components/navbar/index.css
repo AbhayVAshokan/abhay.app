@@ -18,7 +18,7 @@
     transition:
       stroke-dasharray 400ms,
       stroke-dashoffset 400ms;
-    stroke: #e4e4e7;
+    stroke: var(--color-muted-foreground);
     stroke-width: 5.5;
     stroke-linecap: round;
   }
@@ -45,7 +45,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #e4e4e7;
+  background-color: var(--color-foreground);
   transform: scaleX(0);
   transform-origin: top left;
   transition: transform 0.3s ease;

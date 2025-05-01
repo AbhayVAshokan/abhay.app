@@ -68,6 +68,7 @@ const Small = () => {
         viewBox="0 0 100 100"
         width="60"
         onClick={() => setIsOpen((open) => !open)}
+        fill="currentColor"
       >
         <path
           className="line top"
@@ -82,7 +83,7 @@ const Small = () => {
 
       <div
         className={classNames(
-          "md:hidden fixed inset-0 w-screen flex flex-col gap-4 uppercase items-center justify-center bg-zinc-900 z-50 bg-black/70 backdrop-blur transition-all duration-300",
+          "md:hidden fixed inset-0 w-screen flex flex-col gap-4 uppercase items-center justify-center bg-background/70 z-50 backdrop-blur transition-all duration-300",
           { "h-[1px]": !isOpen },
           { "h-screen": isOpen },
         )}

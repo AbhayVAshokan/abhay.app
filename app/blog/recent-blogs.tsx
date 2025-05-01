@@ -15,17 +15,17 @@ const RecentBlogs = ({ blogs }: { blogs: BlogType[] }) => (
         <Link
           key={title}
           href={link}
-          className="flex flex-col md:flex-row gap-4 border-b border-dashed opacity-70 hover:opacity-100 transition-opacity justify-between p-2"
+          className="flex flex-col md:flex-row gap-4 border-b border-dashed opacity-75 hover:opacity-100 transition-opacity justify-between p-2"
           target={target}
         >
           <h3>{title}</h3>
-          <p className="text-zinc-300 lowercase text-sm">{prefix}</p>
+          <p className="text-muted lowercase text-sm">{prefix}</p>
         </Link>
       ))}
     </div>
     <Link
       href="/blog"
-      className="text-zinc-300 hover:text-typography transition-colors"
+      className="text-muted hover:text-typography transition-colors"
     >
       View all blogs →
     </Link>

@@ -2,8 +2,10 @@
 
 @layer base {
   :root {
-    --background: rgb(248, 249, 250);
-    --foreground: rgb(10, 10, 10);
+    /* --background: rgb(248, 249, 250);
+    --foreground: rgb(10, 10, 10); */
+    --background: var(--color-zinc-100);
+    --foreground: var(--color-zinc-900);
     --muted-background: var(--color-zinc-300);
     --muted-foreground: var(--color-zinc-800);
   }
@@ -17,6 +19,8 @@
 
   body {
     @apply bg-background text-foreground;
+    transition-property: background-color, color;
+    transition-duration: 200ms;
   }
 
   ::selection {
