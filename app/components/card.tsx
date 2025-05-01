@@ -72,7 +72,7 @@ const Card = ({
       <Title link={link} target={target}>
         {title}
       </Title>
-      {subtitle && <h3 className="text-lg text-muted-foreground opacity-70 mb-3">{subtitle}</h3>}
+      {subtitle && <h3 className="text-lg text-muted-foreground mb-3">{subtitle}</h3>}
       <p>{summary}</p>
     </div>
   </div>
