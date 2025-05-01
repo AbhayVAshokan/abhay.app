@@ -8,8 +8,10 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     rehypePlugins: [
+      // @ts-expect-error
       ["rehype-slug"],
       [
+        // @ts-expect-error
         "rehype-pretty-code",
         { theme: { dark: "dark-plus", light: "light-plus" } },
       ],
