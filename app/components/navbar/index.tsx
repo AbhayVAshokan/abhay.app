@@ -5,9 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
-import { Sun, Moon } from "lucide-react";
-import "./index.css";
 import ThemeSwitcher from "./theme-switcher";
+import "./index.css";
 
 const NAV_LINKS = [
   { label: "Home", link: "/" },
@@ -27,15 +26,15 @@ const Large = () => {
 
   return (
     <nav className="hidden md:block top-4 w-[375px] mx-auto sticky z-50 mb-4">
-      <div className="flex justify-between w-full border items-center p-2 rounded-2xl border-zinc-800 bg-background text-sm backdrop-blur bg-opacity-60">
+      <div className="flex justify-between w-full border items-center p-2 rounded-2xl border-muted-background/50 bg-background text-sm backdrop-blur bg-opacity-60">
         {NAV_LINKS.map(({ label, link }) => (
           <Link
             key={link}
             href={link}
             className={classNames("p-2 rounded-lg transition-colors", {
-              "text-zinc-400 hover:bg-zinc-700 hover:text-zinc-500":
+              "text-muted-foreground hover:bg-muted-background":
                 link !== activeLink,
-              "bg-zinc-600 text-typography hover:text-zinc-300":
+              "bg-muted-background text-typography":
                 link === activeLink,
             })}
           >
@@ -43,7 +42,6 @@ const Large = () => {
           </Link>
         ))}
       </div>
-      <ThemeSwitcher />
     </nav>
   );
 };
@@ -115,6 +113,7 @@ const NavBar = () => (
   <>
     <Large />
     <Small />
+    <ThemeSwitcher />
   </>
 );
 

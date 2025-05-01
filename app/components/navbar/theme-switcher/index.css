@@ -1,7 +1,13 @@
 .theme-toggle {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 1.65rem;
+  right: 4rem;
+  z-index: 60;
+  cursor: pointer;
+
+  @media (width >= 48rem /* 768px */) {
+    right: 1rem;
+  }
 
   --ease-3: cubic-bezier(.25, 0, .3, 1);
   --ease-out-5: cubic-bezier(0, 0, 0, 1);
