@@ -1,5 +1,10 @@
 export const BLOGS = [
   {
+    title: "How I Self-Hosted Ente - And How You Can Too",
+    prefix: "May 24, 2025 • 10 minute read",
+    link: "/blog/how-i-self-hosted-ente-and-how-you-can-too",
+  },
+  {
     title: "Growing Up in Bangalore's Air Force Quarters",
     prefix: "October 13, 2024 • 2 minute read",
     link: "/blog/growing-up-in-bangalores-air-force-quarters",

@@ -1,0 +1,241 @@
+import BlogLayout from "_/blog-layout";
+import { buildMetaData } from "../utils";
+
+export const data = {
+  title: "How I Self-Hosted Ente - And How You Can Too",
+  summary:
+    "Here's how I self-hosted a private, end-to-end encrypted photo storage server using Ente, and a low-cost cloud storage, complete with HTTPS, public albums, and backups.",
+  keywords: [
+    "Ente photos",
+    "Self hosted",
+    "Cloudflare R2",
+    "Ente self-hosting guide",
+    "How to self host Ente",
+    "Docker",
+  ],
+  date: "24 may 2025",
+  readingTime: 10,
+};
+
+export const generateMetadata = () => buildMetaData(data);
+
+<BlogLayout data={data}>
+
+Like every other January 1st, I started the year with a little extra motivation to spare. This time, I thought I'd turn my old laptop into a 24/7 server and host all my photos locally. What I didn't realize was… the laptop had already passed away sometime in 2024. I put my old man to rest. I'd already replaced the batteries three times, and it still wouldn't work without being plugged in. Not to mention how slow it has become over the past seven years. I dropped the idea and decided that this year's New Year's resolution is hitting the gym... again!
+
+Fast-forward to May, and I pretty much had no choice but to export everything from Google Photos. Gmail had started whining that it might stop sending emails soon. I'm not about to pay Google ₹100+ per month just to hang on to my photos. I have an ick for subscription plans. In fact, I don't even have a YouTube premium subscription.
+
+[Ente](https://ente.io/) was an easy choice for me. It runs as a lightweight Go binary with minimal resources. [The lightweight server can be run on a Raspberry PI](https://ente.io/blog/ente-on-raspberry-pi/). Due to its client-side encryption, all heavy lifting including face recognition and semantic search is done on your own device. It's wild that they pulled off on-device machine learning with limited processing power and still got it working across different platforms. [They've written a great breakdown of how they pulled it off](https://ente.io/ml).
+
+Ente's founder, Vishnu, a Malayali, was creeped out by seeing how much information Google could infer from photos. So, he left Google to build something different: a reliable, privacy-focused alternative to Google Photos - Ente. In Malayalam, "ente" means "mine," so "Ente photos" literally translates to "My photos."
+
+I created my second AWS account. Well, only God and I know what happened to my first one. Since I don't own a credit card, my options were limited. I don't plan to use AWS beyond the free tier either. I've seen enough AWS memes to know I'm probably going to mess something up… again. Well, that's future me's problem now.
+
+After a bit of digging around, I decided to go with [Cloudflare R2](https://www.cloudflare.com/developer-platform/products/r2) instead of AWS S3 or EBS for storing my photos. R2 offers a pretty generous 10GB of free storage and charges only about ₹1.20 per month for each additional GB. Plus you get millions of free read and write operations every month. Thanks to Ente's client-side caching, my usage stays well below the limits, like, over 100x lower. They do not charge anything for egress either, which is wild. Here's how I did it.
+
+## The Quick and Easy Setup
+
+### Step 1: Set up Docker if you don't have it already
+
+I am running a Debian on my EC2 instance, so I just followed [the installation steps](https://docs.docker.com/engine/install/debian) in the official docs to get this part up.
+
+### Step 2: Use the quickstart script
+
+The Ente team has built a quick start script to [setup and run the Ente server with a single command](https://ente.io/blog/self-hosting-quickstart).
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ente-io/ente/main/server/quickstart.sh)"
+```
+
+This curl command sets everything up. It creates a `my-ente` directory with the necessary configuration files, pulls and runs all the containers, and gets things up and running. To test it out, you can forward port `3000` from your EC2 instance and access your web server at `http://<elastic-ip>:3000`.
+
+### Step 3: Setting up a reverse proxy
+
+Ente Auth, by design, requires a secure connection (HTTPS) for its communication. It does not support HTTP connections. So, to get things running, you'll need a custom domain.
+
+I've deployed my Ente server at [https://ente.abhay.app](https://ente.abhay.app). To do something similar, start by adding an `A` record for your domain and point it to your EC2 instance's elastic IP. You'll also need to set up a reverse proxy. I used [Caddy](https://caddyserver.com) for this. It has a lightweight web server with a clean, easy-to-read config file. It fetches and renews TLS certificates by default.
+
+Firstly, install Caddy on your instance:
+
+```bash
+sudo apt install caddy
+```
+
+This will create a `Caddyfile` at `/etc/caddy`. Update your `Caddyfile` in this format:
+
+```js
+{
+    email ente@abhay.app
+}
+
+ente.abhay.app {
+    reverse_proxy {
+      to http://localhost:3000
+    }
+}
+
+ente-api.abhay.app {
+    reverse_proxy {
+      to http://localhost:8080
+    }
+}
+```
+
+Now, execute the `caddy reload` command and you are done. You have your Ente server running on your custom domain.
+
+### Step 4: Setting up Cloudflare R2
+
+I have used Cloudflare R2 for my setup. You can use any S3-compatible storage provider. By default, Ente's compose file is shipped with [MinIO](https://min.io), which itself is a solid starting point.
+
+To use R2, create a bucket through the Cloudflare dashboard, and then set the following CORS policy:
+
+```json
+[
+  {
+    "AllowedOrigins": ["*"],
+    "AllowedMethods": ["GET", "HEAD", "POST", "PUT", "DELETE"],
+    "AllowedHeaders": ["*"],
+    "ExposeHeaders": ["Etag"],
+    "MaxAgeSeconds": 3000
+  }
+]
+```
+
+You don't need to make the bucket public. Instead, we'll use an API token for secure access. Just head over to the **Manage API Tokens** section in the Cloudflare dashboard and generate an access key and secret. We'll plug these into the Ente configuration in the next step.
+
+### Step 5: Setting up your museum
+
+I really loved Ente's reasoning for naming their server museum: ***"We named our server museum because, for us and our customers, personal photos are worth more than any other piece of art"***. I made a few tweaks to the generated configs to make sure everything works with my configuration. Here's what my final config looks like. By default, all encryption keys are generated as random hashes.
+
+```yaml
+# museum.yaml
+
+key:
+  encryption: <your-encryption-key>
+  hash: <your-encryption-hash>
+
+jwt:
+  secret: <your-jwt-secret>
+
+db:
+  host: postgres
+  port: 5432
+  name: <your-db-name>
+  user: <your-pg-user>
+  password: <your-pg-password>
+
+s3:
+  are_local_buckets: true
+  b2-eu-cen:
+    endpoint: <your-bucket-endpoint>
+    bucket: <your-bucket-name>
+    key: <your-access-key>
+    secret: <your-access-secret>
+    region: auto
+```
+
+```yaml
+# compose.yaml
+
+services:
+  museum:
+    image: ghcr.io/ente-io/server
+    ports:
+      - 8080:8080 # API
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./museum.yaml:/museum.yaml:ro
+      - ./data:/data:ro
+
+  web:
+    image: ghcr.io/ente-io/web
+    ports:
+      - 3000:3000
+    environment:
+      ENTE_API_ORIGIN: https://ente-api.abhay.app
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: <your-pg-user>
+      POSTGRES_PASSWORD: <your-pg-password>
+      POSTGRES_DB: <your-db-name>
+    healthcheck:
+      test: pg_isready -q -d <your-db-name> -U <your-pg-user>
+      start_period: 40s
+      start_interval: 1s
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+```
+
+### Step 6: Setting up public albums
+
+To enable public sharing of your albums, you'll need to run two instances of the web app. One serves as your regular app, and the other runs the same code but on a different origin. Then, you simply configure the main app to use this second instance to handle public links.
+
+```yaml {3-4}
+# Rest of the museum.yaml file
+
+apps:
+  public-albums: https://albums.abhay.app
+```
+
+```yaml {8-17}
+# Rest of compose.yaml file.
+
+web:
+  image: ghcr.io/ente-io/web
+  ports:
+    - 3000:3000
+  environment:
+    ENTE_API_ORIGIN: https://ente-api.abhay.app
+    ENTE_ALBUMS_ORIGIN: https://albums.abhay.app
+
+albums:
+  image: ghcr.io/ente-io/web
+  ports:
+    - 3002:3002
+  environment:
+    ENTE_API_ORIGIN: https://ente-api.abhay.app
+    ENTE_ALBUMS_ORIGIN: https://albums.abhay.app
+
+# Rest of compose.yaml file.
+```
+
+### Step 7: Setting up backups
+
+All your uploaded photos are encrypted by default, which is great for privacy. But it also means the data in your bucket is useless without your server. So, having proper backups is essential. Losing your server shouldn't mean losing all your photos.
+
+You'll want to back up all the secrets used by your museum server. For PostgreSQL, you'll need to back up the entire data volume. To handle this, I set up a separate Docker container that periodically backs up my database to R2.
+
+```yaml {3-19}
+# Rest of the compose.yaml file
+
+backup:
+  image: eeshugerman/postgres-backup-s3:15
+  environment:
+    SCHEDULE: "@daily"
+    BACKUP_KEEP_DAYS: 30
+    S3_REGION: auto
+    S3_ENDPOINT: <your-bucket-endpoint>
+    S3_ACCESS_KEY_ID: <your-access-key>
+    S3_SECRET_ACCESS_KEY: <your-access-secret>
+    S3_BUCKET: <your-bucket-name>
+    S3_PREFIX: backups
+    POSTGRES_HOST: postgres
+    POSTGRES_DATABASE: <your-db-name>
+    POSTGRES_USER: <your-pg-user>
+    POSTGRES_PASSWORD: <your-pg-password>
+```
+
+Ideally, you should also [enable replication in Ente](https://ente.io/reliability) - this gives you primary and secondary hot storage, along with cold storage. It's actually pretty easy to set up. That said, I'm skipping it for now since Cloudflare R2 boasts a whopping **99.999999999%** (yep, eleven nines!) annual durability. Realistically, the only way I'd lose data at this point is through human errors, which, let's be honest, is always the biggest risk anyway.
+
+I also updated my museum server to block new registrations and set up the [Ente CLI](https://ente.io/blog/ente-cli). Once everything was ready, I [exported all my Google Photos with Takeout](https://ente.io/articles/exporting-google-photos-with-takeout). Over the past couple of years, I had backed up photos in all sorts of weird places. I lost quite a bit of metadata in the process. To fix that, I wrote a bash script using `exiftool` to restore the correct timestamps and locations. Those are really the only two pieces of metadata I care about.
+
+It's been two weeks since I migrated everything, and I've been really happy with how it's all working. My photos and their thumbnails take up just over 11GB, and I'm expecting my monthly bill to be under ₹3. Not bad at all.
+
+</BlogLayout>

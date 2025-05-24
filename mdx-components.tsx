@@ -32,7 +32,7 @@ const Img = (props: any) => (
   </span>
 );
 
-const Header = ({
+const H2 = ({
   id,
   children,
 }: {
@@ -47,12 +47,27 @@ const Header = ({
   );
 };
 
+const H3 = ({
+  id,
+  children,
+}: {
+  id: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <Link href={`#${id}`} className="header-link">
+      <h3 id={id}>{children}</h3>
+      <LinkIcon />
+    </Link>
+  );
+};
+
 export const useMDXComponents = (components: any): MDXComponents => ({
   img: Img,
-  h2: Header,
-  h3: Header,
-  h4: Header,
-  h5: Header,
-  h6: Header,
+  h2: H2,
+  h3: H3,
+  h4: H3,
+  h5: H3,
+  h6: H3,
   ...components,
 });
