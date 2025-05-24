@@ -98,6 +98,7 @@
 
     code>[data-highlighted-line] {
       border-left: 0.25rem solid #a1a1aa;
+      background: color-mix(in srgb, var(--color-muted-background) 20%, transparent);
     }
 
     code>[data-highlighted-line]::before {
