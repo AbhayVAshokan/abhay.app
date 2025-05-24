@@ -8,6 +8,7 @@
     --foreground: var(--color-zinc-900);
     --muted-background: var(--color-zinc-300);
     --muted-foreground: var(--color-zinc-800);
+    --code-background: rgb(249, 248, 249);
   }
 
   .dark {
@@ -15,6 +16,8 @@
     --foreground: rgb(234, 234, 234);
     --muted-background: var(--color-zinc-600);
     --muted-foreground: var(--color-zinc-400);
+    --code-background: rgb(28, 28, 31);
+    --code-highlight: rgb(113, 113, 122);
   }
 
   @theme {

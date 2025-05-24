@@ -105,7 +105,7 @@ You don't need to make the bucket public. Instead, we'll use an API token for se
 
 ### Step 5: Setting up your museum
 
-I really loved Ente's reasoning for naming their server museum: ***"We named our server museum because, for us and our customers, personal photos are worth more than any other piece of art"***. I made a few tweaks to the generated configs to make sure everything works with my configuration. Here's what my final config looks like. By default, all encryption keys are generated as random hashes.
+I really loved Ente's reasoning for naming their server museum: **_"We named our server museum because, for us and our customers, personal photos are worth more than any other piece of art"_**. I made a few tweaks to the generated configs to make sure everything works with my configuration. Here's what my final config looks like. By default, all encryption keys are generated as random hashes.
 
 ```yaml
 # museum.yaml
@@ -202,7 +202,6 @@ albums:
   environment:
     ENTE_API_ORIGIN: https://ente-api.abhay.app
     ENTE_ALBUMS_ORIGIN: https://albums.abhay.app
-
 # Rest of compose.yaml file.
 ```
 
@@ -232,7 +231,7 @@ backup:
     POSTGRES_PASSWORD: <your-pg-password>
 ```
 
-Ideally, you should also [enable replication in Ente](https://ente.io/reliability) - this gives you primary and secondary hot storage, along with cold storage. It's actually pretty easy to set up. That said, I'm skipping it for now since Cloudflare R2 boasts a whopping **99.999999999%** (yep, eleven nines!) annual durability. Realistically, the only way I'd lose data at this point is through human errors, which, let's be honest, is always the biggest risk anyway.
+Ideally, you should also [enable replication in Ente](https://ente.io/reliability) - this gives you primary and secondary hot storage, along with cold storage. It's actually pretty easy to set up. That said, I'm skipping it for now since Cloudflare R2 boasts a whopping **99.999999999%** (yep, eleven nines!) annual durability. Realistically, the only way I'd lose data at this point is me accidentally doing something dumb, which, let's be honest, is always the biggest risk anyway.
 
 I also updated my museum server to block new registrations and set up the [Ente CLI](https://ente.io/blog/ente-cli). Once everything was ready, I [exported all my Google Photos with Takeout](https://ente.io/articles/exporting-google-photos-with-takeout). Over the past couple of years, I had backed up photos in all sorts of weird places. I lost quite a bit of metadata in the process. To fix that, I wrote a bash script using `exiftool` to restore the correct timestamps and locations. Those are really the only two pieces of metadata I care about.
 
