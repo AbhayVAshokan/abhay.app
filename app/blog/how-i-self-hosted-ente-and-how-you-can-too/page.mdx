@@ -205,6 +205,16 @@ albums:
 # Rest of compose.yaml file.
 ```
 
+```js
+// Rest of the Caddyfile
+
+albums.abhay.app {
+    reverse_proxy {
+      to http://localhost:3002
+    }
+}
+```
+
 ### Step 7: Setting up backups
 
 All your uploaded photos are encrypted by default, which is great for privacy. But it also means the data in your bucket is useless without your server. So, having proper backups is essential. Losing your server shouldn't mean losing all your photos.
