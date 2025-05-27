@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     siteName: TITLE,
     images: [{ url: "https://abhay.app/home/cover.webp" }],
   },
+  alternates: {
+    canonical: "https://abhay.app",
+  }
 };
 
 const RootLayout = ({

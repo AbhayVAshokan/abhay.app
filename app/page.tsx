@@ -22,7 +22,7 @@ const SOCIALS = [
   { icon: Twitter, link: "https://twitter.com/abhayvashokan" },
   { icon: LinkedIn, link: "https://linkedin.com/in/abhayvashokan" },
   { icon: Medium, link: "https://abhayvashokan.medium.com" },
-  { icon: Gmail, link: "mailto:abhayvashokan@gmail.com" },
+  { icon: Gmail, link: "mailto:hi@abhay.app" },
   { icon: Instagram, link: "https://www.instagram.com/__abhay_ashokan__" },
 ];
 

@@ -9,6 +9,7 @@ interface Data {
 }
 
 export const buildMetaData = (data: Data): Metadata => {
+  const slug = `${data.title.split(" ").join("-").toLowerCase()}`;
   const subtitle = `${data.date} ${data.readingTime} • minute read`;
   const ogImage =
     `https://abhay.app/api/og?title=${data.title}&subtitle=${subtitle}`.replace(
@@ -29,11 +30,14 @@ export const buildMetaData = (data: Data): Metadata => {
     },
     openGraph: {
       type: "article",
-      url: `https://abhay.app/blog/${data.title.split(" ").join("-").toLowerCase()}`,
+      url: `https://abhay.app/blog/${slug}`,
       title: data.title,
       siteName: data.title,
       images: ogImage,
       authors: "Abhay V Ashokan",
     },
+    alternates: {
+      canonical: `https://abhay.app/blog/${slug}`
+    }
   };
 };

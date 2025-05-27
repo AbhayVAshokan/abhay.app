@@ -2,9 +2,13 @@ import Card from "@/app/components/card";
 import Header from "@/app/components/header";
 import { BLOGS } from "./blogs";
 import Link from "next/link";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blogs | Abhay V Ashokan",
+  alternates: {
+    canonical: "https://abhay.app/blogs"
+  }
 };
 
 const Blogs = () => (

@@ -1,5 +1,6 @@
 import { CardProps, Prefix, Title } from "@/app/components/card";
 import Header from "@/app/components/header";
+import { Metadata } from "next";
 
 const durationFromToday = (date: Date) => {
   const today = new Date();
@@ -93,8 +94,11 @@ const ACHIEVEMENTS = [
   { title: "KSM Idea Grant 2018 finalist", year: "2018" },
 ];
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About | Abhay V Ashokan",
+  alternates: {
+    canonical: "https://abhay.app/about"
+  }
 };
 
 const Card = ({

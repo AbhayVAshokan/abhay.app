@@ -1,5 +1,6 @@
 import Card from "@/app/components/card";
 import Header from "@/app/components/header";
+import { Metadata } from "next";
 
 const PROJECTS = [
   {
@@ -87,8 +88,11 @@ const PROJECTS = [
   },
 ];
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Projects | Abhay V Ashokan",
+  alternates: {
+    canonical: "https://abhay.app/projects"
+  }
 };
 
 const Projects = () => (

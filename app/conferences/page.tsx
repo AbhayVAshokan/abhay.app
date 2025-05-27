@@ -1,5 +1,6 @@
 import Card from "@/app/components/card";
 import Header from "@/app/components/header";
+import { Metadata } from "next";
 
 const TALKS = [
   {
@@ -69,8 +70,11 @@ const CONFERENCES = [
   },
 ];
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Conferences | Abhay V Ashokan",
+  alternates: {
+    canonical: "https://abhay.app/conferences"
+  }
 };
 
 const Talks = () => (
