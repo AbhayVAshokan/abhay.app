@@ -29,7 +29,7 @@ const sitemap = (): MetadataRoute.Sitemap => {
       priority: 0.8,
     },
 
-    ...BLOGS.map(({ link, prefix }) => ({
+    ...BLOGS.filter(({ target }) => !target).map(({ link, prefix }) => ({
       url: `https://abhay.app${link}`,
       priority: 0.8,
       lastModified: new Date(
