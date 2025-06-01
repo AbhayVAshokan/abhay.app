@@ -21,7 +21,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
-    "Software engineer",
+    "Senior Software engineer",
+    "Tech lead",
     "BigBinary",
     "React",
     "Next.js",
