@@ -1,6 +1,7 @@
 export interface Theme {
   colors: {
     primary: string
-    font: string
+    font: string,
+    watermark: string,
   }
 }

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const Resume = () => {
   // TODO: Replace this with nocodb API to themes table.
-  const theme = { colors: { primary: "#2350DD", font: "#2d3c42" } }
+  const theme = { colors: { primary: "#2350DD", font: "#2d3c42", watermark: "#929596" } }
   // TODO: Replace this with nocodb API to profile table.
   const profile = {
     name: "Abhay V Ashokan",

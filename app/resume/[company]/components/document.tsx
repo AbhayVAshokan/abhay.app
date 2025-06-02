@@ -7,6 +7,7 @@ import "../utils/font"
 
 // https://github.com/diegomura/react-pdf/issues/2599#issuecomment-1935349954
 import dynamic from "next/dynamic";
+import Watermark from './watermark';
 const PDFViewer = dynamic(
   () => import("@react-pdf/renderer").then((module) => module.PDFViewer),
   { ssr: false },
@@ -41,6 +42,7 @@ const ResumeDocument = ({ theme, profile }) => {
           keywords={profile.keywords.join(", ")}
         >
           <Page size="A4" style={styles.page}>
+            <Watermark />
             <Heading
               title={profile.name}
               subtitle={profile.title}
