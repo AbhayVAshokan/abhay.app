@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 const Resume = () => {
   // TODO: Replace this with nocodb API to themes table.
-  const theme = { colors: { primary: "#2350DD", font: "#18181b" } }
+  const theme = { colors: { primary: "#2350DD", font: "#2d3c42" } }
   // TODO: Replace this with nocodb API to profile table.
   const profile = {
     name: "Abhay V Ashokan",
-    title: "Tech-lead at BigBinary | Ruby on Rails | React | Next.js | Full-stack",
+    title: "Tech Lead at BigBinary | Ruby on Rails | React | Next.js | Full-stack",
     avatarUrl: "https://abhay.app/home/abhay.webp",
     phone: "+919074050411",
     email: "hi@abhay.app",

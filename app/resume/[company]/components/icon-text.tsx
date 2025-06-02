@@ -1,12 +1,19 @@
-import { Styles, StyleSheet, Text, View } from '@react-pdf/renderer'
+import { Circle, Path, Styles, StyleSheet, Svg, Rect, Text, View } from '@react-pdf/renderer'
 import { useTheme } from '../theme'
 import { cn } from '../utils/cn'
 import React from 'react'
-import { LucideProps } from "lucide-react"
+import { Camera, Icon, LucideProps } from "lucide-react"
+import { renderToString } from 'react-dom/server'
 
-export interface IconTextProps {
+interface IconTextProps {
   style?: Styles[string]
   text: string
+  Icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>
+}
+
+interface LucideIconToPDFProps {
+  size?: number;
+  color?: string;
   Icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>
 }
 
@@ -16,19 +23,62 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    // TODO:
-    // fontFamily: 'Raleway',
+    fontFamily: 'Raleway',
     fontSize: 8,
-    marginLeft: 4,
+    marginLeft: 2,
   },
 })
+
+const LucideIconToPDF = ({ Icon, color = 'black', size = 24 }: LucideIconToPDFProps) => {
+  const iconString = renderToString(<Icon size={size} />);
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(iconString, 'image/svg+xml');
+  const svgElement = doc.querySelector('svg');
+
+  if (!svgElement) {
+    return null;
+  }
+
+  const svgPaths = Array.from(svgElement.querySelectorAll('path')).map((path, index) => (
+    <Path key={index} d={path.getAttribute('d') || ''} stroke={color} />
+  ));
+
+  const svgCircles = Array.from(svgElement.querySelectorAll('circle')).map((circle, index) => (
+    <Circle
+      key={index}
+      cx={circle.getAttribute('cx') || ''}
+      cy={circle.getAttribute('cy') || ''}
+      r={circle.getAttribute('r') || ''}
+      stroke={color}
+    />
+  ));
+
+  const svgRects = Array.from(svgElement.querySelectorAll('rect')).map((rect, index) => (
+    <Rect
+      key={index}
+      y={rect.getAttribute('y') || ''}
+      x={rect.getAttribute('x') || ''}
+      width={rect.getAttribute('width') || ''}
+      height={rect.getAttribute('height') || ''}
+      stroke={color}
+    />
+  ));
+
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      {svgPaths}
+      {svgCircles}
+      {svgRects}
+    </Svg>
+  );
+};
 
 const IconText = ({ style, text, Icon }: IconTextProps) => {
   const theme = useTheme()
 
   return (
     <View style={cn(styles.container, style)}>
-      <Icon size={10} />
+      <LucideIconToPDF Icon={Icon} size={10} color={theme.colors.font} />
       <Text style={[styles.text,
       { color: theme.colors.font }
       ]}>{text}</Text>

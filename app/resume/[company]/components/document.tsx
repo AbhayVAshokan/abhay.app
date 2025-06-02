@@ -1,8 +1,9 @@
 "use client"
 
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Document, StyleSheet } from '@react-pdf/renderer';
 import Heading from "./heading";
 import { ThemeProvider } from "../theme";
+import "../utils/font"
 
 // https://github.com/diegomura/react-pdf/issues/2599#issuecomment-1935349954
 import dynamic from "next/dynamic";

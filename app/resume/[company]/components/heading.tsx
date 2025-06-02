@@ -2,7 +2,7 @@ import { Image, Link, Styles, StyleSheet, Text, View } from '@react-pdf/renderer
 import IconText from './icon-text'
 import { cn } from '../utils/cn'
 import { useTheme } from '../theme'
-import { Github, Globe, Linkedin, Mail, MapPin, Phone, PhoneCall, Twitter } from 'lucide-react'
+import { AtSign, Github, Globe, Linkedin, Mail, MapPin, Phone, PhoneCall, Twitter } from 'lucide-react'
 
 
 export interface HeadingProps {
@@ -39,23 +39,21 @@ const styles = StyleSheet.create({
   title: {
     textTransform: 'uppercase',
     fontSize: 20,
-    // TODO:
-    // fontFamily: 'Raleway',
-    fontWeight: 'bold',
+    fontFamily: 'Raleway',
+    fontWeight: 'semibold',
   },
   subTitle: {
     fontSize: 12,
     marginTop: 4,
-    // TODO:
-    // fontFamily: 'Raleway',
-    fontWeight: 'bold',
+    fontFamily: 'Raleway',
+    fontWeight: 'semibold',
   },
   infoContainer: {
     flexDirection: 'row',
     marginTop: 12,
   },
   link: {
-    marginRight: 16,
+    marginRight: 12,
     textDecoration: 'none',
   },
 })
@@ -84,19 +82,19 @@ const Heading = ({
             <IconText text={phone} Icon={Phone} />
           </Link>
           <Link src={`mailto:${email}`} style={styles.link}>
-            <IconText text={email} Icon={Mail} />
+            <IconText text={email} Icon={AtSign} />
           </Link>
-          <Link src={website} style={styles.link}>
+          <Link  src={website} style={styles.link}>
             <IconText text={website} Icon={Globe} />
           </Link>
           <Link src={github} style={styles.link}>
-            <IconText text={github} Icon={Github} />
+            <IconText text="GitHub" Icon={Github} />
           </Link>
           <Link src={linkedin} style={styles.link}>
-            <IconText text={linkedin} Icon={Linkedin} />
+            <IconText text="LinkedIn" Icon={Linkedin} />
           </Link>
           <Link src={twitter} style={styles.link}>
-            <IconText text={twitter} Icon={Twitter} />
+            <IconText text="Twitter" Icon={Twitter} />
           </Link>
           <IconText text={location} Icon={MapPin} />
         </View>
