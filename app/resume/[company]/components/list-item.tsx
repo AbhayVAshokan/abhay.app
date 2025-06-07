@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   text: {
-    fontSize: 10,
+    fontSize: 9,
     fontFamily: 'Raleway',
     flex: 1,
   },

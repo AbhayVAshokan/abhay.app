@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const Section: React.FC<React.PropsWithChildren<SectionProps>> = ({
+const Section: React.FC<React.PropsWithChildren<SectionProps>> = ({
   style,
   title,
   spacing,
@@ -52,3 +52,5 @@ export const Section: React.FC<React.PropsWithChildren<SectionProps>> = ({
     </View>
   )
 }
+
+export default Section;

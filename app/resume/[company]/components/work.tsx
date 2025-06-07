@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { cn } from '../../utils/cn'
-import { useTheme } from '../../theme'
+import { cn } from '../utils/cn'
+import { useTheme } from '../theme'
 import { Styles, Link, StyleSheet, Text, View } from '@react-pdf/renderer'
-import IconText from '../icon-text'
+import IconText from './icon-text'
 import { MapPin } from 'lucide-react'
-import DateRange from '../date-range'
+import DateRange from './date-range'
 
 export interface WorkProps {
   style?: Styles[string]
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     fontWeight: 'semibold',
   },
   description: {
-    fontSize: 10,
+    fontSize: 9,
     fontFamily: 'Raleway',
     marginTop: 4,
   },

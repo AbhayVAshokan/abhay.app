@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontWeight: 'semibold',
   },
   subTitle: {
-    fontSize: 10,
+    fontSize: 9,
     marginTop: 4,
     fontFamily: 'Raleway',
   },

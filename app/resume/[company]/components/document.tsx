@@ -5,10 +5,13 @@ import Heading from "./heading";
 import { ThemeProvider } from "../theme";
 import "../utils/font"
 
+import Watermark from './watermark';
+import LeftColumn from './left-column';
+import Work from './work';
+import ListItem from './list-item';
+
 // https://github.com/diegomura/react-pdf/issues/2599#issuecomment-1935349954
 import dynamic from "next/dynamic";
-import Watermark from './watermark';
-import LeftColumn from './page1/left-column';
 const PDFViewer = dynamic(
   () => import("@react-pdf/renderer").then((module) => module.PDFViewer),
   { ssr: false },
@@ -58,7 +61,31 @@ const ResumeDocument = ({ theme, profile, workExperiences }) => {
                 location: profile.location,
               }}
             />
-            <LeftColumn workExperiences={workExperiences} />
+            <LeftColumn title="Work experience">
+              {workExperiences.map((experience) => (
+                <Work
+                  key={experience.id}
+                  title={experience.title}
+                  companyName={experience.company}
+                  companyUrl={experience.companyUrl}
+                  location={experience.location}
+                  startAt={experience.startAt}
+                  endAt={experience.endAt}
+                  description={experience.description}
+                >
+                  {experience.points
+                    .map((point, index) => (
+                      <ListItem key={`${experience.id}-point-${index}`}>
+                        {point}
+                      </ListItem>
+                    ))}
+                </Work>
+              ))}
+            </LeftColumn>
+          </Page>
+
+          <Page size="A4" style={styles.page}>
+            <Watermark />
           </Page>
         </Document>
       </ThemeProvider>
