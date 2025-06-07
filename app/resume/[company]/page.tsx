@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const Resume = () => {
   // TODO: Replace this with nocodb API to themes table.
-  const theme = { colors: { primary: "#2350DD", font: "#2d3c42", watermark: "#929596" } }
+  const theme = { colors: { primary: "#2350DD", font: "#2d3c42", watermark: "#929596", gray: '#929596' } }
   // TODO: Replace this with nocodb API to profile table.
   const profile = {
     name: "Abhay V Ashokan",
@@ -39,8 +39,37 @@ const Resume = () => {
     ],
   }
 
+  const workExperiences = [{
+    id: 1,
+    title: "Tech-lead and Senior software engineer",
+    company: "BigBinary",
+    companyUrl: "https://bigbinary.com",
+    location: "Remote",
+    startAt: "12/07/2021",
+    description: "Riqra construye una solución e-commerce dedicada a digitalizar las ventas",
+    points: ["Mantengo las principales aplicaciones frontend de la empresa, lideran.", "Desarrollo integraciones con sistemas de pago nacionales e international."]
+  },
+  {
+    id: 1,
+    title: "Senior software engineer",
+    company: "Neeto",
+    companyUrl: "https://bigbinary.com",
+    location: "Remote",
+    startAt: "12/07/2021",
+    description: "Riqra construye una solución e-commerce dedicada a digitalizar las ventas",
+    points: [
+      "Mantengo las principales aplicaciones frontend de la empresa, lideran lorem ipsum sit amet.",
+      "Desarrollo integraciones con sistemas de pago nacionales e international. frontend de la empresa, lideran lorem ipsum sit amet",
+      "Mantengo las principales aplicaciones frontend de la empresa, lideran. frontend de la empresa, lideran lorem ipsum sit amet frontend de la empresa, lideran lorem ipsum sit amet",
+      "Desarrollo integraciones con sistemas de pago nacionales e international. frontend de la empresa, lideran lorem ipsum sit amet",
+      "Mantengo las principales aplicaciones frontend de la empresa, lideran. frontend de la empresa, lideran lorem ipsum sit amet frontend de la empresa, lideran lorem ipsum sit amet frontend de la empresa, lideran lorem ipsum sit amet",
+      "Desarrollo integraciones con sistemas de pago nacionales e international.",
+    ]
+  }
+  ]
+
   return (
-    <Document theme={theme} profile={profile} />
+    <Document theme={theme} profile={profile} workExperiences={workExperiences} />
   )
 };
 

@@ -8,12 +8,13 @@ import "../utils/font"
 // https://github.com/diegomura/react-pdf/issues/2599#issuecomment-1935349954
 import dynamic from "next/dynamic";
 import Watermark from './watermark';
+import LeftColumn from './page1/left-column';
 const PDFViewer = dynamic(
   () => import("@react-pdf/renderer").then((module) => module.PDFViewer),
   { ssr: false },
 );
 
-const ResumeDocument = ({ theme, profile }) => {
+const ResumeDocument = ({ theme, profile, workExperiences }) => {
   const styles = StyleSheet.create({
     page: {
       paddingTop: 48,
@@ -57,6 +58,7 @@ const ResumeDocument = ({ theme, profile }) => {
                 location: profile.location,
               }}
             />
+            <LeftColumn workExperiences={workExperiences} />
           </Page>
         </Document>
       </ThemeProvider>

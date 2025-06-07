@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const LucideIconToPDF = ({ Icon, color = 'black', size = 24 }: LucideIconToPDFProps) => {
+export const LucideIconToPDF = ({ Icon, color = 'black', size = 24 }: LucideIconToPDFProps) => {
   const iconString = renderToString(<Icon size={size} />);
   const parser = new DOMParser();
   const doc = parser.parseFromString(iconString, 'image/svg+xml');

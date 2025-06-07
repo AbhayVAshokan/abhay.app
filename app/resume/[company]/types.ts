@@ -3,5 +3,6 @@ export interface Theme {
     primary: string
     font: string,
     watermark: string,
+    gray: string,
   }
 }

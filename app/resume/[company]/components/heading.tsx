@@ -81,17 +81,17 @@ const Heading = ({
           <Link src={`mailto:${email}`} style={styles.link}>
             <IconText text={email} Icon={AtSign} />
           </Link>
-          <Link src={website} style={styles.link}>
-            <IconText text={website} Icon={Globe} />
-          </Link>
           <Link src={github} style={styles.link}>
-            <IconText text="GitHub" Icon={Github} />
-          </Link>
-          <Link src={linkedin} style={styles.link}>
-            <IconText text="LinkedIn" Icon={Linkedin} />
+            <IconText text="AbhayVAshokan" Icon={Github} />
           </Link>
           <Link src={twitter} style={styles.link}>
-            <IconText text="Twitter" Icon={Twitter} />
+            <IconText text="@abhayvashokan" Icon={Twitter} />
+          </Link>
+          <Link src={linkedin} style={styles.link}>
+            <IconText text="Linkedin" Icon={Linkedin} />
+          </Link>
+          <Link src={website} style={styles.link}>
+            <IconText text="abhay.app" Icon={Globe} />
           </Link>
           <IconText text={location} Icon={MapPin} />
         </View>
