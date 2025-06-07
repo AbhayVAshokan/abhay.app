@@ -29,3 +29,17 @@ Font.register({
     },
   ],
 });
+
+Font.register({
+  family: 'Quicksand',
+  fonts: [
+    {
+      src: '"http://fonts.gstatic.com/s/quicksand/v6/Ngv3fIJjKB7sD-bTUGIFCA.ttf"',
+      fontWeight: 400,
+    },
+    {
+      src: "http://fonts.gstatic.com/s/quicksand/v6/FRGja7LlrG1Mypm0hCq0Di3USBnSvpkopQaUR-2r7iU.ttf",
+      fontWeight: 500,
+    },
+  ],
+});

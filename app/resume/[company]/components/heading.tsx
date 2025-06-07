@@ -10,7 +10,7 @@ export interface HeadingProps {
   avatarSize?: number
   avatarUrl: string
   title: string
-  subtitle: string
+  bio: string
   information: {
     phone: string
     email: string
@@ -39,14 +39,13 @@ const styles = StyleSheet.create({
   title: {
     textTransform: 'uppercase',
     fontSize: 20,
-    fontFamily: 'Raleway',
+    fontFamily: 'Quicksand',
     fontWeight: 'semibold',
   },
   subTitle: {
-    fontSize: 12,
+    fontSize: 10,
     marginTop: 4,
     fontFamily: 'Raleway',
-    fontWeight: 'semibold',
   },
   infoContainer: {
     flexDirection: 'row',
@@ -61,7 +60,7 @@ const styles = StyleSheet.create({
 const Heading = ({
   style,
   title,
-  subtitle,
+  bio,
   avatarUrl,
   avatarSize = 100,
   information: { phone, email, website, linkedin, github, twitter, location },
@@ -72,10 +71,8 @@ const Heading = ({
     <View style={cn(styles.container, style)}>
       <View style={{ margin: 1 }}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={[styles.subTitle,
-        { color: theme.colors.primary }
-        ]}>
-          {subtitle}
+        <Text style={[styles.subTitle]}>
+          {bio}
         </Text>
         <View style={styles.infoContainer}>
           <Link src={`tel:${phone}`} style={styles.link}>
@@ -84,7 +81,7 @@ const Heading = ({
           <Link src={`mailto:${email}`} style={styles.link}>
             <IconText text={email} Icon={AtSign} />
           </Link>
-          <Link  src={website} style={styles.link}>
+          <Link src={website} style={styles.link}>
             <IconText text={website} Icon={Globe} />
           </Link>
           <Link src={github} style={styles.link}>

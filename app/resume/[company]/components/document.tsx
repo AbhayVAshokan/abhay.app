@@ -45,7 +45,7 @@ const ResumeDocument = ({ theme, profile }) => {
             <Watermark />
             <Heading
               title={profile.name}
-              subtitle={profile.title}
+              bio={profile.bio}
               avatarUrl={profile.avatarUrl}
               information={{
                 phone: profile.phone,
