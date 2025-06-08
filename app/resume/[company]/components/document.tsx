@@ -14,12 +14,13 @@ import Education from './education';
 
 // https://github.com/diegomura/react-pdf/issues/2599#issuecomment-1935349954
 import dynamic from "next/dynamic";
+import Skill from './skill';
 const PDFViewer = dynamic(
   () => import("@react-pdf/renderer").then((module) => module.PDFViewer),
   { ssr: false },
 );
 
-const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences }) => {
+const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences, skills }) => {
   const styles = StyleSheet.create({
     page: {
       paddingTop: 48,
@@ -84,6 +85,14 @@ const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences 
                     <Education
                       key={experience.id}
                       {...experience}
+                    />
+                  ))}
+                </Section>
+                <Section title="Skills" spacing={4}>
+                  {skills.map((skill) => (
+                    <Skill
+                      key={skill.skill}
+                      {...skill}
                     />
                   ))}
                 </Section>

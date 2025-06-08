@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const Resume = () => {
   // TODO: Replace this with nocodb API to themes table.
-  const theme = { colors: { primary: "#2350DD", font: "#2d3c42", watermark: "#929596", gray: '#929596' } }
+  const theme = { colors: { primary: "#2350DD", accent: "#7281ff",font: "#2d3c42", watermark: "#929596", gray: '#929596', lightGray: '#dadbdc', } }
   // TODO: Replace this with nocodb API to profile table.
   const profile = {
     name: "Abhay V Ashokan",
@@ -84,8 +84,27 @@ const Resume = () => {
     cgpa: "9.54"
   }]
 
+  const skills = [
+    { skill: "React", level: 10 },
+    { skill: "Next.js", level: 10 },
+    { skill: "Ruby on Rails", level: 10 },
+    { skill: "JavaScript", level: 10 },
+    { skill: "PostgreSQL", level: 9 },
+    { skill: "TypeScript", level: 8 },
+    { skill: "Ruby", level: 8 },
+    { skill: "UI/UX", level: 8 },
+    { skill: "CSS/SCSS", level: 8 },
+    { skill: "C/C++", level: 8 },
+    { skill: "Python", level: 6 },
+    { skill: "Vue.js", level: 5 },
+    { skill: "Nuxt.js", level: 5 },
+    { skill: "Node.js", level: 5 },
+    { skill: "Flutter", level: 5 },
+    { skill: "AI/ML", level: 4 },
+  ];
+
   return (
-    <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} />
+    <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} skills={skills} />
   )
 };
 
