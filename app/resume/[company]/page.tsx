@@ -15,7 +15,7 @@ const Resume = () => {
   const profile = {
     name: "Abhay V Ashokan",
     bio: "I am a software engineer at BigBinary. For me, building software is more than just a job — it's a passion. I like to get my hands dirty and build tools to solve my own itch, and make life easier for everyone else. You will always find me with endless open tabs, reading numerous blogs, experimenting with what's hot in the JavaScript world, or solving chess puzzles. Don't hesitate to say hi if you spot me at meetups or cafes with a laptop and headphones. I will not stop talking if you strike up a conversation with me by casually mentioning Next.js, React, Ruby on Rails, or anything related to chess.",
-    avatarUrl: "https://abhay.app/home/abhay.webp",
+    avatarUrl: "https://ik.imagekit.io/abhayvashokan/abhayvashokan.jpg",
     phone: "+919074050411",
     email: "hi@abhay.app",
     website: "https://abhay.app",
@@ -138,8 +138,48 @@ const Resume = () => {
     },
   ]
 
+  const projects = [{
+    id: 1,
+    title: "NeetoSite",
+    url: "https://neetosite.com",
+    points: ["Mantengo las principales aplicaciones frontend de la empresa, lideran.", "Desarrollo integraciones con sistemas de pago nacionales e international."]
+  },
+  {
+    id: 1,
+    title: "NeetoSite",
+    url: "https://neetosite.com",
+    points: ["Mantengo las principales aplicaciones frontend de la empresa, lideran.", "Desarrollo integraciones con sistemas de pago nacionales e international."]
+  },
+  {
+    id: 1,
+    title: "NeetoSite",
+    url: "https://neetosite.com",
+    points: ["Mantengo las principales aplicaciones frontend de la empresa, lideran.", "Desarrollo integraciones con sistemas de pago nacionales e international."]
+  },
+  {
+    id: 1,
+    title: "NeetoSite",
+    url: "https://neetosite.com",
+    points: ["Mantengo las principales aplicaciones frontend de la empresa, lideran.", "Desarrollo integraciones con sistemas de pago nacionales e international."]
+  },
+
+  {
+    id: 1,
+    title: "NeetoSite",
+    url: "https://neetosite.com",
+    points: ["Mantengo las principales aplicaciones frontend de la empresa, lideran.", "Desarrollo integraciones con sistemas de pago nacionales e international."]
+  },
+  {
+    id: 1,
+    title: "NeetoSite",
+    url: "https://neetosite.com",
+    points: ["Mantengo las principales aplicaciones frontend de la empresa, lideran.", "Desarrollo integraciones con sistemas de pago nacionales e international."]
+  },
+
+  ]
+
   return (
-    <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} skills={skills} talks={talks} />
+    <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} skills={skills} talks={talks} projects={projects} />
   )
 };
 

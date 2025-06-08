@@ -38,10 +38,10 @@ const Section: React.FC<React.PropsWithChildren<SectionProps>> = ({
 
   return (
     <View style={cn(styles.container, style)}>
-      <Text style={[styles.title, { color: theme.colors.gray }]}>{title}</Text>
-      <View
-        style={[styles.separator, { backgroundColor: theme.colors.gray }]}
-      />
+      {title && <><Text style={[styles.title, { color: theme.colors.gray }]}>{title}</Text>
+        <View
+          style={[styles.separator, { backgroundColor: theme.colors.gray }]}
+        /></>}
       {React.Children.map(children, (child, index) => {
         const mb = index + 1 === childCount ? 0 : spacing
         const style = { marginBottom: mb }

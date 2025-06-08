@@ -16,12 +16,13 @@ import Education from './education';
 import dynamic from "next/dynamic";
 import Skill from './skill';
 import Talk from './talk';
+import Project from './project';
 const PDFViewer = dynamic(
   () => import("@react-pdf/renderer").then((module) => module.PDFViewer),
   { ssr: false },
 );
 
-const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences, skills, talks }) => {
+const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences, skills, talks, projects }) => {
   const styles = StyleSheet.create({
     page: {
       paddingTop: 48,
@@ -79,6 +80,22 @@ const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences,
                     </Work>
                   ))}
                 </Section>
+                <Section title="Projects" spacing={8}>
+                  {projects.slice(0, 2).map((project) => (
+                    <Project
+                      key={project.id}
+                      title={project.title}
+                      projectUrl={project.url}
+                    >
+                      {project.points
+                        .map((point, index) => (
+                          <ListItem key={`${project.id}-point-${index}`}>
+                            {point}
+                          </ListItem>
+                        ))}
+                    </Project>
+                  ))}
+                </Section>
               </Section.Left>
               <Section.Right>
                 <Section title="Education" spacing={8}>
@@ -105,6 +122,22 @@ const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences,
             <Watermark />
             <View style={styles.row}>
               <Section.Left>
+                <Section spacing={8}>
+                  {projects.slice(2).map((project) => (
+                    <Project
+                      key={project.id}
+                      title={project.title}
+                      projectUrl={project.url}
+                    >
+                      {project.points
+                        .map((point, index) => (
+                          <ListItem key={`${project.id}-point-${index}`}>
+                            {point}
+                          </ListItem>
+                        ))}
+                    </Project>
+                  ))}
+                </Section>
               </Section.Left>
               <Section.Right>
                 <Section title="Talks" spacing={12}>

@@ -42,10 +42,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Quicksand',
     fontWeight: 'semibold',
   },
-  subTitle: {
+  bio: {
     fontSize: 9,
     marginTop: 4,
     fontFamily: 'Raleway',
+    width: "75%",
   },
   infoContainer: {
     flexDirection: 'row',
@@ -71,7 +72,7 @@ const Heading = ({
     <View style={cn(styles.container, style)}>
       <View style={{ margin: 1 }}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={[styles.subTitle]}>
+        <Text style={[styles.bio]}>
           {bio}
         </Text>
         <View style={styles.infoContainer}>
