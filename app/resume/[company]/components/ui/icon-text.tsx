@@ -1,6 +1,6 @@
 import { Circle, Path, Styles, StyleSheet, Svg, Rect, Text, View } from '@react-pdf/renderer'
-import { useTheme } from '../theme'
-import { cn } from '../utils/cn'
+import { useTheme } from '../../theme'
+import { cn } from '../../utils/cn'
 import React from 'react'
 import { Camera, Icon, LucideProps } from "lucide-react"
 import { renderToString } from 'react-dom/server'

@@ -1,5 +1,5 @@
-import { cn } from '../utils/cn'
-import { useTheme } from '../theme'
+import { cn } from '../../utils/cn'
+import { useTheme } from '../../theme'
 import { Styles, StyleSheet, Text, View } from '@react-pdf/renderer'
 import { Dot } from 'lucide-react'
 import { LucideIconToPDF } from './icon-text'

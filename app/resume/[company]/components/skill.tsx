@@ -2,7 +2,7 @@
 import { Styles, StyleSheet, Text, View } from '@react-pdf/renderer'
 import { useTheme } from '../theme'
 import { cn } from '../utils/cn'
-import { LucideIconToPDF } from './icon-text'
+import { LucideIconToPDF } from './ui/icon-text'
 import { Circle, Dot } from 'lucide-react'
 
 export interface LanguageProps {

@@ -1,5 +1,5 @@
 import { Styles, StyleSheet, Text, View } from '@react-pdf/renderer'
-import DateRange from './date-range'
+import DateRange from './ui/date-range'
 import { cn } from '../utils/cn'
 import { useTheme } from '../theme'
 

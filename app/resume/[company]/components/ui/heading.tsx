@@ -1,7 +1,7 @@
 import { Image, Link, Styles, StyleSheet, Text, View } from '@react-pdf/renderer'
 import IconText from './icon-text'
-import { cn } from '../utils/cn'
-import { useTheme } from '../theme'
+import { cn } from '../../utils/cn'
+import { useTheme } from '../../theme'
 import { AtSign, Github, Globe, Linkedin, Mail, MapPin, Phone, PhoneCall, Twitter } from 'lucide-react'
 
 

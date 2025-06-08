@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { cn } from '../utils/cn'
+import { cn } from '../../utils/cn'
 import { Styles, StyleSheet, Text, View } from '@react-pdf/renderer'
-import { useTheme } from '../theme'
+import { useTheme } from '../../theme'
 
 export interface SectionProps {
   style?: Styles[string]

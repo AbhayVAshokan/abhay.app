@@ -1,4 +1,4 @@
-import MadeWith from "./components/made-with";
+import MadeWith from "./components/ui/made-with";
 
 const ResumeLayout = ({
   children,

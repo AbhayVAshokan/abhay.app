@@ -37,7 +37,7 @@ const DateRange = ({ startAt, endAt, style, showDiff = false }: DateRangeProps) 
   const diff = dateDifference(startAt, endAt);
 
   let text = `${formatDate(startAt)} - ${endAtText}`
-  if (showDiff) text += `${diff}`
+  if (showDiff) text += ` (${diff})`
 
   return <IconText style={style} text={text} Icon={Calendar} />
 }

@@ -2,9 +2,9 @@ import * as React from 'react'
 import { cn } from '../utils/cn'
 import { useTheme } from '../theme'
 import { Styles, Link, StyleSheet, Text, View } from '@react-pdf/renderer'
-import IconText from './icon-text'
+import IconText from './ui/icon-text'
 import { MapPin } from 'lucide-react'
-import DateRange from './date-range'
+import DateRange from './ui/date-range'
 
 export interface WorkProps {
   style?: Styles[string]
@@ -87,6 +87,7 @@ const Work = ({
           <WorkPlace url={companyUrl}>{companyName}</WorkPlace>
         ) : null}
         <DateRange
+          showDiff
           style={{ marginLeft: companyName ? 'auto' : 0, marginRight: 16 }}
           startAt={startAt}
           endAt={endAt}

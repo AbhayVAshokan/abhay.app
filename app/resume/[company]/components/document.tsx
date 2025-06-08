@@ -1,15 +1,15 @@
 "use client"
 
 import { Page, Document, StyleSheet, View } from '@react-pdf/renderer';
-import Heading from "./heading";
+import Heading from "./ui/heading";
 import { ThemeProvider } from "../theme";
 import "../utils/font"
 
-import Watermark from './watermark';
+import Watermark from './ui/watermark';
 import LeftColumn from './left-column';
 import Work from './work';
-import ListItem from './list-item';
-import Section from './section';
+import ListItem from './ui/list-item';
+import Section from './ui/section';
 import Education from './education';
 
 // https://github.com/diegomura/react-pdf/issues/2599#issuecomment-1935349954

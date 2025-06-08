@@ -1,4 +1,4 @@
-import { useTheme } from "../theme"
+import { useTheme } from "../../theme"
 import { Canvas, View } from '@react-pdf/renderer'
 
 const path =
