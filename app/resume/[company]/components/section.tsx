@@ -53,4 +53,34 @@ const Section: React.FC<React.PropsWithChildren<SectionProps>> = ({
   )
 }
 
+const Left = ({ children }) => {
+  const styles = StyleSheet.create({
+    leftColumn: {
+      flexGrow: 1,
+      marginRight: 16,
+      width: '55%',
+    },
+  });
+
+  return <View style={styles.leftColumn}>
+    {children}
+  </View>
+}
+
+const Right = ({ children }) => {
+  const styles = StyleSheet.create({
+    rightColumn: {
+      flexGrow: 1,
+      width: '40%',
+    },
+  });
+
+  return <View style={styles.rightColumn}>
+    {children}
+  </View>
+}
+
+Section.Left = Left;
+Section.Right = Right;
+
 export default Section;

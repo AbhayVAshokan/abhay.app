@@ -6,6 +6,7 @@ export interface DateRangeProps {
   style?: Styles[string]
   startAt: string
   endAt?: string
+  showDiff?: boolean
 }
 
 const formatDate = (dateString: string, format = 'LL/yyyy') => {
@@ -31,10 +32,12 @@ const dateDifference = (date1, date2 = new Date().toDateString()) => {
   return `${months} months`;
 }
 
-const DateRange = ({ startAt, endAt, style }: DateRangeProps) => {
+const DateRange = ({ startAt, endAt, style, showDiff = false }: DateRangeProps) => {
   const endAtText = endAt ? formatDate(endAt) : "present"
   const diff = dateDifference(startAt, endAt);
-  const text = `${formatDate(startAt)} - ${endAtText} (${diff})`
+
+  let text = `${formatDate(startAt)} - ${endAtText}`
+  if (showDiff) text += `${diff}`
 
   return <IconText style={style} text={text} Icon={Calendar} />
 }

@@ -68,8 +68,24 @@ const Resume = () => {
   }
   ]
 
+  const educationExperiences = [{
+    id: 1,
+    title: "Government engineering college, Thrissur",
+    subtitle: "B.tech (hons) in computer science and engineering",
+    startAt: "12/07/2017",
+    endAt: "10/07/2021",
+    cgpa: "9.54"
+  }, {
+    id: 2,
+    title: "Kendriya Vidyalaya, Puranattukkara, Thrissur",
+    subtitle: "Computer science and maths",
+    startAt: "12/07/2017",
+    endAt: "10/07/2021",
+    cgpa: "9.54"
+  }]
+
   return (
-    <Document theme={theme} profile={profile} workExperiences={workExperiences} />
+    <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} />
   )
 };
 

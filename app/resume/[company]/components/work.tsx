@@ -107,4 +107,6 @@ const Work = ({
   )
 }
 
+Work.WorkPlace = WorkPlace;
+
 export default Work;

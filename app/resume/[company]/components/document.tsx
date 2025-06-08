@@ -1,6 +1,6 @@
 "use client"
 
-import { Page, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Document, StyleSheet, View } from '@react-pdf/renderer';
 import Heading from "./heading";
 import { ThemeProvider } from "../theme";
 import "../utils/font"
@@ -9,6 +9,8 @@ import Watermark from './watermark';
 import LeftColumn from './left-column';
 import Work from './work';
 import ListItem from './list-item';
+import Section from './section';
+import Education from './education';
 
 // https://github.com/diegomura/react-pdf/issues/2599#issuecomment-1935349954
 import dynamic from "next/dynamic";
@@ -17,7 +19,7 @@ const PDFViewer = dynamic(
   { ssr: false },
 );
 
-const ResumeDocument = ({ theme, profile, workExperiences }) => {
+const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences }) => {
   const styles = StyleSheet.create({
     page: {
       paddingTop: 48,
@@ -25,15 +27,6 @@ const ResumeDocument = ({ theme, profile, workExperiences }) => {
     },
     row: {
       flexDirection: 'row',
-    },
-    leftColumn: {
-      flexGrow: 1,
-      marginRight: 16,
-      width: '55%',
-    },
-    rightColumn: {
-      flexGrow: 1,
-      width: '40%',
     },
   });
 
@@ -61,27 +54,41 @@ const ResumeDocument = ({ theme, profile, workExperiences }) => {
                 location: profile.location,
               }}
             />
-            <LeftColumn title="Work experience">
-              {workExperiences.map((experience) => (
-                <Work
-                  key={experience.id}
-                  title={experience.title}
-                  companyName={experience.company}
-                  companyUrl={experience.companyUrl}
-                  location={experience.location}
-                  startAt={experience.startAt}
-                  endAt={experience.endAt}
-                  description={experience.description}
-                >
-                  {experience.points
-                    .map((point, index) => (
-                      <ListItem key={`${experience.id}-point-${index}`}>
-                        {point}
-                      </ListItem>
-                    ))}
-                </Work>
-              ))}
-            </LeftColumn>
+            <View style={styles.row}>
+              <Section.Left>
+                <Section title="Work experience" spacing={8}>
+                  {workExperiences.map((experience) => (
+                    <Work
+                      key={experience.id}
+                      title={experience.title}
+                      companyName={experience.company}
+                      companyUrl={experience.companyUrl}
+                      location={experience.location}
+                      startAt={experience.startAt}
+                      endAt={experience.endAt}
+                      description={experience.description}
+                    >
+                      {experience.points
+                        .map((point, index) => (
+                          <ListItem key={`${experience.id}-point-${index}`}>
+                            {point}
+                          </ListItem>
+                        ))}
+                    </Work>
+                  ))}
+                </Section>
+              </Section.Left>
+              <Section.Right>
+                <Section title="Education" spacing={8}>
+                  {educationExperiences.map((experience) => (
+                    <Education
+                      key={experience.id}
+                      {...experience}
+                    />
+                  ))}
+                </Section>
+              </Section.Right>
+            </View>
           </Page>
 
           <Page size="A4" style={styles.page}>
