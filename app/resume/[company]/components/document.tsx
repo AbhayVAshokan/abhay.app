@@ -6,7 +6,6 @@ import { ThemeProvider } from "../theme";
 import "../utils/font"
 
 import Watermark from './ui/watermark';
-import LeftColumn from './left-column';
 import Work from './work';
 import ListItem from './ui/list-item';
 import Section from './ui/section';
@@ -17,12 +16,13 @@ import dynamic from "next/dynamic";
 import Skill from './skill';
 import Talk from './talk';
 import Project from './project';
+import Achievement from './achievement';
 const PDFViewer = dynamic(
   () => import("@react-pdf/renderer").then((module) => module.PDFViewer),
   { ssr: false },
 );
 
-const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences, skills, talks, projects }) => {
+const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences, skills, talks, projects, achievements }) => {
   const styles = StyleSheet.create({
     page: {
       paddingTop: 48,
@@ -147,6 +147,14 @@ const ResumeDocument = ({ theme, profile, workExperiences, educationExperiences,
                       {...talk}
                     />
                   ))}
+                </Section>
+                <Section title="Achievements" spacing={8}>
+                  {achievements
+                    .map(({ year, title }) => (
+                      <ListItem key={title}>
+                        {year} - {title}
+                      </ListItem>
+                    ))}
                 </Section>
               </Section.Right>
             </View>
