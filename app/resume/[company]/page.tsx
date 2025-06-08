@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Document from "./components/document";
+import { fetchAchievements, fetchSkills } from "@/nocodb/api";
 
 export const metadata: Metadata = {
   title: "Resume | Abhay V Ashokan",
@@ -8,7 +9,9 @@ export const metadata: Metadata = {
   },
 };
 
-const Resume = () => {
+const Resume = async ({ params }) => {
+  const { company } = await params;
+
   // TODO: Replace this with nocodb API to themes table.
   const theme = { colors: { primary: "#2350DD", accent: "#7281ff", font: "#2d3c42", watermark: "#929596", gray: '#929596', lightGray: '#dadbdc', } }
   // TODO: Replace this with nocodb API to profile table.
@@ -84,24 +87,7 @@ const Resume = () => {
     cgpa: "9.54"
   }]
 
-  const skills = [
-    { skill: "React", level: 10 },
-    { skill: "Next.js", level: 10 },
-    { skill: "Ruby on Rails", level: 10 },
-    { skill: "JavaScript", level: 10 },
-    { skill: "PostgreSQL", level: 9 },
-    { skill: "TypeScript", level: 8 },
-    { skill: "Ruby", level: 8 },
-    { skill: "UI/UX", level: 8 },
-    { skill: "CSS/SCSS", level: 8 },
-    { skill: "C/C++", level: 8 },
-    { skill: "Python", level: 6 },
-    { skill: "Vue.js", level: 5 },
-    { skill: "Nuxt.js", level: 5 },
-    { skill: "Node.js", level: 5 },
-    { skill: "Flutter", level: 5 },
-    { skill: "AI/ML", level: 4 },
-  ];
+  const skills = await fetchSkills(company)
 
   const talks = [
     {
@@ -178,22 +164,7 @@ const Resume = () => {
 
   ]
 
-  const achievements = [
-    {
-      title: "First runner up in Reboot Kerala Hackathon - healthcare division",
-      year: "2020",
-    },
-    { title: "Obtained future lab support for KSM Idea Fest", year: "2019" },
-    {
-      title: "IEEE Xtreme 12.0 global rank 1450, country rank 271",
-      year: "2019",
-    },
-    {
-      title: "First in competitive coding: ISTE Annual State Convention",
-      year: "2018",
-    },
-    { title: "KSM Idea Grant 2018 finalist", year: "2018" },
-  ];
+  const achievements = await fetchAchievements(company);
 
   return (
     <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} skills={skills} talks={talks} projects={projects} achievements={achievements} />

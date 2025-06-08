@@ -49,7 +49,6 @@ const Talk = ({
 }: WorkProps) => {
   const theme = useTheme()
   const dateText = new Date(date).toLocaleString("default", { month: "short", year: "numeric" })
-  console.log(dateText)
 
   return (
     <View style={style}>
