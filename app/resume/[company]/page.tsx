@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const Resume = () => {
   // TODO: Replace this with nocodb API to themes table.
-  const theme = { colors: { primary: "#2350DD", accent: "#7281ff",font: "#2d3c42", watermark: "#929596", gray: '#929596', lightGray: '#dadbdc', } }
+  const theme = { colors: { primary: "#2350DD", accent: "#7281ff", font: "#2d3c42", watermark: "#929596", gray: '#929596', lightGray: '#dadbdc', } }
   // TODO: Replace this with nocodb API to profile table.
   const profile = {
     name: "Abhay V Ashokan",
@@ -103,8 +103,43 @@ const Resume = () => {
     { skill: "AI/ML", level: 4 },
   ];
 
+  const talks = [
+    {
+      title: "Reading the Ruby AST to write RuboCop rules",
+      subtitle: "Lightning talk at RubyConf India 2024, Jaipur.",
+      date: "November 30, 2024",
+      link: "https://youtu.be/eGnhXyYQRos?si=VhCOIY0uowtSeT2u&t=594",
+      location: "Jaipur"
+    },
+    {
+      title:
+        "Panel discussion: Thread of thoughts: navigating diverse career paths",
+      subtitle: "Panel discussion with exports at Proxy 2024 - GEC Thrissur.",
+      date: "September 30, 2024",
+      location: "Thrissur"
+    },
+    {
+      title: "Solid Cache",
+      subtitle: "Leading talk at Kerala Ruby meetup 2024.",
+      date: "February 10, 2024",
+      location: "Kochi"
+    },
+    {
+      title: "Discovering your passion and stepping into the world of tech",
+      subtitle: "Interactive session at the inauguration of Meet the Alumni in GEC Thrissur.",
+      date: "December 4, 2023",
+      location: "Thrissur"
+    },
+    {
+      title: "An optical illution for machines",
+      subtitle: "Talk at AI week in GEC Thrissur.",
+      date: "November 14, 2022",
+      location: "Thrissur"
+    },
+  ]
+
   return (
-    <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} skills={skills} />
+    <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} skills={skills} talks={talks} />
   )
 };
 
