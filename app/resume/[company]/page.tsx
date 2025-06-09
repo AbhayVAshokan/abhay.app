@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Document from "./components/document";
-import { fetchAchievements, fetchSkills } from "@/nocodb/api";
+import { fetchAchievements, fetchCompany, fetchSkills, fetchTalks } from "@/nocodb/api";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Resume | Abhay V Ashokan",
@@ -87,43 +88,6 @@ const Resume = async ({ params }) => {
     cgpa: "9.54"
   }]
 
-  const skills = await fetchSkills(company)
-
-  const talks = [
-    {
-      title: "Reading the Ruby AST to write RuboCop rules",
-      subtitle: "Lightning talk at RubyConf India 2024, Jaipur.",
-      date: "November 30, 2024",
-      link: "https://youtu.be/eGnhXyYQRos?si=VhCOIY0uowtSeT2u&t=594",
-      location: "Jaipur"
-    },
-    {
-      title:
-        "Panel discussion: Thread of thoughts: navigating diverse career paths",
-      subtitle: "Panel discussion with exports at Proxy 2024 - GEC Thrissur.",
-      date: "September 30, 2024",
-      location: "Thrissur"
-    },
-    {
-      title: "Solid Cache",
-      subtitle: "Leading talk at Kerala Ruby meetup 2024.",
-      date: "February 10, 2024",
-      location: "Kochi"
-    },
-    {
-      title: "Discovering your passion and stepping into the world of tech",
-      subtitle: "Interactive session at the inauguration of Meet the Alumni in GEC Thrissur.",
-      date: "December 4, 2023",
-      location: "Thrissur"
-    },
-    {
-      title: "An optical illution for machines",
-      subtitle: "Talk at AI week in GEC Thrissur.",
-      date: "November 14, 2022",
-      location: "Thrissur"
-    },
-  ]
-
   const projects = [{
     id: 1,
     title: "NeetoSite",
@@ -164,7 +128,21 @@ const Resume = async ({ params }) => {
 
   ]
 
-  const achievements = await fetchAchievements(company);
+  const companyData = await fetchCompany(company);
+  if (!companyData.length) redirect("/resume/default")
+
+  // Use "default" as the fallback.
+  const getSlug = (assoc: string) => companyData[assoc] ? company : "default";
+
+  const [
+    achievements,
+    skills,
+    talks,
+  ] = await Promise.all([
+    fetchAchievements(getSlug("achievements")),
+    fetchSkills(getSlug("skills")),
+    fetchTalks(getSlug("talks"))
+  ]);
 
   return (
     <Document theme={theme} profile={profile} workExperiences={workExperiences} educationExperiences={educationExperiences} skills={skills} talks={talks} projects={projects} achievements={achievements} />
