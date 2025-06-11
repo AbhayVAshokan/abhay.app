@@ -73,8 +73,8 @@ const CONFERENCES = [
 export const metadata: Metadata = {
   title: "Conferences | Abhay V Ashokan",
   alternates: {
-    canonical: "https://abhay.app/conferences"
-  }
+    canonical: "https://abhay.app/conferences",
+  },
 };
 
 const Talks = () => (

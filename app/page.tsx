@@ -36,7 +36,7 @@ const Home = () => (
             <span
               className={classNames(
                 "inline-block relative md:text-7xl text-4xl",
-                caveat.className
+                caveat.className,
               )}
             >
               Abhay V Ashokan

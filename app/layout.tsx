@@ -21,7 +21,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
-    "Software engineer",
+    "Senior Software engineer",
+    "Tech lead",
     "BigBinary",
     "React",
     "Next.js",
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://abhay.app",
-  }
+  },
 };
 
 const RootLayout = ({

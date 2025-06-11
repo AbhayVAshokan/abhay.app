@@ -7,8 +7,8 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Blogs | Abhay V Ashokan",
   alternates: {
-    canonical: "https://abhay.app/blogs"
-  }
+    canonical: "https://abhay.app/blogs",
+  },
 };
 
 const Blogs = () => (

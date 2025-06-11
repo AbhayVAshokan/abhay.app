@@ -91,8 +91,8 @@ const PROJECTS = [
 export const metadata: Metadata = {
   title: "Projects | Abhay V Ashokan",
   alternates: {
-    canonical: "https://abhay.app/projects"
-  }
+    canonical: "https://abhay.app/projects",
+  },
 };
 
 const Projects = () => (

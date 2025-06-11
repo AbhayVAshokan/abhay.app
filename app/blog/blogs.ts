@@ -10,7 +10,8 @@ export const BLOGS = [
     link: "/blog/growing-up-in-bangalores-air-force-quarters",
   },
   {
-    title: "Dropping tables, dropping columns and renaming columns in a safe way in Ruby on Rails",
+    title:
+      "Dropping tables, dropping columns and renaming columns in a safe way in Ruby on Rails",
     prefix: "September 17, 2024 • 11 minute read",
     link: "https://bigbinary.com/blog/rails-8-deleting-tables-columns-using-rubocop",
     target: "_blank",

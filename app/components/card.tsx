@@ -14,7 +14,11 @@ export interface CardProps {
 
 export const Prefix = ({ prefix }: { prefix: string | string[] }) => {
   if (typeof prefix === "string") {
-    return <p className="text-sm lowercase text-muted-foreground opacity-70">{prefix}</p>;
+    return (
+      <p className="text-sm lowercase text-muted-foreground opacity-70">
+        {prefix}
+      </p>
+    );
   }
 
   return (
@@ -60,9 +64,12 @@ const Card = ({
   className,
 }: CardProps) => (
   <div
-    className={classNames("border-t border-muted-foreground/30 py-6 flex gap-6", {
-      [className]: className,
-    })}
+    className={classNames(
+      "border-t border-muted-foreground/30 py-6 flex gap-6",
+      {
+        [className]: className,
+      },
+    )}
   >
     <span className="text-4xl text-muted-foreground opacity-70">
       {index.toString().padStart(2, "0")}
@@ -72,7 +79,9 @@ const Card = ({
       <Title link={link} target={target}>
         {title}
       </Title>
-      {subtitle && <h3 className="text-lg text-muted-foreground mb-3">{subtitle}</h3>}
+      {subtitle && (
+        <h3 className="text-lg text-muted-foreground mb-3">{subtitle}</h3>
+      )}
       <p>{summary}</p>
     </div>
   </div>

@@ -2,8 +2,6 @@ import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
 import Link from "next/link";
 
-
-
 const LinkIcon = () => (
   <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#a)">
@@ -28,17 +26,13 @@ const Img = (props: any) => (
       className="rounded-xl object-contain !w-auto mx-auto border border-muted-foreground"
       {...props}
     />
-    <span className="inline-block text-sm text-muted-foreground opacity-70 absolute text-center w-full -bottom-8 left-1/2 -translate-x-1/2">{props.alt}</span>
+    <span className="inline-block text-sm text-muted-foreground opacity-70 absolute text-center w-full -bottom-8 left-1/2 -translate-x-1/2">
+      {props.alt}
+    </span>
   </span>
 );
 
-const H2 = ({
-  id,
-  children,
-}: {
-  id: string;
-  children: React.ReactNode;
-}) => {
+const H2 = ({ id, children }: { id: string; children: React.ReactNode }) => {
   return (
     <Link href={`#${id}`} className="header-link">
       <h2 id={id}>{children}</h2>
@@ -47,13 +41,7 @@ const H2 = ({
   );
 };
 
-const H3 = ({
-  id,
-  children,
-}: {
-  id: string;
-  children: React.ReactNode;
-}) => {
+const H3 = ({ id, children }: { id: string; children: React.ReactNode }) => {
   return (
     <Link href={`#${id}`} className="header-link">
       <h3 id={id}>{children}</h3>

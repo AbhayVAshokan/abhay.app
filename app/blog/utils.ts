@@ -37,7 +37,7 @@ export const buildMetaData = (data: Data): Metadata => {
       authors: "Abhay V Ashokan",
     },
     alternates: {
-      canonical: `https://abhay.app/blog/${slug}`
-    }
+      canonical: `https://abhay.app/blog/${slug}`,
+    },
   };
 };

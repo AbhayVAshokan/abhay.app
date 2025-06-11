@@ -42,7 +42,9 @@ const BlogLayout = ({
 
         <div className="border-b my-12 w-full border-muted-foreground/30" />
         <RecentBlogs
-          blogs={BLOGS.filter((blog) => blog.title !== data.title && blog.link !== "#").slice(0, 5)}
+          blogs={BLOGS.filter(
+            (blog) => blog.title !== data.title && blog.link !== "#",
+          ).slice(0, 5)}
         />
       </article>
     </main>

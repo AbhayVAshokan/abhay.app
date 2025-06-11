@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
 
-import "./index.css"
+import "./index.css";
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();

@@ -34,8 +34,7 @@ const Large = () => {
             className={classNames("p-2 rounded-lg transition-colors", {
               "text-muted-foreground hover:bg-muted-background":
                 link !== activeLink,
-              "bg-muted-background text-typography":
-                link === activeLink,
+              "bg-muted-background text-typography": link === activeLink,
             })}
           >
             {label}

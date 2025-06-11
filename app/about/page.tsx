@@ -55,7 +55,7 @@ I was responsible for conducting interviews and participating in the hiring proc
 - NeetoEditor: I developed an open-source rich-text WYSIWYG editor using Tiptap and Prosemirror in React.
 - NeetoKB: Initial revamp of NeetoKB, the foundational architecture and integration of APIs.
 - NeetoFilters: simplify filtering operations for all Neeto products using Arel.
-      `
+      `,
     ],
   },
   {
@@ -97,8 +97,8 @@ const ACHIEVEMENTS = [
 export const metadata: Metadata = {
   title: "About | Abhay V Ashokan",
   alternates: {
-    canonical: "https://abhay.app/about"
-  }
+    canonical: "https://abhay.app/about",
+  },
 };
 
 const Card = ({

@@ -1,7 +1,10 @@
 import Link from "next/link";
 
 const Back = () => (
-  <Link href="/blog" className="text-sm text-muted-foreground flex items-center">
+  <Link
+    href="/blog"
+    className="text-sm text-muted-foreground flex items-center"
+  >
     <svg
       width="20"
       height="20"
