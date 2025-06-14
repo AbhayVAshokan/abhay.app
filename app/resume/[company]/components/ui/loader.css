@@ -8,11 +8,18 @@
   }
 }
 
-.resume-loader {
+.resume-loader-wrapper {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.resume-loader {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
   height: 8px;
   display: inline-block;
   border-radius: 4px;

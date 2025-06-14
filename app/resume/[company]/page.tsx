@@ -52,7 +52,10 @@ const Resume = async ({ params }: { params: Promise<{ company: string }> }) => {
 
   return (
     <>
-      <span className="resume-loader"></span>
+      <div className="resume-loader-wrapper">
+        <span className="resume-loader"></span>
+        <p className="text-sm">Generating resume</p>
+      </div>
       <Document
         companyData={companyData}
         theme={theme}
