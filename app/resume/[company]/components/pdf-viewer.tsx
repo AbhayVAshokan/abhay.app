@@ -1,7 +1,7 @@
 "use client"
 
 import * as pdfjs from "pdfjs-dist";
-import { DocumentProps, usePDF } from "@react-pdf/renderer";
+import { DocumentProps, PDFDownloadLink, usePDF } from "@react-pdf/renderer";
 import { useEffect, useRef } from "react";
 
 interface PDFViewerProps {
@@ -50,6 +50,9 @@ const Mobile = ({ document }: PDFViewerProps) => {
   >
     <canvas ref={pageOneRef} />
     <canvas ref={pageTwoRef} />
+    <div className="bg-white text-xs border border-zinc-300 shadow rounded py-1 px-2 fixed bottom-2 left-4 z-[75]">
+      <p className="text-black">For the best experience, open on desktop or <PDFDownloadLink title="Resume - Abhay V Ashokan" document={document} className="text-link font-semibold">download the PDF</PDFDownloadLink></p>
+    </div>
   </div>
 };
 
