@@ -27,9 +27,9 @@ import {
   OpensourceConribution,
 } from "../types";
 
-// https://github.com/diegomura/react-pdf/issues/2599#issuecomment-1935349954
-import dynamic from "next/dynamic";
 import useAnalytics from "./hooks/useAnalytics";
+
+import dynamic from "next/dynamic";
 const PDFViewer = dynamic(() => import("./pdf-viewer"), { ssr: false });
 
 interface ResumeDocumentProps {
@@ -71,137 +71,137 @@ const ResumeDocument = ({
 
   useAnalytics(companyData);
 
-  return (
-    <PDFViewer className="w-full h-full left-0 top-0 fixed z-10">
-      <ThemeProvider theme={theme}>
-        <Document
-          title="Resume | Abhay V Ashokan"
-          author="Abhay V Ashokan"
-          keywords={profile.keywords}
-        >
-          <Page size="A4" style={styles.page}>
-            <Watermark />
-            <Heading
-              title={profile.name}
-              bio={profile.bio}
-              avatarUrl={profile.avatarUrl}
-              information={{
-                phone: profile.phone,
-                email: profile.email,
-                website: profile.website,
-                github: profile.github,
-                twitter: profile.twitter,
-                linkedin: profile.linkedin,
-                location: profile.location,
-              }}
-            />
-            <View style={styles.row}>
-              <Section.Left>
-                <Section title="Work experience" spacing={8}>
-                  {workExperiences.map((experience) => (
-                    <Work
-                      key={experience.Id}
-                      title={experience.title}
-                      companyName={experience.company}
-                      companyUrl={experience.companyUrl}
-                      location={experience.location}
-                      startAt={experience.startAt}
-                      endAt={experience.endAt}
-                      description={experience.description}
-                    >
-                      {experience.summary.split("\n\n").map((point, index) => (
-                        <ListItem key={`${experience.Id}-point-${index}`}>
-                          {point}
-                        </ListItem>
-                      ))}
-                    </Work>
+  const document = <ThemeProvider theme={theme}>
+    <Document
+      title="Resume | Abhay V Ashokan"
+      author="Abhay V Ashokan"
+      keywords={profile.keywords}
+    >
+      <Page size="A4" style={styles.page}>
+        <Watermark />
+        <Heading
+          title={profile.name}
+          bio={profile.bio}
+          avatarUrl={profile.avatarUrl}
+          information={{
+            phone: profile.phone,
+            email: profile.email,
+            website: profile.website,
+            github: profile.github,
+            twitter: profile.twitter,
+            linkedin: profile.linkedin,
+            location: profile.location,
+          }}
+        />
+        <View style={styles.row}>
+          <Section.Left>
+            <Section title="Work experience" spacing={8}>
+              {workExperiences.map((experience) => (
+                <Work
+                  key={experience.Id}
+                  title={experience.title}
+                  companyName={experience.company}
+                  companyUrl={experience.companyUrl}
+                  location={experience.location}
+                  startAt={experience.startAt}
+                  endAt={experience.endAt}
+                  description={experience.description}
+                >
+                  {experience.summary.split("\n\n").map((point, index) => (
+                    <ListItem key={`${experience.Id}-point-${index}`}>
+                      {point}
+                    </ListItem>
                   ))}
-                </Section>
-                <Section title="Projects" spacing={8}>
-                  {projects.slice(0, 1).map((project) => (
-                    <Project
-                      key={project.Id}
-                      title={project.title}
-                      projectUrl={project.url}
-                    >
-                      {project.summary.split("\n\n").map((point, index) => (
-                        <ListItem key={`${project.Id}-point-${index}`}>
-                          {point}
-                        </ListItem>
-                      ))}
-                    </Project>
+                </Work>
+              ))}
+            </Section>
+            <Section title="Projects" spacing={8}>
+              {projects.slice(0, 1).map((project) => (
+                <Project
+                  key={project.Id}
+                  title={project.title}
+                  projectUrl={project.url}
+                >
+                  {project.summary.split("\n\n").map((point, index) => (
+                    <ListItem key={`${project.Id}-point-${index}`}>
+                      {point}
+                    </ListItem>
                   ))}
-                </Section>
-              </Section.Left>
-              <Section.Right>
-                <Section title="Skills" spacing={4}>
-                  {skills.map((skill) => (
-                    <Skill key={skill.skill} {...skill} />
-                  ))}
-                </Section>
-                <Section title="Open-source contributions" spacing={8}>
-                  <Text>
-                    Contributed to:{" "}
-                    {opensourceContributions
-                      .filter(({ type }) => type === "contribution")
-                      .map(({ title }) => title)
-                      .join(", ")}
-                    .
-                  </Text>
-                  {opensourceContributions
-                    .filter(({ type }) => type === "volunteering")
-                    .map(({ title }) => (
-                      <Text key={title}>{title}</Text>
-                    ))}
-                </Section>
-                <Section title="Talks" spacing={8}>
-                  {talks.map((talk) => (
-                    <Talk key={talk.title} {...talk} />
-                  ))}
-                </Section>
-              </Section.Right>
-            </View>
-          </Page>
+                </Project>
+              ))}
+            </Section>
+          </Section.Left>
+          <Section.Right>
+            <Section title="Skills" spacing={4}>
+              {skills.map((skill) => (
+                <Skill key={skill.skill} {...skill} />
+              ))}
+            </Section>
+            <Section title="Open-source contributions" spacing={8}>
+              <Text>
+                Contributed to:{" "}
+                {opensourceContributions
+                  .filter(({ type }) => type === "contribution")
+                  .map(({ title }) => title)
+                  .join(", ")}
+                .
+              </Text>
+              {opensourceContributions
+                .filter(({ type }) => type === "volunteering")
+                .map(({ title }) => (
+                  <Text key={title}>{title}</Text>
+                ))}
+            </Section>
+            <Section title="Talks" spacing={8}>
+              {talks.map((talk) => (
+                <Talk key={talk.title} {...talk} />
+              ))}
+            </Section>
+          </Section.Right>
+        </View>
+      </Page>
 
-          <Page size="A4" style={styles.page}>
-            <Watermark />
-            <View style={styles.row}>
-              <Section.Left>
-                <Section spacing={8}>
-                  {projects.slice(1).map((project) => (
-                    <Project
-                      key={project.Id}
-                      title={project.title}
-                      projectUrl={project.url}
-                    >
-                      {project.summary.split("\n\n").map((point, index) => (
-                        <ListItem key={`${project.Id}-point-${index}`}>
-                          {point}
-                        </ListItem>
-                      ))}
-                    </Project>
+      <Page size="A4" style={styles.page}>
+        <Watermark />
+        <View style={styles.row}>
+          <Section.Left>
+            <Section spacing={8}>
+              {projects.slice(1).map((project) => (
+                <Project
+                  key={project.Id}
+                  title={project.title}
+                  projectUrl={project.url}
+                >
+                  {project.summary.split("\n\n").map((point, index) => (
+                    <ListItem key={`${project.Id}-point-${index}`}>
+                      {point}
+                    </ListItem>
                   ))}
-                </Section>
-              </Section.Left>
-              <Section.Right>
-                <Section title="Education" spacing={8}>
-                  {educationExperiences.map((experience) => (
-                    <Education key={experience.Id} {...experience} />
-                  ))}
-                </Section>
-                <Section title="Achievements" spacing={8}>
-                  {achievements.map(({ Id, year, title }) => (
-                    <Text key={Id}>
-                      {year} - {title}
-                    </Text>
-                  ))}
-                </Section>
-              </Section.Right>
-            </View>
-          </Page>
-        </Document>
-      </ThemeProvider>
-    </PDFViewer>
+                </Project>
+              ))}
+            </Section>
+          </Section.Left>
+          <Section.Right>
+            <Section title="Education" spacing={8}>
+              {educationExperiences.map((experience) => (
+                <Education key={experience.Id} {...experience} />
+              ))}
+            </Section>
+            <Section title="Achievements" spacing={8}>
+              {achievements.map(({ Id, year, title }) => (
+                <Text key={Id}>
+                  {year} - {title}
+                </Text>
+              ))}
+            </Section>
+          </Section.Right>
+        </View>
+      </Page>
+    </Document>
+  </ThemeProvider >
+
+  return (
+    <PDFViewer document={document} />
   );
 };
 
