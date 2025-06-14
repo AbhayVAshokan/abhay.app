@@ -12,6 +12,14 @@ const fetchData = async (baseUrl: string, company: string) => {
   return data.list;
 };
 
+export const fetchCompanies = async () => {
+  const url =
+    "https://app.nocodb.com/api/v2/tables/mvn11rzjs9f465t/records?viewId=vwhiyvcmcqctoxri";
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data.list;
+};
+
 export const fetchCompany = async (company: string) => {
   const url = `https://app.nocodb.com/api/v2/tables/mvn11rzjs9f465t/records?viewId=vwhiyvcmcqctoxri&where=(slug,eq,${company})`;
   const response = await fetch(url, options);

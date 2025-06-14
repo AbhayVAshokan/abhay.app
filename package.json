@@ -29,6 +29,7 @@
     "shiki": "^1.13.0"
   },
   "devDependencies": {
+    "@types/next": "^9.0.0",
     "@types/node": "^20",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",

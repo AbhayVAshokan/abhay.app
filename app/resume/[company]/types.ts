@@ -9,6 +9,7 @@ export interface Theme {
 export interface Company {
   Id: string;
   title: string;
+  slug: string;
   profile_views: number;
 }
 

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Document from "./components/document";
 import {
   fetchAchievements,
+  fetchCompanies,
   fetchCompany,
   fetchEducation,
   fetchOpensourceContributions,
@@ -15,6 +16,7 @@ import {
 import { redirect } from "next/navigation";
 
 import "./components/ui/loader.css";
+import { Company } from "./types";
 
 export const metadata: Metadata = {
   title: "Resume | Abhay V Ashokan",
@@ -22,6 +24,11 @@ export const metadata: Metadata = {
     canonical: "https://abhay.app/resume",
   },
 };
+
+export const generateStaticParams = async () => {
+  const companies: Company[] = await fetchCompanies();
+  return companies.map(({ slug }) => ({ slug }));
+}
 
 const Resume = async ({ params }: { params: Promise<{ company: string }> }) => {
   const { company } = await params;
