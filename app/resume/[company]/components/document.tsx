@@ -30,7 +30,7 @@ import {
 import useAnalytics from "./hooks/useAnalytics";
 
 import dynamic from "next/dynamic";
-const PDFViewer = dynamic(() => import("./pdf-viewer"), { ssr: false });
+const PDFViewer = dynamic(() => import("./ui/pdf-viewer"), { ssr: false });
 
 interface ResumeDocumentProps {
   companyData: Company;
