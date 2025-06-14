@@ -61,7 +61,7 @@ const Desktop = ({ document }: PDFViewerProps) => {
   const [{ url }] = usePDF({ document });
 
   return <>
-    <iframe src={url as string} className="z-10 h-full w-full" />
+    <iframe src={url as string} className="z-10 fixed h-full w-full" />
     <div className="fixed bottom-2 right-4 z-[75] rounded py-1 px-2 bg-white border border-zinc-300 text-black text-xs shadow">
       <p>
         Built by me with{" "}
