@@ -16,6 +16,7 @@ const useAnalytics = (companyData: Company) => {
 
   useEffect(() => {
     if (!url) return;
+    if (process.env.NODE_ENV === "development") return;
 
     fetch(url, {
       method: "POST",
