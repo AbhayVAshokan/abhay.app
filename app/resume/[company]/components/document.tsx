@@ -117,7 +117,7 @@ const ResumeDocument = ({
                 ))}
               </Section>
               <Section title="Projects" spacing={8}>
-                {projects.slice(0, 2).map((project) => (
+                {projects.slice(0, 1).map((project) => (
                   <Project
                     key={project.Id}
                     title={project.title}
@@ -167,7 +167,7 @@ const ResumeDocument = ({
           <View style={styles.row}>
             <Section.Left>
               <Section spacing={8}>
-                {projects.slice(2).map((project) => (
+                {projects.slice(1).map((project) => (
                   <Project
                     key={project.Id}
                     title={project.title}
