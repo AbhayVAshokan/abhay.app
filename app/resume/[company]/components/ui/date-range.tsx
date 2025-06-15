@@ -24,7 +24,7 @@ const dateDifference = (
   const end = new Date(date2);
 
   let years = end.getFullYear() - start.getFullYear();
-  let months = end.getMonth() - start.getMonth();
+  let months = end.getMonth() - start.getMonth() + 1;
 
   if (months < 0) {
     years--;
