@@ -1,8 +1,9 @@
+import { fetchCompany } from "@/nocodb/api";
 import { jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
 export const POST = async (
-  request: Request,
+  _request: Request,
   { params }: { params: Promise<{ company: string }> },
 ) => {
   try {
@@ -27,11 +28,16 @@ export const POST = async (
   }
 
   const { company } = await params;
-  const body = await request.json();
-  let nocodb_response, telegram_bot_response;
+  let nocodb_response, telegram_bot_response, companyData;
 
   try {
     // Update the profile view count.
+    companyData = await fetchCompany(company);
+    const payload = {
+      Id: companyData.Id,
+      profile_views: Number(companyData.profile_views) + 1,
+    }
+
     nocodb_response = await fetch(
       "https://app.nocodb.com/api/v2/tables/mvn11rzjs9f465t/records",
       {
@@ -41,7 +47,7 @@ export const POST = async (
           "Content-Type": "application/json",
           "xc-token": process.env.NOCODB_TOKEN as string,
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(payload),
       },
     );
   } catch (error: any) {
@@ -67,7 +73,7 @@ export const POST = async (
         },
         body: JSON.stringify({
           chat_id: process.env.TELEGRAM_CHAT_ID,
-          text: `Your resume for ${body.title} has ${body.profile_views} views 🎉`,
+          text: `Your resume for ${companyData.title} has ${companyData.profile_views + 1} views 🎉`,
         }),
       },
     );
