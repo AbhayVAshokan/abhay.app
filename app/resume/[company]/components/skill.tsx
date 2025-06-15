@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
   },
   scoreLabel: {
     fontSize: 8,
-    marginLeft: "auto",
     marginRight: 5,
   },
 });
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
 const Skill = ({ style, skill, level }: SkillProps) => {
   return (
     <View style={cn(styles.container, style)}>
-      <Text>{skill}</Text>
+      <Text style={styles.scoreLabel}>{skill}</Text>
       <Score level={level} />
     </View>
   );
