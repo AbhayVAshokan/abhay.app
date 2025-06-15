@@ -4,9 +4,7 @@ const ResumeLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <main className="fixed top-0 left-0 h-full w-full z-[70]">
-      {children}
-    </main>
+    <main className="fixed top-0 left-0 h-full w-full z-[70]">{children}</main>
   );
 };
 

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export const generateStaticParams = async () => {
   const companies: Company[] = await fetchCompanies();
   return companies.map(({ slug }) => ({ slug }));
-}
+};
 
 const Resume = async ({ params }: { params: Promise<{ company: string }> }) => {
   const { company } = await params;
