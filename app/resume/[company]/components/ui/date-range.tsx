@@ -18,10 +18,10 @@ const formatDate = (dateString: Date) => {
 
 const dateDifference = (
   date1: Date | string,
-  date2: Date | string = new Date().toDateString(),
+  date2: Date | string | undefined,
 ) => {
   const start = new Date(date1);
-  const end = new Date(date2);
+  const end = new Date(date2 ?? new Date());
 
   let years = end.getFullYear() - start.getFullYear();
   let months = end.getMonth() - start.getMonth() + 1;
