@@ -5,7 +5,6 @@ import Heading from "./ui/heading";
 import { ThemeProvider } from "../theme";
 import "../utils/font";
 
-import Watermark from "./ui/watermark";
 import Work from "./work";
 import ListItem from "./ui/list-item";
 import Section from "./ui/section";
@@ -61,7 +60,7 @@ const ResumeDocument = ({
     page: {
       paddingTop: 48,
       paddingHorizontal: 50,
-      fontFamily: "Raleway",
+      fontFamily: "Open Sans",
       fontSize: 9,
     },
     row: {
@@ -79,7 +78,7 @@ const ResumeDocument = ({
         keywords={profile.keywords}
       >
         <Page size="A4" style={styles.page}>
-          <Watermark />
+          {/* <Watermark /> */}
           <Heading
             title={profile.name}
             bio={profile.bio}
@@ -138,7 +137,7 @@ const ResumeDocument = ({
                   <Skill key={skill.skill} {...skill} />
                 ))}
               </Section>
-              <Section title="Open-source contributions" spacing={8}>
+              <Section title="Open-source contributions" spacing={4}>
                 <Text>
                   Contributed to:{" "}
                   {opensourceContributions
@@ -163,7 +162,7 @@ const ResumeDocument = ({
         </Page>
 
         <Page size="A4" style={styles.page}>
-          <Watermark />
+          {/* <Watermark /> */}
           <View style={styles.row}>
             <Section.Left>
               <Section spacing={8}>

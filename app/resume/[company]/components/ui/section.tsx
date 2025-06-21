@@ -14,7 +14,7 @@ interface SectionProps {
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom: 20,
+    paddingBottom: 12,
   },
   title: {
     textTransform: "uppercase",
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   separator: {
     height: 2,
     marginTop: 1,
-    marginBottom: 12,
+    marginBottom: 8,
   },
 });
 

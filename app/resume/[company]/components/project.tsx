@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     fontSize: 8,
   },
   content: {
-    marginTop: 10,
+    marginTop: 4,
   },
 });
 

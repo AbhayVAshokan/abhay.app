@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
   title: {
     textTransform: "uppercase",
     fontSize: 20,
-    fontFamily: "Quicksand",
     fontWeight: "semibold",
   },
   bio: {
@@ -64,7 +63,6 @@ const styles = StyleSheet.create({
   },
   infoContainer: {
     flexDirection: "row",
-    marginTop: 12,
   },
   link: {
     marginRight: 12,
