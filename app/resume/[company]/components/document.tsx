@@ -115,7 +115,7 @@ const ResumeDocument = ({
                   </Work>
                 ))}
               </Section>
-              <Section title="Projects" spacing={8}>
+              <Section title="Projects" spacing={4}>
                 {projects.slice(0, 1).map((project) => (
                   <Project
                     key={project.Id}

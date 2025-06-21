@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
   imageContainer: {
     position: "absolute",
     right: 0,
-    top: -20,
   },
   image: {
     borderRadius: 99999,
@@ -63,6 +62,7 @@ const styles = StyleSheet.create({
   },
   infoContainer: {
     flexDirection: "row",
+    marginTop: 8
   },
   link: {
     marginRight: 12,
