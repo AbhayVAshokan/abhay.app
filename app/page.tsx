@@ -49,7 +49,7 @@ const Home = () => (
             </span>
           </h1>
           <p className="md:text-lg">
-            I am a software engineer at BigBinary. For me, building software is
+            I am a software engineer at GitLab. For me, building software is
             more than just a job — it&apos;s a passion. I like to get my hands
             dirty and build tools to solve my own itch, and make life easier for
             everyone else. You will always find me with endless open tabs,

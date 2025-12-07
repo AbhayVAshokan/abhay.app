@@ -33,10 +33,21 @@ const SKILLS = [
 
 const EXPERIENCES = [
   {
+    title: "Fullstack Engineer at GitLab",
+    link: "https://gitlab.com",
+    target: "_blank",
+    prefix: `September 2025 - Present • ${durationFromToday(new Date("22 Sept 2025"))}`,
+    summary: [
+      `
+I am a Fullstack Engineer in the Fulfillment:Provision group under the Monetization Engineering department.
+      `,
+    ],
+  },
+  {
     title: "Tech-lead at BigBinary",
     link: "https://bigbinary.com",
     target: "_blank",
-    prefix: `July 2021 - Present • ${durationFromToday(new Date("01 Jul 2021"))}`,
+    prefix: `July 2021 - September 2025 • 4 yrs 2 mos`,
     summary: [
       `
 NeetoSite: neeto.com/neetosite
