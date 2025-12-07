@@ -4,6 +4,14 @@ import { Metadata } from "next";
 
 const PROJECTS = [
   {
+    title: "Zonic",
+    prefix: ["swift", "sqlite3", "macos"],
+    link: "http://localhost:3001/about",
+    target: "_blank",
+    summary:
+      "A macOS Menu Bar application that displays the current time for the cities in different timezones across the world. Quickly search for cities and add them to your favorites for instant access to their local time.",
+  },
+  {
     title: "Leetify",
     prefix: ["nextjs", "prisma", "supabase", "leetcode"],
     link: "https://leetify.onrender.com",
