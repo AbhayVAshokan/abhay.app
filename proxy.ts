@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { SignJWT } from "jose";
 
-export const middleware = async () => {
+export const proxy = async () => {
   const response = NextResponse.next();
   const x_token = await new SignJWT({ token: process.env.X_TOKEN })
     .setProtectedHeader({ alg: "HS256" })
