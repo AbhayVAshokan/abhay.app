@@ -6,10 +6,18 @@ const PROJECTS = [
   {
     title: "Zonic",
     prefix: ["swift", "sqlite3", "macos"],
-    link: "http://localhost:3001/about",
+    link: "https://gitlab.com/abhayvashokan/zonic",
     target: "_blank",
     summary:
       "A macOS Menu Bar application that displays the current time for the cities in different timezones across the world. Quickly search for cities and add them to your favorites for instant access to their local time.",
+  },
+  {
+    title: "Vimmit",
+    prefix: ["extension", "bun", "javascript"],
+    link: "https://gitlab.com/abhayvashokan/vimmit/",
+    target: "_blank",
+    summary:
+      "Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 'k', upvote/downvote with 'u'/'d', and more.",
   },
   {
     title: "Leetify",
