@@ -56,6 +56,14 @@ const FEATURED_PROJECTS = [
 // Tooling & Other Projects - Combined List
 const OTHER_PROJECTS = [
   {
+    title: "glab-soft-labels",
+    prefix: ["javascript", "extension"],
+    link: "https://gitlab.com/abhayvashokan/glab-soft-labels",
+    target: "_blank",
+    summary:
+      "Soften the screaming label colors in GitLab in dark mode for a better, more pleasing aesthetic. This browser extension tones down the default label colors, making them less distracting, especially for users who prefer dark mode.",
+  },
+  {
     title: "Lorem",
     prefix: ["remix.run"],
     link: "https://lorem.abhay.app",
