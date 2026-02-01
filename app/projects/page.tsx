@@ -1,8 +1,26 @@
-import Card from "@/app/components/card";
-import Header from "@/app/components/header";
+import FeaturedProject from "@/app/components/featured-project";
+import ProjectList from "@/app/components/project-list";
+import Header, { Subheader } from "@/app/components/header";
 import { Metadata } from "next";
 
-const PROJECTS = [
+// Featured Projects - Masonry Layout (6 most impressive projects)
+const FEATURED_PROJECTS = [
+  {
+    title: "Leetify",
+    prefix: ["nextjs", "prisma", "supabase", "leetcode"],
+    link: "https://leetify.onrender.com",
+    target: "_blank",
+    summary:
+      "Gamify Leetcode with a comprehensive dashboard showing solved problems, your score, rank, and current streak. Built with modern full-stack technologies.",
+  },
+  {
+    title: "Tiny",
+    prefix: ["nextjs", "prisma", "supabase", "trpc"],
+    link: "https://tiny.abhay.app",
+    target: "_blank",
+    summary:
+      "A URL shortener for personal links. Built to explore the shadcn CLI tool and tRPC for client-server communication, using Prisma ODM with PostgreSQL.",
+  },
   {
     title: "Zonic",
     prefix: ["swift", "sqlite3", "macos"],
@@ -20,62 +38,35 @@ const PROJECTS = [
       "Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 'k', upvote/downvote with 'u'/'d', and more.",
   },
   {
-    title: "Leetify",
-    prefix: ["nextjs", "prisma", "supabase", "leetcode"],
-    link: "https://leetify.onrender.com",
-    target: "_blank",
+    title: "Flair",
+    prefix: ["flutter", "nodejs", "mongodb", "aws"],
     summary:
-      "Gamify Leetcode with a comprehensive Leetcode dashboard showing the list of all the solved problems, your score, rank, and the current streak.",
-  },
-  {
-    title: "Tiny",
-    prefix: ["nextjs", "prisma", "supabase", "trpc"],
-    link: "https://tiny.abhay.app",
-    target: "_blank",
-    summary:
-      "A URL shortener for shrinking my personal links. I started this project to check out the new shadcn CLI tool. trpc looked like a cool way to send requests between the client and server. I decided to give it a go. I used Prisma for ODM and added my database to PostgreSQL.",
+      "A competitive platform for people to show off their talents in music and dance. We developed our own algorithm to rank video submissions for competitions, promoting genuine talent over clickbait content. Built using Flutter, Node.js and deployed on AWS.",
   },
   {
     title: "Fast",
-    prefix: ["nuxtjs"],
+    prefix: ["nuxtjs", "vue"],
     link: "https://fast.abhay.app",
     target: "_blank",
-    summary: "A web app for testing internet bandwidth.",
+    summary:
+      "A clean, minimal web app for testing internet bandwidth with real-time results.",
   },
+];
+
+// Tooling & Other Projects - Combined List
+const OTHER_PROJECTS = [
   {
     title: "Lorem",
     prefix: ["remix.run"],
     link: "https://lorem.abhay.app",
     target: "_blank",
     summary:
-      "Generate lorem ipsum text for your website by specifying the number of paragraphs.",
+      "Generate lorem ipsum text by specifying the number of paragraphs.",
   },
   {
-    title: "Flair",
-    prefix: ["flutter", "nodejs", "mongodb", "aws"],
-    summary:
-      "A competitive platform for people to show off their talents in music and dance. It started as a side project to kill time during lockdown. Soon, it started showing good potential. We noticed that the traditional algorithms promoted clickbait content and not the best talent. So we developed our own algorithm to rank video submissions for competitions. It is built using Flutter, Node.js and deployed in AWS. Unfortunately, it is now taken down from Play Store due to lack of maintenance when we went our separate ways after college.",
-  },
-  {
-    title: "Talk Sindhi",
-    link: "https://github.com/AbhayVAshokan/Talk-Sindhi",
-    target: "_blank",
-    prefix: ["flutter"],
-    summary:
-      "This is a mobile application to help users learn the language Sindhi. It has a fun interface to learn Sindhi using English or Hindi as the primary medium. Additionally, the app offers interactive quizzes to assess the user's knowledge. This was developed during my internship at Infoware India.",
-  },
-  {
-    title: "Habituals",
-    link: "https://github.com/AbhayVAshokan/Habituals",
-    target: "_blank",
-    prefix: ["flutter", "nodejs", "mysql"],
-    summary:
-      "This is a corporate mobile application for helping with mental health. The app provides audits and nudges to make sure that there is a good employee wellbeing. It was developed using Flutter and Node.js during my internship at Infoware India. ",
-  },
-  {
-    target: "_blank",
     title: "TEDx StTeresasCollege",
     prefix: ["nextjs"],
+    target: "_blank",
     summary: "Curated the website development of TEDx StTeresasCollege.",
   },
   {
@@ -84,7 +75,7 @@ const PROJECTS = [
     target: "_blank",
     prefix: ["python", "ml", "opencv", "cnn"],
     summary:
-      "Semantic segmentation of road surface using the Indian Driving Dataset (IDD). Here, the IDD dataset was transformed to a collection of masks using binary thresholding. The result was trained on a U-NET (end-to-end fully convolutional network).",
+      "Road surface segmentation using Indian Driving Dataset (IDD) with U-NET architecture for end-to-end fully convolutional network training.",
   },
   {
     title: "Object-Detection-YOLOv3",
@@ -92,7 +83,7 @@ const PROJECTS = [
     target: "_blank",
     prefix: ["python", "ml", "opencv", "nodejs"],
     summary:
-      "The input video is first checked for motion detection. If a motion is detected, every second frame is processed using YOLOv3 object detection algorithm loaded with pre-trained weights. The dashboard sends API request to the Node.js server to execute object detection in a virtual Python shell.",
+      "Motion detection and YOLOv3 object detection system with web dashboard API for real-time video processing.",
   },
   {
     title: "Live face recognition",
@@ -100,7 +91,23 @@ const PROJECTS = [
     target: "_blank",
     prefix: ["python", "ml", "opencv"],
     summary:
-      "Live training and recognition of faces using convolutional neural network.",
+      "Real-time face training and recognition using convolutional neural networks.",
+  },
+  {
+    title: "Talk Sindhi",
+    link: "https://github.com/AbhayVAshokan/Talk-Sindhi",
+    target: "_blank",
+    prefix: ["flutter"],
+    summary:
+      "Mobile app for learning Sindhi language with interactive quizzes. Developed during internship at Infoware India.",
+  },
+  {
+    title: "Habituals",
+    link: "https://github.com/AbhayVAshokan/Habituals",
+    target: "_blank",
+    prefix: ["flutter", "nodejs", "mysql"],
+    summary:
+      "Corporate mental health mobile app providing employee wellbeing audits and nudges. Internship project at Infoware India.",
   },
 ];
 
@@ -112,20 +119,30 @@ export const metadata: Metadata = {
 };
 
 const Projects = () => (
-  <main className="flex-1 space-y-12">
+  <main className="flex-1 space-y-16">
+    {/* Featured Projects Section */}
     <section className="max-w-3xl mx-auto my-8">
       <Header>Projects</Header>
-      <p className="my-8">
-        I have more unfinished projects than the number of tabs that are open on
-        my browser. There are a lot more on my to-do. For me, side projects are
-        a great way to kill time and learn something new. Here are a few good
-        ones that I built during my time in college.
+      <Subheader>Featured</Subheader>
+      <p className="my-8 text-muted">
+        I have more unfinished projects than the number of tabs open in my
+        browser. For me, side projects are a great way to experiment, learn new
+        technologies, and solve interesting problems.
       </p>
-      <div>
-        {PROJECTS.map((project, index) => (
-          <Card key={index} index={index + 1} {...project} />
+
+      {/* Masonry Grid for Featured Projects */}
+      <div className="columns-1 md:columns-2 lg:columns-3 space-y-6">
+        {FEATURED_PROJECTS.map((project) => (
+          <div key={project.title} className="break-inside-avoid mb-6">
+            <FeaturedProject {...project} />
+          </div>
         ))}
       </div>
+    </section>
+
+    {/* Other Projects - Combined Section */}
+    <section className="max-w-3xl mx-auto my-8">
+      <ProjectList projects={OTHER_PROJECTS} />
     </section>
   </main>
 );

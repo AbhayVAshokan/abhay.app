@@ -9,6 +9,14 @@
     --muted-background: var(--color-zinc-300);
     --muted-foreground: var(--color-zinc-800);
     --code-background: rgb(249, 248, 249);
+
+    /* Status indicator colors for light theme */
+    --status-live-bg: rgb(220, 252, 231);
+    --status-live-text: rgb(15, 78, 35);
+    --status-live-border: rgb(34, 197, 94);
+    --status-source-bg: rgb(219, 234, 254);
+    --status-source-text: rgb(30, 58, 138);
+    --status-source-border: rgb(59, 130, 246);
   }
 
   .dark {
@@ -18,6 +26,14 @@
     --muted-foreground: var(--color-zinc-400);
     --code-background: rgb(28, 28, 31);
     --code-highlight: rgb(113, 113, 122);
+
+    /* Status indicator colors for dark theme */
+    --status-live-bg: rgb(5, 46, 22);
+    --status-live-text: rgb(134, 239, 172);
+    --status-live-border: rgb(22, 101, 52);
+    --status-source-bg: rgb(12, 22, 47);
+    --status-source-text: rgb(147, 197, 253);
+    --status-source-border: rgb(29, 78, 216);
   }
 
   @theme {
@@ -26,6 +42,12 @@
     --color-muted-background: var(--muted-background);
     --color-muted-foreground: var(--muted-foreground);
     --color-link: rgb(114, 129, 255);
+    --color-status-live-bg: var(--status-live-bg);
+    --color-status-live-text: var(--status-live-text);
+    --color-status-live-border: var(--status-live-border);
+    --color-status-source-bg: var(--status-source-bg);
+    --color-status-source-text: var(--status-source-text);
+    --color-status-source-border: var(--status-source-border);
   }
 
   body {

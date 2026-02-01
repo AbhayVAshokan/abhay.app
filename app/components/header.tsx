@@ -6,6 +6,11 @@ interface HeaderProps {
   children: React.ReactNode;
 }
 
+interface SubheaderProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
 const LinkIcon = () => (
   <svg
     width="24"
@@ -41,4 +46,21 @@ const Header = ({ className, children }: HeaderProps) => {
   );
 };
 
+const Subheader = ({ className, children }: SubheaderProps) => {
+  const id = children?.toString().toLowerCase();
+
+  return (
+    <Link href={`#${id}`} className="header-link mb-6">
+      <h2
+        id={id}
+        className={classNames("text-3xl md:text-4xl font-semibold", className)}
+      >
+        {children}
+      </h2>
+      <LinkIcon />{" "}
+    </Link>
+  );
+};
+
 export default Header;
+export { Subheader };
