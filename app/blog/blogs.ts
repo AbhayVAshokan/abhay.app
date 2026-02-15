@@ -1,5 +1,10 @@
 export const BLOGS = [
   {
+    title: "My favorite superhero is Superman!",
+    prefix: "Feb 15, 2026 • 2 minute read",
+    link: "/blog/my-favorite-superhero-is-superman",
+  },
+  {
     title: "How I Self-Hosted Ente - And How You Can Too",
     prefix: "May 24, 2025 • 10 minute read",
     link: "/blog/how-i-self-hosted-ente-and-how-you-can-too",

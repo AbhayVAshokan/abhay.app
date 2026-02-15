@@ -5,7 +5,7 @@ import { BLOGS } from "../blogs";
 
 interface BlogDataProps {
   title: string;
-  summary: string;
+  summary: string | string[];
   date: string;
   readingTime: number;
 }
@@ -33,7 +33,15 @@ const BlogLayout = ({
           </h1>
           <div>
             <p className="text-sm text-muted-foreground">tl;dr</p>
-            <p className="italic !m-0">{data.summary}</p>
+            {Array.isArray(data.summary) ? (
+              data.summary.map((item, index) => (
+                <p key={index} className="italic !m-0">
+                  {item}
+                </p>
+              ))
+            ) : (
+              <p className="italic !m-0">{data.summary}</p>
+            )}
             <div className="border-b my-12 w-full border-muted-foreground/30" />
           </div>
         </section>
