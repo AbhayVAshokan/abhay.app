@@ -56,6 +56,14 @@ const FEATURED_PROJECTS = [
 // Tooling & Other Projects - Combined List
 const OTHER_PROJECTS = [
   {
+    title: "Moonfin installer",
+    prefix: ["docker", "tizen", "samsung"],
+    link: "https://github.com/AbhayVAshokan/moonfin-installer",
+    target: "_blank",
+    summary:
+      "A Docker-based installer that makes it easy to install Moonfin (a Jellyfin client) on Samsung Smart TVs with a single pre-configured container. Provides enhanced viewing experience with additional features and optimizations.",
+  },
+  {
     title: "glab-soft-labels",
     prefix: ["javascript", "extension"],
     link: "https://gitlab.com/abhayvashokan/glab-soft-labels",
