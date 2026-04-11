@@ -1,5 +1,10 @@
 export const BLOGS = [
   {
+    title: "Turning my Old MacBook into a Jellyfin Server",
+    prefix: "Apr 11, 2026 • 5 minute read",
+    link: "/blog/turning-my-old-macbook-into-a-jellyfin-server",
+  },
+  {
     title: "My favorite superhero is Superman!",
     prefix: "Feb 15, 2026 • 2 minute read",
     link: "/blog/my-favorite-superhero-is-superman",
