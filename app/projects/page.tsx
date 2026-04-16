@@ -56,6 +56,13 @@ const FEATURED_PROJECTS = [
 // Tooling & Other Projects - Combined List
 const OTHER_PROJECTS = [
   {
+    title: "Jellyfin Syncplay Chat",
+    prefix: ["jellyfin-plugin", "syncplay", "csharp", "javascript"],
+    link: "https://github.com/AbhayVAshokan/jellyfin-syncplay-chat",
+    target: "_blank",
+    summary: "Live chat plugin for your Jellyfin Syncplay.",
+  },
+  {
     title: "Moonfin installer",
     prefix: ["docker", "tizen", "samsung"],
     link: "https://github.com/AbhayVAshokan/moonfin-installer",
