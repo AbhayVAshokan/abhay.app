@@ -71,6 +71,14 @@ const OTHER_PROJECTS = [
       "A Docker-based installer that makes it easy to install Moonfin (a Jellyfin client) on Samsung Smart TVs with a single pre-configured container. Provides enhanced viewing experience with additional features and optimizations.",
   },
   {
+    title: "GitLab Notification Button",
+    prefix: ["javascript", "extension"],
+    link: "https://addons.mozilla.org/addon/gitlab-notification-button/",
+    target: "_blank",
+    summary:
+      "Adds a notification toggle button to every merge request on the GitLab dashboard, allowing you to quickly subscribe or unsubscribe from MR notifications without opening each one.",
+  },
+  {
     title: "glab-soft-labels",
     prefix: ["javascript", "extension"],
     link: "https://gitlab.com/abhayvashokan/glab-soft-labels",
