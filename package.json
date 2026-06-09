@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && bun run feed",
     "start": "next start",
+    "feed": "bun run scripts/generate-feed.ts",
     "lint": "eslint ."
   },
   "dependencies": {
