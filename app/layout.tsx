@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://abhay.app",
+    types: {
+      "application/rss+xml": "https://abhay.app/feed.xml",
+    },
   },
 };
 
